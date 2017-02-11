@@ -9,10 +9,22 @@
 import UIKit
 
 class IssueListView: UIViewController {
+    
+    fileprivate let issueService: IssueService = IssueService()
+    fileprivate var issues: ***REMOVED***Issue***REMOVED***? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.issueService.get { (result) in
+            switch result {
+            case .success(let issues):
+                self.issues = issues
+                
+            case .failure(let error):
+                print(error)
+***REMOVED***
+        }
     }
 }
 
