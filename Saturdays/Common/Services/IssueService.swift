@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Unbox
 
 internal enum Result<T> {
     case success(***REMOVED***T***REMOVED***)
@@ -49,18 +50,22 @@ class IssueService: NSObject{
         do{
             let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             
-            guard let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? ***REMOVED******REMOVED***String:Any***REMOVED******REMOVED*** else{
+            guard let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? NSArray else{
                 let readingError = JSONDataRetrivalError.jsonDataReadingError(message: "Can't serialize json data.")
                 completion(Result.failure(readingError))
                 return
 ***REMOVED***
             
-            let issues = jsonArray.flatMap({ (issueDictionary) -> Issue in
-                return Issue(with: issueDictionary)
-***REMOVED***)
+            guard let allItems = jsonArray as? ***REMOVED***UnboxableDictionary***REMOVED*** else {
+                let mappingError = JSONDataRetrivalError.mappingError(message: "Can't map")
+                completion(Result.failure(mappingError))
+                return
+***REMOVED***
             
-            print(jsonArray)
-            print(issues)
+            let unboxedIssueItems: ***REMOVED***Issue***REMOVED*** = try unbox(dictionaries: allItems)
+            completion(Result.success(unboxedIssueItems))
+            
+            print(unboxedIssueItems)
             
         }catch let error{
             print(error)

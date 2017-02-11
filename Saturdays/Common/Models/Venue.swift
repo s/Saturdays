@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Unbox
 
 struct Venue {
     let name: String
@@ -14,4 +15,14 @@ struct Venue {
     let locationInfo: String
     let foursquareID: String
     let photo: Photo
+}
+
+extension Venue: Unboxable {
+    init(unboxer: Unboxer) throws {
+        self.name = try unboxer.unbox(key: "name")
+        self.type = try unboxer.unbox(key: "type")
+        self.locationInfo = try unboxer.unbox(key: "location_info")
+        self.foursquareID = try unboxer.unbox(key: "foursquare_id")
+        self.photo = try unboxer.unbox(key: "photo")
+    }
 }
