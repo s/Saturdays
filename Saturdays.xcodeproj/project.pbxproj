@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
 		B248264B1E4F8DA50070628D /* IssueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248264A1E4F8DA50070628D /* IssueListView.swift */; };
 		B248264E1E4F8DA50070628D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B248264C1E4F8DA50070628D /* Main.storyboard */; };
 		B24826501E4F8DA50070628D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B248264F1E4F8DA50070628D /* Assets.xcassets */; };
 		B24826531E4F8DA50070628D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24826511E4F8DA50070628D /* LaunchScreen.storyboard */; };
 		B24826621E4F8F760070628D /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = B24826611E4F8F760070628D /* demo.json */; };
+		B24826681E4F90E90070628D /* IssueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826671E4F90E90070628D /* IssueService.swift */; };
+		B248266F1E4F91B70070628D /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266A1E4F91B70070628D /* Issue.swift */; };
+		B24826701E4F91B70070628D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266B1E4F91B70070628D /* Photo.swift */; };
+		B24826711E4F91B70070628D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266C1E4F91B70070628D /* Post.swift */; };
+		B24826721E4F91B70070628D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266D1E4F91B70070628D /* Track.swift */; };
+		B24826731E4F91B70070628D /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266E1E4F91B70070628D /* Venue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24826481E4F8DA50070628D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B248264A1E4F8DA50070628D /* IssueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListView.swift; sourceTree = "<group>"; };
@@ -24,6 +33,13 @@
 		B24826521E4F8DA50070628D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B24826541E4F8DA50070628D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B24826611E4F8F760070628D /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		B24826671E4F90E90070628D /* IssueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueService.swift; sourceTree = "<group>"; };
+		B248266A1E4F91B70070628D /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		B248266B1E4F91B70070628D /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B248266C1E4F91B70070628D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B248266D1E4F91B70070628D /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
+		B248266E1E4F91B70070628D /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B3E7B4354EAFF99EA5AA38A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				238E30299D6622745C3493F4 /* Pods_Saturdays.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E10D16DCD698039AFE6A007 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */,
+				5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B248263C1E4F8DA50070628D = {
 			isa = PBXGroup;
 			children = (
 				B24826471E4F8DA50070628D /* Saturdays */,
 				B24826461E4F8DA50070628D /* Products */,
+				8E10D16DCD698039AFE6A007 /* Pods */,
+				4B3E7B4354EAFF99EA5AA38A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +102,7 @@
 		B248265A1E4F8DFD0070628D /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B24826671E4F90E90070628D /* IssueService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -83,9 +120,10 @@
 		B248265D1E4F8E250070628D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B24826611E4F8F760070628D /* demo.json */,
 				B24826481E4F8DA50070628D /* AppDelegate.swift */,
 				B248264F1E4F8DA50070628D /* Assets.xcassets */,
+				B24826611E4F8F760070628D /* demo.json */,
+				B24826691E4F91720070628D /* Models */,
 				B248265A1E4F8DFD0070628D /* Services */,
 			);
 			path = Common;
@@ -99,6 +137,18 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		B24826691E4F91720070628D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B248266A1E4F91B70070628D /* Issue.swift */,
+				B248266B1E4F91B70070628D /* Photo.swift */,
+				B248266C1E4F91B70070628D /* Post.swift */,
+				B248266D1E4F91B70070628D /* Track.swift */,
+				B248266E1E4F91B70070628D /* Venue.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B24826571E4F8DA50070628D /* Build configuration list for PBXNativeTarget "Saturdays" */;
 			buildPhases = (
+				42C03D1628FA0196B205E1C1 /* ***REMOVED***CP***REMOVED*** Check Pods Manifest.lock */,
 				B24826411E4F8DA50070628D /* Sources */,
 				B24826421E4F8DA50070628D /* Frameworks */,
 				B24826431E4F8DA50070628D /* Resources */,
+				1592D0BD42E4124446F69357 /* ***REMOVED***CP***REMOVED*** Embed Pods Frameworks */,
+				1D1241FDA195898B0B61676C /* ***REMOVED***CP***REMOVED*** Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,13 +221,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1592D0BD42E4124446F69357 /* ***REMOVED***CP***REMOVED*** Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "***REMOVED***CP***REMOVED*** Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1D1241FDA195898B0B61676C /* ***REMOVED***CP***REMOVED*** Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "***REMOVED***CP***REMOVED*** Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42C03D1628FA0196B205E1C1 /* ***REMOVED***CP***REMOVED*** Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "***REMOVED***CP***REMOVED*** Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif ***REMOVED*** $? != 0 ***REMOVED*** ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B24826411E4F8DA50070628D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B248264B1E4F8DA50070628D /* IssueListView.swift in Sources */,
+				B24826731E4F91B70070628D /* Venue.swift in Sources */,
 				B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */,
+				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
+				B24826711E4F91B70070628D /* Post.swift in Sources */,
+				B248266F1E4F91B70070628D /* Issue.swift in Sources */,
+				B24826701E4F91B70070628D /* Photo.swift in Sources */,
+				B24826721E4F91B70070628D /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +402,7 @@
 		};
 		B24826581E4F8DA50070628D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L38W434WBD;
@@ -308,6 +416,7 @@
 		};
 		B24826591E4F8DA50070628D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L38W434WBD;
