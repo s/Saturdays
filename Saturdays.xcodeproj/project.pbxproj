@@ -20,6 +20,7 @@
 		B24826711E4F91B70070628D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266C1E4F91B70070628D /* Post.swift */; };
 		B24826721E4F91B70070628D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266D1E4F91B70070628D /* Track.swift */; };
 		B24826731E4F91B70070628D /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266E1E4F91B70070628D /* Venue.swift */; };
+		B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826751E4F98AE0070628D /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B248266C1E4F91B70070628D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B248266D1E4F91B70070628D /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		B248266E1E4F91B70070628D /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		B24826751E4F98AE0070628D /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				B24826481E4F8DA50070628D /* AppDelegate.swift */,
 				B248264F1E4F8DA50070628D /* Assets.xcassets */,
 				B24826611E4F8F760070628D /* demo.json */,
+				B24826741E4F98960070628D /* Extensions */,
 				B24826691E4F91720070628D /* Models */,
 				B248265A1E4F8DFD0070628D /* Services */,
 			);
@@ -147,6 +150,14 @@
 				B248266E1E4F91B70070628D /* Venue.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B24826741E4F98960070628D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B24826751E4F98AE0070628D /* DateExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 				B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */,
 				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
+				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
 				B248266F1E4F91B70070628D /* Issue.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
@@ -447,6 +459,7 @@
 				B24826591E4F8DA50070628D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
