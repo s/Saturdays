@@ -13,9 +13,15 @@ class IssueListView: UIViewController {
     fileprivate let issueService: IssueService = IssueService()
     fileprivate var issues: ***REMOVED***Issue***REMOVED***? = nil
 
+    @IBOutlet weak var issuesCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.retrieveIssues()
+    }
+    
+    fileprivate func retrieveIssues() {
         self.issueService.get { (result) in
             switch result {
             case .success(let issues):
@@ -25,6 +31,10 @@ class IssueListView: UIViewController {
                 print(error)
 ***REMOVED***
         }
+    }
+    
+    fileprivate func registerCell() {
+        self.issuesCollectionView.register(nib:IssueCell.self)
     }
 }
 

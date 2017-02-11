@@ -21,6 +21,10 @@
 		B24826721E4F91B70070628D /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266D1E4F91B70070628D /* Track.swift */; };
 		B24826731E4F91B70070628D /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266E1E4F91B70070628D /* Venue.swift */; };
 		B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826751E4F98AE0070628D /* DateExtensions.swift */; };
+		B248267A1E4F9D460070628D /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826781E4F9D460070628D /* IssueCell.swift */; };
+		B248267B1E4F9D460070628D /* IssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24826791E4F9D460070628D /* IssueCell.xib */; };
+		B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */; };
+		B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		B248266D1E4F91B70070628D /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		B248266E1E4F91B70070628D /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		B24826751E4F98AE0070628D /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		B24826781E4F9D460070628D /* IssueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
+		B24826791E4F9D460070628D /* IssueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueCell.xib; sourceTree = "<group>"; };
+		B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +143,7 @@
 		B248265E1E4F8E3C0070628D /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B248264A1E4F8DA50070628D /* IssueListView.swift */,
+				B24826771E4F9D150070628D /* IssueList */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -156,8 +164,20 @@
 			isa = PBXGroup;
 			children = (
 				B24826751E4F98AE0070628D /* DateExtensions.swift */,
+				B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */,
+				B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B24826771E4F9D150070628D /* IssueList */ = {
+			isa = PBXGroup;
+			children = (
+				B248264A1E4F8DA50070628D /* IssueListView.swift */,
+				B24826781E4F9D460070628D /* IssueCell.swift */,
+				B24826791E4F9D460070628D /* IssueCell.xib */,
+			);
+			path = IssueList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B24826531E4F8DA50070628D /* LaunchScreen.storyboard in Resources */,
+				B248267B1E4F9D460070628D /* IssueCell.xib in Resources */,
 				B24826501E4F8DA50070628D /* Assets.xcassets in Resources */,
 				B24826621E4F8F760070628D /* demo.json in Resources */,
 				B248264E1E4F8DA50070628D /* Main.storyboard in Resources */,
@@ -286,14 +307,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B248264B1E4F8DA50070628D /* IssueListView.swift in Sources */,
+				B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */,
 				B24826731E4F91B70070628D /* Venue.swift in Sources */,
 				B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */,
 				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
+				B248267A1E4F9D460070628D /* IssueCell.swift in Sources */,
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
 				B248266F1E4F91B70070628D /* Issue.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
+				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
