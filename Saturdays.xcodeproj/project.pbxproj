@@ -54,14 +54,46 @@
 		B24826471E4F8DA50070628D /* Saturdays */ = {
 			isa = PBXGroup;
 			children = (
-				B24826481E4F8DA50070628D /* AppDelegate.swift */,
-				B248264A1E4F8DA50070628D /* ViewController.swift */,
+				B248265D1E4F8E250070628D /* Common */,
+				B248265E1E4F8E3C0070628D /* Screens */,
+				B248265B1E4F8E030070628D /* Supporting Files */,
+			);
+			path = Saturdays;
+			sourceTree = "<group>";
+		};
+		B248265A1E4F8DFD0070628D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B248265B1E4F8E030070628D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				B248264C1E4F8DA50070628D /* Main.storyboard */,
-				B248264F1E4F8DA50070628D /* Assets.xcassets */,
 				B24826511E4F8DA50070628D /* LaunchScreen.storyboard */,
 				B24826541E4F8DA50070628D /* Info.plist */,
 			);
-			path = Saturdays;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B248265D1E4F8E250070628D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B24826481E4F8DA50070628D /* AppDelegate.swift */,
+				B248264F1E4F8DA50070628D /* Assets.xcassets */,
+				B248265A1E4F8DFD0070628D /* Services */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B248265E1E4F8E3C0070628D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B248264A1E4F8DA50070628D /* ViewController.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +183,7 @@
 				B248264D1E4F8DA50070628D /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B24826511E4F8DA50070628D /* LaunchScreen.storyboard */ = {
@@ -159,6 +192,7 @@
 				B24826521E4F8DA50070628D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -260,7 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L38W434WBD;
-				INFOPLIST_FILE = Saturdays/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -273,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L38W434WBD;
-				INFOPLIST_FILE = Saturdays/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
