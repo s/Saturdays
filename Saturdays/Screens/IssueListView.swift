@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  IssueListView.swift
 //  Saturdays
 //
 //  Created by Said Ozcan on 2/11/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IssueListView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
