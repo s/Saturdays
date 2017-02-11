@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import Unbox
 
 struct Track{
     let name: String
     let artist: String
     let spotifyID: String
     let albumArtURL: URL?
+}
+
+extension Track: Unboxable {
+    internal init(unboxer: Unboxer) throws{
+        self.name = try unboxer.unbox(key: "name")
+        self.artist = try unboxer.unbox(key: "artist")
+        self.spotifyID = try unboxer.unbox(key: "spotify_id")
+        self.albumArtURL = try URL(string: unboxer.unbox(key: "album_art_url"))
+    }
 }
