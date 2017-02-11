@@ -2,20 +2,23 @@ PODS:
   - Alamofire (4.3.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - KDCircularProgress (1.5.2)
   - Reveal-SDK (6)
   - Unbox (2.3.0)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.1)
+  - KDCircularProgress
   - Reveal-SDK
   - Unbox
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   Reveal-SDK: 67460e58f93711c7b18631d12c2b5de7740e48b5
   Unbox: 5ba1966ebe99b5d568d432626323331eedd33458
 
-PODFILE CHECKSUM: 6290520793f6a14b6231fa7886a6d78adb69de6f
+PODFILE CHECKSUM: 8a4adb0b1b49c425b2c4bb471f4f5ad992515bcb
 
 COCOAPODS: 1.1.1

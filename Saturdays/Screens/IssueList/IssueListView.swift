@@ -19,6 +19,7 @@ class IssueListView: UIViewController {
     {
         super.viewDidLoad()
         
+        self.title = "SATURDAYS"
         self.retrieveIssues()
         self.registerCell()
     }
