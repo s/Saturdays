@@ -215,7 +215,7 @@
 				TargetAttributes = {
 					B24826441E4F8DA50070628D = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = L38W434WBD;
+						DevelopmentTeam = Z2EVZ5Y6JY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -441,7 +441,8 @@
 			baseConfigurationReference = CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L38W434WBD;
+				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
 				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays;
@@ -455,7 +456,8 @@
 			baseConfigurationReference = 5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = L38W434WBD;
+				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
 				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays;

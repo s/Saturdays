@@ -7,4 +7,6 @@ target 'Saturdays' do
 
   # Pods for Saturdays
   pod 'Unbox'
+  pod 'Reveal-SDK', :configurations => ***REMOVED***'Debug'***REMOVED*** 
+  pod 'AlamofireImage', '~> 3.1'
 end
