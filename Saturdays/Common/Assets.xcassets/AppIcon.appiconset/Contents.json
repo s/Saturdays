@@ -2,6 +2,16 @@
   "images" : ***REMOVED***
     {
       "idiom" : "iphone",
+      "size" : "20x20",
+      "scale" : "2x"
+***REMOVED***
+    {
+      "idiom" : "iphone",
+      "size" : "20x20",
+      "scale" : "3x"
+***REMOVED***
+    {
+      "idiom" : "iphone",
       "size" : "29x29",
       "scale" : "2x"
 ***REMOVED***
