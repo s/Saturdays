@@ -12,11 +12,11 @@ import Foundation
 class TableViewDataSourceGenericSectionModel<Model, Cell>: TableViewDataSourceGenericSectionModelProtocol where Cell: UITableViewCell, Cell: ConfigurableCell, Cell.Model == Model {
     private let items: ***REMOVED***Model***REMOVED***
     private let reuseIdentifier: String
-    private let selectHandler: (Model, Cell) -> ()
+    private let selectionHandler: (Cell, Model) -> ()
     
-    init(items: ***REMOVED***Model***REMOVED***, reuseIdentifier:String, selectHandler: @escaping (Model, Cell) -> ()) {
+    init(items: ***REMOVED***Model***REMOVED***, reuseIdentifier:String, selectionHandler: @escaping (Cell, Model) -> ()) {
         self.items = items
-        self.selectHandler = selectHandler
+        self.selectionHandler = selectionHandler
         self.reuseIdentifier = reuseIdentifier
     }
     
@@ -33,6 +33,6 @@ class TableViewDataSourceGenericSectionModel<Model, Cell>: TableViewDataSourceGe
     func sectionModel(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.items***REMOVED***indexPath.row***REMOVED***
         let cell = self.sectionModel(tableView, cellForRowAt: indexPath)
-        self.selectHandler(model, cell as! Cell)
+        self.selectionHandler(cell as! Cell, model)
     }
 }
