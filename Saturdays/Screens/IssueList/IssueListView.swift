@@ -72,3 +72,14 @@ extension IssueListView: UICollectionViewDelegateFlowLayout
         return CGSize(width: self.view.frame.size.width, height: cellHeight)
     }
 }
+
+extension IssueListView: UICollectionViewDelegate
+{
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath)
+    {
+        let selectedIssue = self.issues***REMOVED***indexPath.row***REMOVED***
+        let issueDetailsView = IssueDetailsView(with: selectedIssue)
+        self.navigationController?.pushViewController(issueDetailsView, animated: true)
+    }
+}
