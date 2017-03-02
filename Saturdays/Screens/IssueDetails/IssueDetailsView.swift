@@ -25,6 +25,7 @@ class IssueDetailsView: UIViewController {
         self.updateSubviews()
         self.registerCells()
         self.issueTableView.dataSource = self.dataSource
+        self.issueTableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

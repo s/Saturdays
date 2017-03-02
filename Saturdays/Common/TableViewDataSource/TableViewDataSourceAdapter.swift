@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TableViewDataSourceAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
+class TableViewDataSourceAdapter: NSObject {
     let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED***
     
     init(with issue: Issue) {
@@ -32,7 +32,9 @@ class TableViewDataSourceAdapter: NSObject, UITableViewDelegate, UITableViewData
     private func section(at index: Int) -> TableViewDataSourceGenericSectionModelProtocol {
         return self.sections***REMOVED***index***REMOVED***
     }
-    
+}
+
+extension TableViewDataSourceAdapter: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.sections.count
     }
@@ -44,25 +46,10 @@ class TableViewDataSourceAdapter: NSObject, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return self.section(at: indexPath.section).sectionModel(tableView, cellForRowAt: indexPath)
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return self.section(at: indexPath.section).sectionModel(tableView, didSelectRowAt: indexPath)
-    }
 }
 
-extension TableViewDataSourceAdapter {
-    
-    static func adapter(from issue: Issue) -> TableViewDataSourceAdapter {
-        let tracksSection = TableViewDataSourceGenericSectionModel<Track, IssueDetailsTrackCell>(items: issue.tracks, reuseIdentifier:IssueDetailsTrackCell.name) { (model, cell) in
-        }
-        
-        let venuesSection = TableViewDataSourceGenericSectionModel<Venue, IssueDetailsVenueCell>(items: issue.venues, reuseIdentifier:IssueDetailsVenueCell.name) { (model, cell) in
-        }
-        
-        let postsSection = TableViewDataSourceGenericSectionModel<Post, IssueDetailsPostCell>(items: issue.posts, reuseIdentifier:IssueDetailsPostCell.name) { (model, cell) in
-        }
-        
-        let adapter = TableViewDataSourceAdapter(sections: ***REMOVED***tracksSection, venuesSection, postsSection***REMOVED***)
-        return adapter
+extension TableViewDataSourceAdapter: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        return self.section(at: indexPath.section).sectionModel(tableView, didSelectRowAt: indexPath)
     }
 }
