@@ -9,8 +9,14 @@
 import UIKit
 
 class IssueDetailsVenueCell: UITableViewCell, ConfigurableCell {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var locationInfoLabel: UILabel!
+    
     func configure(with model: Venue) {
-        
+        self.nameLabel.text = model.name
+        self.typeLabel.text = model.type
+        self.locationInfoLabel.text = model.locationInfo
     }
 }
