@@ -9,12 +9,16 @@
 import Foundation
 import Unbox
 
-struct Venue {
+struct Venue : ExternallyOpenable {
     let name: String
     let type: String
     let locationInfo: String
     let foursquareID: String
     let photo: Photo
+    
+    var externalURL: URL {
+        return URL(string: "foursquare://")!
+    }
 }
 
 extension Venue: Unboxable {

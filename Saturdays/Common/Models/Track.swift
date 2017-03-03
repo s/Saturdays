@@ -9,11 +9,15 @@
 import Foundation
 import Unbox
 
-struct Track{
+struct Track : ExternallyOpenable{
     let name: String
     let artist: String
     let spotifyID: String
     let albumArtURL: URL?
+    
+    var externalURL: URL {
+        return URL(string: "spotify://")!
+    }
 }
 
 extension Track: Unboxable {
