@@ -9,14 +9,12 @@
 import UIKit
 import Foundation
 
-class TableViewDataSourceGenericSectionModel<Model, Cell>: TableViewDataSourceGenericSectionModelProtocol where Cell: UITableViewCell, Cell: ConfigurableCell, Cell.Model == Model {
+class TableViewDataSourceGenericSectionModel<Cell, Model>: NSObject, TableViewDataSourceGenericSectionModelProtocol where Cell: UITableViewCell, Cell: ConfigurableCell, Cell.Model == Model {
     private let items: ***REMOVED***Model***REMOVED***
     private let reuseIdentifier: String
-    private let selectionHandler: (Cell, Model) -> ()
     
-    init(items: ***REMOVED***Model***REMOVED***, reuseIdentifier:String, selectionHandler: @escaping (Cell, Model) -> ()) {
+    init(items: ***REMOVED***Model***REMOVED***, reuseIdentifier:String) {
         self.items = items
-        self.selectionHandler = selectionHandler
         self.reuseIdentifier = reuseIdentifier
     }
     
@@ -33,6 +31,19 @@ class TableViewDataSourceGenericSectionModel<Model, Cell>: TableViewDataSourceGe
     func sectionModel(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = self.items***REMOVED***indexPath.row***REMOVED***
         let cell = self.sectionModel(tableView, cellForRowAt: indexPath)
-        self.selectionHandler(cell as! Cell, model)
+        self.selectHandler(cell: cell as! Cell, model: model)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func sectionModel(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let defaultSectionHeight : CGFloat = 40.0
+        return defaultSectionHeight
+    }
+    
+    func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return nil
+    }
+    
+    internal func selectHandler(cell: Cell, model: Model) {}
 }

@@ -12,4 +12,6 @@ protocol TableViewDataSourceGenericSectionModelProtocol {
     func sectionModel(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     func sectionModel(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     func sectionModel(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    func sectionModel(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
 }

@@ -12,24 +12,11 @@ import UIKit
 class TableViewDataSourceAdapter: NSObject {
     let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED***
     
-    init(with issue: Issue) {
-        let tracksSection = TableViewDataSourceGenericSectionModel<Track, IssueDetailsTrackCell>(items: issue.tracks, reuseIdentifier:IssueDetailsTrackCell.name) { (model, cell) in
-        }
-        
-        let venuesSection = TableViewDataSourceGenericSectionModel<Venue, IssueDetailsVenueCell>(items: issue.venues, reuseIdentifier:IssueDetailsVenueCell.name) { (model, cell) in
-        }
-        
-        let postsSection = TableViewDataSourceGenericSectionModel<Post, IssueDetailsPostCell>(items: issue.posts, reuseIdentifier:IssueDetailsPostCell.name) { (model, cell) in
-        }
-        
-        self.sections = ***REMOVED***tracksSection, venuesSection, postsSection***REMOVED***
-    }
-    
     init(sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED***) {
         self.sections = sections
     }
     
-    private func section(at index: Int) -> TableViewDataSourceGenericSectionModelProtocol {
+    fileprivate func section(at index: Int) -> TableViewDataSourceGenericSectionModelProtocol {
         return self.sections***REMOVED***index***REMOVED***
     }
 }
@@ -51,5 +38,13 @@ extension TableViewDataSourceAdapter: UITableViewDataSource {
 extension TableViewDataSourceAdapter: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         return self.section(at: indexPath.section).sectionModel(tableView, didSelectRowAt: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return self.section(at: section).sectionModel(tableView, heightForHeaderInSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return self.section(at: section).sectionModel(tableView, viewForHeaderInSection: section)
     }
 }

@@ -23,9 +23,7 @@ class IssueDetailsView: UIViewController {
         super.viewDidLoad()
 
         self.updateSubviews()
-        self.registerCells()
-        self.issueTableView.dataSource = self.dataSource
-        self.issueTableView.tableFooterView = UIView()
+        self.setupTableView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,8 +38,19 @@ class IssueDetailsView: UIViewController {
     
     init(with issue:Issue) {
         self.issue = issue
-        self.dataSource = TableViewDataSourceAdapter(with: issue)
+        
+        let tracksSection = IssueDetailsTracksSection(with: issue.tracks)
+        let venuesSection = IssueDetailsVenuesSection(with: issue.venues)
+        let postsSection = IssueDetailsPostsSection(with: issue.posts)
+        
+        let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED*** = ***REMOVED***tracksSection, venuesSection, postsSection***REMOVED***
+        self.dataSource = TableViewDataSourceAdapter(sections: sections)
+        
         super.init(nibName: IssueDetailsView.name, bundle: nil)
+        
+        tracksSection.delegate = self
+        venuesSection.delegate = self
+        postsSection.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,14 +59,38 @@ class IssueDetailsView: UIViewController {
     
     // MARK: Helpers
     
-    private func updateSubviews() {
+    fileprivate func updateSubviews() {
         self.headingLabel.text = self.issue.detailHeading
         self.descriptionLabel.text = self.issue.detailDescription
     }
     
-    private func registerCells() {
+    fileprivate func registerCells() {
         self.issueTableView.register(nib: IssueDetailsTrackCell.self)
         self.issueTableView.register(nib: IssueDetailsVenueCell.self)
         self.issueTableView.register(nib: IssueDetailsPostCell.self)
+    }
+    
+    fileprivate func setupTableView() {
+        self.issueTableView.estimatedRowHeight = 76.0
+        self.issueTableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.issueTableView.sizeHeaderToFit()
+        self.issueTableView.tableFooterView = UIView()
+        
+        self.registerCells()
+        self.issueTableView.dataSource = self.dataSource
+        self.issueTableView.delegate = self.dataSource
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension IssueDetailsView : IssueDetailsSectionProtocol {
+    func issueDetails(itemWasSelected item: ExternallyOpenable, in section: TableViewDataSourceGenericSectionModelProtocol) {
+        print(item, section)
     }
 }
