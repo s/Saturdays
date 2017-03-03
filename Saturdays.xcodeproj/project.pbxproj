@@ -34,6 +34,7 @@
 		B29165351E526B390045BA4F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29165341E526B390045BA4F /* UITableViewExtensions.swift */; };
 		B2B3B56D1E50788C0048218C /* IssueDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B3B56B1E50788C0048218C /* IssueDetailsView.swift */; };
 		B2B3B56E1E50788C0048218C /* IssueDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B3B56C1E50788C0048218C /* IssueDetailsView.xib */; };
+		B2DEC2301E68EEC100FFFD7D /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEC22F1E68EEC100FFFD7D /* TableHeaderView.swift */; };
 		B2DEC2371E68F20400FFFD7D /* ExternallyOpenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEC2361E68F20400FFFD7D /* ExternallyOpenable.swift */; };
 		B2F076671E67998B00EDFF32 /* TableViewDataSourceGenericSectionModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F076661E67998B00EDFF32 /* TableViewDataSourceGenericSectionModelProtocol.swift */; };
 		B2F076691E6799A700EDFF32 /* TableViewDataSourceAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F076681E6799A700EDFF32 /* TableViewDataSourceAdapter.swift */; };
@@ -85,6 +86,7 @@
 		B29165341E526B390045BA4F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		B2B3B56B1E50788C0048218C /* IssueDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetailsView.swift; sourceTree = "<group>"; };
 		B2B3B56C1E50788C0048218C /* IssueDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailsView.xib; sourceTree = "<group>"; };
+		B2DEC22F1E68EEC100FFFD7D /* TableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableHeaderView.swift; path = Views/TableHeaderView.swift; sourceTree = "<group>"; };
 		B2DEC2361E68F20400FFFD7D /* ExternallyOpenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternallyOpenable.swift; sourceTree = "<group>"; };
 		B2F076661E67998B00EDFF32 /* TableViewDataSourceGenericSectionModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSourceGenericSectionModelProtocol.swift; path = TableViewDataSource/TableViewDataSourceGenericSectionModelProtocol.swift; sourceTree = "<group>"; };
 		B2F076681E6799A700EDFF32 /* TableViewDataSourceAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSourceAdapter.swift; path = TableViewDataSource/TableViewDataSourceAdapter.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				B24826691E4F91720070628D /* Models */,
 				B291651A1E5081280045BA4F /* Protocols */,
 				B248265A1E4F8DFD0070628D /* Services */,
+				B2DEC2281E68E8CE00FFFD7D /* Views */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -281,6 +284,14 @@
 				B2B3B56C1E50788C0048218C /* IssueDetailsView.xib */,
 			);
 			path = IssueDetails;
+			sourceTree = "<group>";
+		};
+		B2DEC2281E68E8CE00FFFD7D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B2DEC22F1E68EEC100FFFD7D /* TableHeaderView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		B2F076811E679CCC00EDFF32 /* TableViewDataSource */ = {
@@ -424,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2DEC2301E68EEC100FFFD7D /* TableHeaderView.swift in Sources */,
 				B2F076691E6799A700EDFF32 /* TableViewDataSourceAdapter.swift in Sources */,
 				B2F0766D1E6799EE00EDFF32 /* TableViewDataSourceGenericSectionModel.swift in Sources */,
 				B29165271E5267FD0045BA4F /* IssueDetailsTrackCell.swift in Sources */,
