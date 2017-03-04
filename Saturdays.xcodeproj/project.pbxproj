@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
+		B23940721E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940711E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift */; };
+		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
 		B248264B1E4F8DA50070628D /* IssueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248264A1E4F8DA50070628D /* IssueListView.swift */; };
 		B248264E1E4F8DA50070628D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B248264C1E4F8DA50070628D /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
+		B23940711E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceGenericSectionModelExtensions.swift; sourceTree = "<group>"; };
+		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24826481E4F8DA50070628D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B248264A1E4F8DA50070628D /* IssueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListView.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 				B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */,
 				B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */,
 				B29165341E526B390045BA4F /* UITableViewExtensions.swift */,
+				B23940711E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 			children = (
 				B2F0766A1E6799CF00EDFF32 /* ConfigurableCell.swift */,
 				B2DEC2361E68F20400FFFD7D /* ExternallyOpenable.swift */,
+				B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -469,10 +475,12 @@
 				B2DEC2331E68EFE500FFFD7D /* IssueItemType.swift in Sources */,
 				B2DEC2301E68EEC100FFFD7D /* TableHeaderView.swift in Sources */,
 				B2F076691E6799A700EDFF32 /* TableViewDataSourceAdapter.swift in Sources */,
+				B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */,
 				B2F0766D1E6799EE00EDFF32 /* TableViewDataSourceGenericSectionModel.swift in Sources */,
 				B2DEC2251E68E7A300FFFD7D /* IssueDetailsVenuesSection.swift in Sources */,
 				B2DEC2351E68F1CC00FFFD7D /* IssueDetailsSectionProtocol.swift in Sources */,
 				B29165271E5267FD0045BA4F /* IssueDetailsTrackCell.swift in Sources */,
+				B23940721E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift in Sources */,
 				B248264B1E4F8DA50070628D /* IssueListView.swift in Sources */,
 				B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */,
 				B2DEC2271E68E7FA00FFFD7D /* IssueDetailsPostsSection.swift in Sources */,
