@@ -18,10 +18,11 @@ extension UITableView{
     
     func sizeHeaderToFit() {
         guard let headerView = self.tableHeaderView else { return }
+        let bottomMargin : CGFloat = 40.0
         
         headerView.setNeedsLayout()
         headerView.layoutIfNeeded()
-        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + bottomMargin
         
         let oldFrame = headerView.frame
         let newFrame = CGRect(x:oldFrame.origin.x ,
