@@ -15,17 +15,13 @@ enum PostSourceType: String{
     case unknown
 }
 
-struct Post : ExternallyOpenable{
+struct Post{
     let url: URL?
     let photo: Photo
     let title: String
     let postDescription: String?
     let sourceType: PostSourceType
     let instagramID: String?
-    
-    var externalURL: URL {
-        return URL(string: "instagram://")!
-    }
 }
 
 extension Post: Unboxable{
@@ -42,5 +38,19 @@ extension Post: Unboxable{
         self.url   = try URL(string: unboxer.unbox(key: "url"))
         self.postDescription = unboxer.unbox(key: "post_description")
         self.instagramID = unboxer.unbox(key: "instagram_id")
+    }
+}
+
+extension Post : ExternallyOpenable {
+    var externalURL: URL {
+        return URL(string: "instagram://")!
+    }
+}
+
+extension Post : ImageDownloadableModel {
+    var imageURL: URL {
+        get {
+            return self.photo.url
+        }
     }
 }

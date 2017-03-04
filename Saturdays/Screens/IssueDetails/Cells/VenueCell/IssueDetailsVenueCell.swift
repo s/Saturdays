@@ -8,15 +8,29 @@
 
 import UIKit
 
-class IssueDetailsVenueCell: UITableViewCell, ConfigurableCell {
+class IssueDetailsVenueCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var locationInfoLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.photoImageView.image = nil
+    }
+}
+
+extension IssueDetailsVenueCell : ConfigurableCell {
     func configure(with model: Venue) {
         self.nameLabel.text = model.name
         self.typeLabel.text = model.type
         self.locationInfoLabel.text = model.locationInfo
     }
+    
+    func updateCell(with image: UIImage) {
+        self.photoImageView.image = image
+    }
+    
+    func updateCellImageDownloadStatus(with fractionCompleted: Double) {}
 }

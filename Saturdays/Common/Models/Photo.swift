@@ -11,13 +11,14 @@ import CoreGraphics.CGGeometry
 import Unbox
 
 struct Photo{
-    let url: URL?
+    let url: URL
     let size: CGSize?
 }
 
 extension Photo: Unboxable{
     init(unboxer: Unboxer) throws{
-        self.url = try URL(string: unboxer.unbox(key: "url"))
+        let urlString : String = try unboxer.unbox(key: "url")
+        self.url = URL(string: urlString)!
         
         let width: Double? = unboxer.unbox(key: "width")
         let height: Double? = unboxer.unbox(key: "height")

@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class TableViewDataSourceGenericSectionModel<Cell, Model>: NSObject, TableViewDataSourceGenericSectionModelProtocol where Cell: UITableViewCell, Cell: ConfigurableCell, Cell.Model == Model {
+class TableViewDataSourceGenericSectionModel<Cell, Model>: NSObject, TableViewDataSourceGenericSectionModelProtocol where Cell: UITableViewCell, Cell: ConfigurableCell, Model: ImageDownloadableModel, Cell.Model == Model {
     private let items: ***REMOVED***Model***REMOVED***
     private let reuseIdentifier: String
     
@@ -24,7 +24,18 @@ class TableViewDataSourceGenericSectionModel<Cell, Model>: NSObject, TableViewDa
     
     func sectionModel(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier, for: indexPath) as! Cell
-        cell.configure(with: items***REMOVED***indexPath.row***REMOVED***)
+        let item = items***REMOVED***indexPath.row***REMOVED***
+        cell.configure(with: item)
+        
+        self.download(cellImage: item.imageURL,
+                      downloadProgressHandler: { (progress) in
+                        cell.updateCellImageDownloadStatus(with: progress.fractionCompleted)
+        }) { (response) in
+            if let image = response.result.value {
+                cell.updateCell(with: image)
+***REMOVED***
+        }
+        
         return cell
     }
     
@@ -43,6 +54,10 @@ class TableViewDataSourceGenericSectionModel<Cell, Model>: NSObject, TableViewDa
     
     func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return nil
+    }
+    
+    func sectionModel(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return tableView.rowHeight  
     }
     
     internal func selectHandler(cell: Cell, model: Model) {}

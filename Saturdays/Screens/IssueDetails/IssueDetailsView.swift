@@ -22,6 +22,7 @@ class IssueDetailsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.automaticallyAdjustsScrollViewInsets = false
         self.updateSubviews()
         self.setupTableView()
     }
@@ -43,7 +44,9 @@ class IssueDetailsView: UIViewController {
         let venuesSection = IssueDetailsVenuesSection(with: issue.venues)
         let postsSection = IssueDetailsPostsSection(with: issue.posts)
         
-        let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED*** = ***REMOVED***tracksSection, venuesSection, postsSection***REMOVED***
+        let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED*** = ***REMOVED***tracksSection,
+                                                                          venuesSection,
+                                                                          postsSection***REMOVED***
         self.dataSource = TableViewDataSourceAdapter(sections: sections)
         
         super.init(nibName: IssueDetailsView.name, bundle: nil)
