@@ -38,7 +38,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVj-Av-82J">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVj-Av-82J">
                         <rect key="frame" x="84" y="50" width="220" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -64,6 +64,7 @@
             <connections>
                 <outlet property="locationInfoLabel" destination="NVj-Av-82J" id="go8-uK-6NR"/>
                 <outlet property="nameLabel" destination="NQA-kA-1o6" id="EW2-Il-kZn"/>
+                <outlet property="photoImageView" destination="jwA-wF-12P" id="hNJ-a5-ewa"/>
                 <outlet property="typeLabel" destination="LA6-KL-cR3" id="iFX-Ql-H1k"/>
             </connections>
         </tableViewCell>

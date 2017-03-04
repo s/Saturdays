@@ -10,14 +10,24 @@ import UIKit
 
 class IssueDetailsPostsSection: TableViewDataSourceGenericSectionModel<IssueDetailsPostCell, Post> {
     
+    let items: ***REMOVED***Post***REMOVED***
     weak var delegate: IssueDetailsSectionProtocol?
     
     init(with items:***REMOVED***Post***REMOVED***) {
+        self.items = items
         super.init(items: items, reuseIdentifier: IssueDetailsPostCell.name)
     }
     
     override func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return TableHeaderView(with: .post)
+    }
+    
+    override func sectionModel(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let imageSize = self.items***REMOVED***indexPath.row***REMOVED***.photo.size else {
+            return super.sectionModel(tableView, heightForRowAt: indexPath)
+        }
+        let imageHeight = ( tableView.frame.size.width * imageSize.height ) / imageSize.width
+        return imageHeight
     }
     
     override func selectHandler(cell: IssueDetailsPostCell, model: Post) {

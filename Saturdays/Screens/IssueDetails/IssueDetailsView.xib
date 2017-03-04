@@ -31,10 +31,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D62-1l-prV" userLabel="BackButton">
-                                <rect key="frame" x="16" y="0.0" width="12" height="25"/>
+                                <rect key="frame" x="16" y="5" width="10" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="LPa-u7-ipK"/>
-                                    <constraint firstAttribute="width" constant="12" id="R3Q-vU-ggu"/>
+                                    <constraint firstAttribute="height" constant="21" id="LPa-u7-ipK"/>
+                                    <constraint firstAttribute="width" constant="10" id="R3Q-vU-ggu"/>
                                 </constraints>
                                 <state key="normal" image="LeftArrow"/>
                                 <connections>
@@ -56,7 +56,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="D62-1l-prV" firstAttribute="top" secondItem="uud-ym-JZy" secondAttribute="top" id="3ZC-yZ-fvh"/>
+                            <constraint firstItem="D62-1l-prV" firstAttribute="top" secondItem="uud-ym-JZy" secondAttribute="top" constant="5" id="3ZC-yZ-fvh"/>
                             <constraint firstItem="mRe-QY-rql" firstAttribute="leading" secondItem="uud-ym-JZy" secondAttribute="leading" constant="16" id="5qu-Hu-kFd"/>
                             <constraint firstItem="mRe-QY-rql" firstAttribute="top" secondItem="p1j-HI-RqO" secondAttribute="bottom" constant="20" id="Ijj-EN-h4t"/>
                             <constraint firstAttribute="bottom" secondItem="mRe-QY-rql" secondAttribute="bottom" constant="20" id="JFC-zI-d4P"/>

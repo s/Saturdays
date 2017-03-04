@@ -21,7 +21,7 @@ class TableViewDataSourceAdapter: NSObject {
     }
 }
 
-extension TableViewDataSourceAdapter: UITableViewDataSource {
+extension TableViewDataSourceAdapter : UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return self.sections.count
     }
@@ -35,7 +35,7 @@ extension TableViewDataSourceAdapter: UITableViewDataSource {
     }
 }
 
-extension TableViewDataSourceAdapter: UITableViewDelegate {
+extension TableViewDataSourceAdapter : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         return self.section(at: indexPath.section).sectionModel(tableView, didSelectRowAt: indexPath)
     }
@@ -46,5 +46,9 @@ extension TableViewDataSourceAdapter: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return self.section(at: section).sectionModel(tableView, viewForHeaderInSection: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.section(at: indexPath.section).sectionModel(tableView, heightForRowAt: indexPath)
     }
 }

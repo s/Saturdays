@@ -9,15 +9,11 @@
 import Foundation
 import Unbox
 
-struct Track : ExternallyOpenable{
+struct Track{
     let name: String
     let artist: String
     let spotifyID: String
-    let albumArtURL: URL?
-    
-    var externalURL: URL {
-        return URL(string: "spotify://")!
-    }
+    let albumArt: Photo
 }
 
 extension Track: Unboxable {
@@ -25,6 +21,20 @@ extension Track: Unboxable {
         self.name = try unboxer.unbox(key: "name")
         self.artist = try unboxer.unbox(key: "artist")
         self.spotifyID = try unboxer.unbox(key: "spotify_id")
-        self.albumArtURL = try URL(string: unboxer.unbox(key: "album_art_url"))
+        self.albumArt = try unboxer.unbox(key: "photo")
+    }
+}
+
+extension Track : ExternallyOpenable {
+    var externalURL: URL {
+        return URL(string: "spotify://")!
+    }
+}
+
+extension Track : ImageDownloadableModel {
+    var imageURL: URL {
+        get {
+            return self.albumArt.url
+        }
     }
 }
