@@ -48,8 +48,8 @@ class TableViewDataSourceGenericSectionModel<Cell, Model>: NSObject, TableViewDa
     }
     
     func sectionModel(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let defaultSectionHeight : CGFloat = 40.0
-        return defaultSectionHeight
+        let defaultSectionHeaderHeight : CGFloat = 44.0
+        return defaultSectionHeaderHeight
     }
     
     func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
