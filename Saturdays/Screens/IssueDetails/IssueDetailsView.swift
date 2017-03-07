@@ -94,6 +94,11 @@ class IssueDetailsView: UIViewController {
 
 extension IssueDetailsView : IssueDetailsSectionProtocol {
     func issueDetails(itemWasSelected item: ExternallyOpenable, in section: TableViewDataSourceGenericSectionModelProtocol) {
+        if UIApplication.shared.canOpenURL(item.externalURL) {
+            UIApplication.shared.open(item.externalURL,
+                                      options:***REMOVED***:***REMOVED***,
+                                      completionHandler: nil)
+        }
         print(item, section)
     }
 }

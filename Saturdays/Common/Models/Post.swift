@@ -43,7 +43,17 @@ extension Post: Unboxable{
 
 extension Post : ExternallyOpenable {
     var externalURL: URL {
-        return URL(string: "instagram://")!
+        if self.sourceType == .instagram {
+            guard let instagramID = self.instagramID else {
+                fatalError("instagram id shouldn't be nil here.")
+***REMOVED***
+            return URL(string: "instagram://media?id=\(instagramID)")!
+        } else {
+            guard let url = self.url else {
+                fatalError("url shouldn't be nil here.")
+***REMOVED***
+            return url
+        }
     }
 }
 

@@ -29,7 +29,7 @@ extension Venue: Unboxable {
 
 extension Venue : ExternallyOpenable {
     var externalURL: URL {
-        return URL(string: "foursquare://")!
+        return URL(string: "foursquare://venues/\(self.foursquareID)")!
     }
 }
 
