@@ -27,7 +27,7 @@ extension Track: Unboxable {
 
 extension Track : ExternallyOpenable {
     var externalURL: URL {
-        return URL(string: "spotify://")!
+        return URL(string: "spotify:track:\(self.spotifyID)")!
     }
 }
 
