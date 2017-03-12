@@ -14,6 +14,7 @@ class IssueListView: UIViewController {
     fileprivate var issues: ***REMOVED***Issue***REMOVED*** = ***REMOVED******REMOVED***
 
     @IBOutlet weak var issuesCollectionView: UICollectionView!
+    fileprivate var refreshControl: UIRefreshControl = UIRefreshControl()
     
     override func viewDidLoad()
     {
@@ -22,6 +23,7 @@ class IssueListView: UIViewController {
         self.title = "SATURDAYS"
         self.retrieveIssues()
         self.registerCell()
+        self.setupRefreshControl()
     }
     
     fileprivate func retrieveIssues()
@@ -30,15 +32,27 @@ class IssueListView: UIViewController {
             switch result {
             case .success(let issues):
                 self.issues = issues
+                self.issuesCollectionView.reloadData()
                 
             case .failure(let error):
                 print(error)
 ***REMOVED***
+            
+            self.refreshControl.endRefreshing()
         }
     }
     
     fileprivate func registerCell() {
         self.issuesCollectionView.register(nib:IssueCell.self)
+    }
+    
+    fileprivate func setupRefreshControl() {
+        self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        self.issuesCollectionView.refreshControl = self.refreshControl
+    }
+    
+    @objc fileprivate func refresh(_ refreshControl: UIRefreshControl) {
+        self.retrieveIssues()
     }
 }
 
