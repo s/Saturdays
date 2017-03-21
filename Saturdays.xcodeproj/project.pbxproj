@@ -10,6 +10,7 @@
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
 		B23940721E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940711E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift */; };
 		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
+		B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
 		B248264B1E4F8DA50070628D /* IssueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248264A1E4F8DA50070628D /* IssueListView.swift */; };
 		B248264E1E4F8DA50070628D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B248264C1E4F8DA50070628D /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
 		B23940711E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceGenericSectionModelExtensions.swift; sourceTree = "<group>"; };
 		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
+		B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24826481E4F8DA50070628D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B248264A1E4F8DA50070628D /* IssueListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueListView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */,
 				B29165341E526B390045BA4F /* UITableViewExtensions.swift */,
 				B23940711E6AED4400E07AF2 /* TableViewDataSourceGenericSectionModelExtensions.swift */,
+				B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
 				B29165321E5268AB0045BA4F /* IssueDetailsPostCell.swift in Sources */,
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
+				B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +536,7 @@
 		B24826551E4F8DA50070628D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_GROUP = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -569,6 +574,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_GROUP = "";
+				INSTALL_OWNER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -581,6 +588,7 @@
 		B24826561E4F8DA50070628D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALTERNATE_GROUP = "";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -612,6 +620,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_GROUP = "";
+				INSTALL_OWNER = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;

@@ -17,6 +17,8 @@ class IssueCell: UICollectionViewCell {
     @IBOutlet weak var coverPhotoImageView: UIImageView!
     @IBOutlet weak var progressBar: KDCircularProgress!
     
+    @IBOutlet weak var coverPhotoImageViewHeightConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -30,8 +32,13 @@ class IssueCell: UICollectionViewCell {
             self.progressBar.animate(toAngle: 360 * progress.fractionCompleted, duration: 0.1, completion: nil)
         }).responseImage { ***REMOVED***weak self***REMOVED*** response in
 
+        
             if let image = response.result.value {
                 self?.coverPhotoImageView.image = image
+                
+                guard let contentViewFrame = self?.contentView.frame else { return }
+                let imageHeight = image.correctHeight(for: contentViewFrame)
+                self?.coverPhotoImageViewHeightConstraint.constant = imageHeight
 ***REMOVED***
             
             self?.progressBar.isHidden = true

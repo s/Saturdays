@@ -20,6 +20,16 @@ class IssueDetailsPostCell: UITableViewCell {
         super.prepareForReuse()
         self.photoImageView.image = nil
     }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.selectionStyle = .none
+    }
 }
 
 extension IssueDetailsPostCell : ConfigurableCell {
@@ -31,7 +41,7 @@ extension IssueDetailsPostCell : ConfigurableCell {
         self.photoImageView.image = image
         self.progressBar.isHidden = true
         
-        let imageHeight = ( self.contentView.frame.size.width * image.size.height ) / image.size.width
+        let imageHeight = image.correctHeight(for: self.contentView.frame)
         self.photoImageViewHeightConstraint.constant = imageHeight
     }
     
