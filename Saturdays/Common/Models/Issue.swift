@@ -30,7 +30,7 @@ extension Issue: Unboxable{
         self.detailDescription = try unboxer.unbox(key: "detail_description")
         
         self.creationDate = unboxer.unbox(key: "created_at", formatter: Date.iso8601Formatter)
-        self.coverPhoto = unboxer.unbox(key: "cover_photo")
+        self.coverPhoto = unboxer.unbox(key: "photo")
         
         self.tracks = try unboxer.unbox(key: "tracks")
         self.venues = try unboxer.unbox(key: "venues")

@@ -50,13 +50,13 @@ class IssueService: NSObject{
         do{
             let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             
-            guard let jsonArray = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? NSArray else{
+            guard let jsonDictionary = try JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers) as? NSDictionary else{
                 let readingError = JSONDataRetrivalError.jsonDataReadingError(message: "Can't serialize json data.")
                 completion(Result.failure(readingError))
                 return
 ***REMOVED***
             
-            guard let allItems = jsonArray as? ***REMOVED***UnboxableDictionary***REMOVED*** else {
+            guard let allItems = jsonDictionary***REMOVED***"issues"***REMOVED*** as? ***REMOVED***UnboxableDictionary***REMOVED*** else {
                 let mappingError = JSONDataRetrivalError.mappingError(message: "Can't map")
                 completion(Result.failure(mappingError))
                 return
