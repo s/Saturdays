@@ -82,8 +82,15 @@ extension IssueListView: UICollectionViewDelegateFlowLayout
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let cellHeight : CGFloat = 250.0
-        return CGSize(width: self.view.frame.size.width, height: cellHeight)
+        let screenWidth = self.view.frame.size.width
+        
+        guard let imageSize = self.issues***REMOVED***indexPath.row***REMOVED***.coverPhoto?.size else {
+            let cellHeight : CGFloat = 250.0
+            return CGSize(width: screenWidth, height: cellHeight)
+        }
+        
+        let cellHeight = ( screenWidth * imageSize.height ) / imageSize.width
+        return CGSize(width: screenWidth, height: cellHeight)
     }
 }
 
