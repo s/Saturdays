@@ -10,4 +10,5 @@ target 'Saturdays' do
   pod 'Reveal-SDK', :configurations => ***REMOVED***'Debug'***REMOVED*** 
   pod 'AlamofireImage', '~> 3.1'
   pod 'KDCircularProgress'
+  pod 'UnboxedAlamofire', '~> 2.0'
 end
