@@ -34,13 +34,13 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LA6-KL-cR3">
                         <rect key="frame" x="84" y="29" width="220" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVj-Av-82J">
                         <rect key="frame" x="84" y="50" width="220" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -52,7 +52,7 @@
                     <constraint firstItem="NQA-kA-1o6" firstAttribute="leading" secondItem="jwA-wF-12P" secondAttribute="trailing" constant="8" id="AqZ-Gw-6Pd"/>
                     <constraint firstItem="NVj-Av-82J" firstAttribute="leading" secondItem="jwA-wF-12P" secondAttribute="trailing" constant="8" id="MdP-xt-QFw"/>
                     <constraint firstItem="jwA-wF-12P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Pb5-OT-0J0"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NVj-Av-82J" secondAttribute="bottom" priority="750" constant="8" id="TYu-7S-QNO"/>
+                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="NVj-Av-82J" secondAttribute="bottom" priority="750" constant="8" id="TYu-7S-QNO"/>
                     <constraint firstAttribute="trailing" secondItem="LA6-KL-cR3" secondAttribute="trailing" constant="16" id="Vbf-5d-epy"/>
                     <constraint firstItem="LA6-KL-cR3" firstAttribute="leading" secondItem="jwA-wF-12P" secondAttribute="trailing" constant="8" id="j70-DB-q2N"/>
                     <constraint firstItem="NQA-kA-1o6" firstAttribute="top" secondItem="jwA-wF-12P" secondAttribute="top" id="kUK-gH-u4y"/>
