@@ -8,6 +8,8 @@
 
 import Foundation
 import Unbox
+import Alamofire
+import UnboxedAlamofire
 
 internal enum Result<T> {
     case success(***REMOVED***T***REMOVED***)
@@ -15,14 +17,17 @@ internal enum Result<T> {
 }
 
 internal enum JSONDataRetrivalError: Error{
+    case noConfigFileFound
     case noJSONDataFound
     case mappingError(message: String)
     case jsonDataReadingError(message: String)
     
     var description: String{
         switch self{
+        case .noConfigFileFound:
+            return "No config file found named: APICredentials.plist"
         case .noJSONDataFound:
-            return "No wheel json data found named: demo.json"
+            return "No demo json data found named: demo.json"
         case .jsonDataReadingError(let message):
             return message
         case .mappingError(let message):
@@ -35,7 +40,7 @@ internal enum JSONDataRetrivalError: Error{
 class IssueService: NSObject{
     
     func get(_ completionHandler: @escaping (Result<Issue>) -> Void){
-        self.readJSON { (result) in
+        self.fetchJSON { (result) in
             completionHandler(result)
         }
     }
@@ -74,4 +79,38 @@ class IssueService: NSObject{
         }
     }
 
+    fileprivate func fetchJSON(with completion:@escaping (Result<Issue>)->Void) {
+        
+        guard let path = Bundle.main.path(forResource: "APICredentials", ofType: "plist") else {
+            let error = JSONDataRetrivalError.noConfigFileFound
+            completion(Result.failure(error))
+            return
+        }
+        
+        guard let credentials = NSDictionary(contentsOfFile: path) else {
+            let readingError = JSONDataRetrivalError.jsonDataReadingError(message: "Can't read APICredentials.plist data as NSDictionary.")
+            completion(Result.failure(readingError))
+            return
+        }
+        
+        guard let apiURL = credentials***REMOVED***"api_url"***REMOVED*** as? String, let token = credentials***REMOVED***"authentication_token"***REMOVED*** as? String else {
+            let readingError = JSONDataRetrivalError.jsonDataReadingError(message: "Can't find credentials in the APICredentials.plist file.")
+            completion(Result.failure(readingError))
+            return
+        }
+        
+        let authorizationHeaders = ***REMOVED***"Authorization": "Token \(token)",
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json"***REMOVED***
+        
+        Alamofire.request(apiURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: authorizationHeaders).responseArray(keyPath: "issues") { (response: DataResponse<***REMOVED***Issue***REMOVED***>) in
+            switch (response.result) {
+            case .success(let issues):
+                print(issues)
+                completion(Result.success(issues))
+            case .failure(let error):
+                completion(Result.failure(error))
+***REMOVED***
+        }
+    }
 }
