@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IssueDetailsView: UIViewController {
+class IssueDetailsView: UIViewController, UIGestureRecognizerDelegate {
     
     fileprivate let issue: Issue
     fileprivate let dataSource: TableViewDataSourceAdapter
@@ -22,6 +22,7 @@ class IssueDetailsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
         self.updateSubviews()
         self.setupTableView()
