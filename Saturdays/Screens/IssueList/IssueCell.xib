@@ -85,7 +85,7 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="jsP-Hb-pyk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="7Uf-c9-br4"/>
                 <constraint firstAttribute="trailing" secondItem="8uL-ZL-clQ" secondAttribute="trailing" id="Ql2-cC-HYQ"/>
