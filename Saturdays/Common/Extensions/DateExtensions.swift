@@ -14,7 +14,7 @@ import Foundation
 public extension Date {
     /// Returns an ISO 8601 formatter
     public static var iso8601Formatter: DateFormatter = {
-        $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        $0.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZ"
         $0.locale = Locale(identifier: "en_US_POSIX")
         return $0
     }(DateFormatter())
