@@ -27,7 +27,8 @@ class IssueDetailsPostsSection: TableViewDataSourceGenericSectionModel<IssueDeta
             return super.sectionModel(tableView, heightForRowAt: indexPath)
         }
         let imageHeight = ( tableView.frame.size.width * imageSize.height ) / imageSize.width
-        return imageHeight
+        let bottomSpacing: CGFloat = 1
+        return imageHeight + bottomSpacing
     }
     
     override func selectHandler(cell: IssueDetailsPostCell, model: Post) {

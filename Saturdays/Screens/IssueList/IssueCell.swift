@@ -23,6 +23,11 @@ class IssueCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.coverPhotoImageView.image = nil
+    }
+    
     func configure(with issue:Issue)
     {
         self.titleLabel.text = issue.title

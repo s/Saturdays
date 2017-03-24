@@ -34,7 +34,6 @@
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="HMx-kI-T0Y"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Lt0-TJ-MSp"/>
-                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="nMx-8C-pFs"/>
                                 </connections>
                             </collectionView>
                         </subviews>
