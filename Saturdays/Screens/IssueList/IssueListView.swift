@@ -28,6 +28,7 @@ class IssueListView: UIViewController {
     
     fileprivate func retrieveIssues()
     {
+        self.refreshControl.beginRefreshing()
         self.issueService.get { (result) in
             switch result {
             case .success(let issues):
