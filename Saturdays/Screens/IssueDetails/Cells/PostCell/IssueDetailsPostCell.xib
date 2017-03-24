@@ -13,20 +13,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IssueDetailsPostCell" rowHeight="150" id="KGk-i7-Jjw" customClass="IssueDetailsPostCell" customModule="Saturdays" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="151"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="150.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="254" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="sog-1I-C2S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                        <rect key="frame" x="0.0" y="1" width="320" height="150"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="150" id="7Qe-9E-hLC"/>
+                            <constraint firstAttribute="height" priority="999" constant="150" id="7Qe-9E-hLC"/>
                         </constraints>
                     </imageView>
                     <view contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-TQ-mAk" userLabel="TitleView">
-                        <rect key="frame" x="16" y="103.5" width="43.5" height="30"/>
+                        <rect key="frame" x="16" y="112.5" width="43.5" height="30"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUf-Re-nKH">
                                 <rect key="frame" x="4" y="4" width="35.5" height="22"/>
@@ -45,7 +45,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KLV-tO-d5F" userLabel="Progress Bar" customClass="KDCircularProgress" customModule="KDCircularProgress">
-                        <rect key="frame" x="135" y="50" width="50" height="50"/>
+                        <rect key="frame" x="135" y="50.5" width="50" height="50"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="8Ru-NM-d50"/>
@@ -83,14 +83,14 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="gbO-TQ-mAk" secondAttribute="bottom" constant="16" id="2pe-yo-gtM"/>
+                    <constraint firstAttribute="bottom" secondItem="gbO-TQ-mAk" secondAttribute="bottom" constant="8" id="2pe-yo-gtM"/>
                     <constraint firstAttribute="trailing" secondItem="sog-1I-C2S" secondAttribute="trailing" id="6xm-R2-7Rd"/>
                     <constraint firstItem="gbO-TQ-mAk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="78T-da-Bcg"/>
                     <constraint firstItem="KLV-tO-d5F" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IVN-QC-qbu"/>
-                    <constraint firstItem="sog-1I-C2S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KDs-qO-kj7"/>
+                    <constraint firstItem="sog-1I-C2S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="KDs-qO-kj7"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="gbO-TQ-mAk" secondAttribute="trailing" constant="16" id="mZj-Zc-o87"/>
                     <constraint firstItem="KLV-tO-d5F" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="oIf-AI-b3b"/>
-                    <constraint firstAttribute="bottom" secondItem="sog-1I-C2S" secondAttribute="bottom" priority="750" id="ptc-Bf-cWR"/>
+                    <constraint firstAttribute="bottom" secondItem="sog-1I-C2S" secondAttribute="bottom" id="ptc-Bf-cWR"/>
                     <constraint firstItem="sog-1I-C2S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="r3m-eZ-UVv"/>
                 </constraints>
             </tableViewCellContentView>
