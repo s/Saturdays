@@ -91,6 +91,7 @@
 		B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		B264932E1E81F51D00878824 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		B26493361E832E8000878824 /* Saturdays.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Saturdays.entitlements; sourceTree = "<group>"; };
 		B26493371E83306100878824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B29165251E5267FD0045BA4F /* IssueDetailsTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetailsTrackCell.swift; sourceTree = "<group>"; };
 		B29165261E5267FD0045BA4F /* IssueDetailsTrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailsTrackCell.xib; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		B24826471E4F8DA50070628D /* Saturdays */ = {
 			isa = PBXGroup;
 			children = (
+				B26493361E832E8000878824 /* Saturdays.entitlements */,
 				B248265D1E4F8E250070628D /* Common */,
 				B248265E1E4F8E3C0070628D /* Screens */,
 				B248265B1E4F8E030070628D /* Supporting Files */,
@@ -388,6 +390,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Z2EVZ5Y6JY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -643,9 +650,11 @@
 			baseConfigurationReference = CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Saturdays/Saturdays.entitlements;
 				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
 				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -658,9 +667,11 @@
 			baseConfigurationReference = 5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Saturdays/Saturdays.entitlements;
 				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
 				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
