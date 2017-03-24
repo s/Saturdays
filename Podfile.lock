@@ -2,7 +2,31 @@ PODS:
   - Alamofire (4.3.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - Firebase/Core (3.14.0):
+    - FirebaseAnalytics (= 3.7.0)
+    - FirebaseCore (= 3.5.1)
+  - Firebase/Messaging (3.14.0):
+    - Firebase/Core
+    - FirebaseMessaging (= 1.2.2)
+  - FirebaseAnalytics (3.7.0):
+    - FirebaseCore (~> 3.5)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.5.1):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.9)
+  - FirebaseMessaging (1.2.2):
+    - FirebaseAnalytics (~> 3.7)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/Logger (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - KDCircularProgress (1.5.2)
+  - Protobuf (3.2.0)
   - Reveal-SDK (7)
   - Unbox (2.3.0)
   - UnboxedAlamofire (2.0.3):
@@ -11,6 +35,8 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.1)
+  - Firebase/Core
+  - Firebase/Messaging
   - KDCircularProgress
   - Reveal-SDK
   - Unbox
@@ -19,11 +45,18 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
+  FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
+  FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
+  FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  FirebaseMessaging: df8267f378580a24174ce7861233aa11d5c90109
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
+  Protobuf: 745f59e122e5de98d4d7ef291e264a0eef80f58e
   Reveal-SDK: 564657bc66c93d2718b1c0121cdebe99d354ddab
   Unbox: 5ba1966ebe99b5d568d432626323331eedd33458
   UnboxedAlamofire: 3ecaf2a745aa018ba3497c0d61487b7338190ac6
 
-PODFILE CHECKSUM: c96ea552aaf98b452dd4a223919c3d6cd61f09f9
+PODFILE CHECKSUM: 4119cb72600963b8fbc143752aa680410dedc66a
 
 COCOAPODS: 1.1.1

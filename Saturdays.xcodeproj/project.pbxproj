@@ -29,6 +29,7 @@
 		B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */; };
 		B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */; };
 		B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264932E1E81F51D00878824 /* UIButtonExtensions.swift */; };
+		B26493381E83306100878824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26493371E83306100878824 /* GoogleService-Info.plist */; };
 		B29165271E5267FD0045BA4F /* IssueDetailsTrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29165251E5267FD0045BA4F /* IssueDetailsTrackCell.swift */; };
 		B29165281E5267FD0045BA4F /* IssueDetailsTrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B29165261E5267FD0045BA4F /* IssueDetailsTrackCell.xib */; };
 		B291652D1E5268890045BA4F /* IssueDetailsVenueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B291652B1E5268890045BA4F /* IssueDetailsVenueCell.swift */; };
@@ -90,6 +91,7 @@
 		B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		B264932E1E81F51D00878824 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
+		B26493371E83306100878824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B29165251E5267FD0045BA4F /* IssueDetailsTrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetailsTrackCell.swift; sourceTree = "<group>"; };
 		B29165261E5267FD0045BA4F /* IssueDetailsTrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailsTrackCell.xib; sourceTree = "<group>"; };
 		B291652B1E5268890045BA4F /* IssueDetailsVenueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssueDetailsVenueCell.swift; path = Cells/VenueCell/IssueDetailsVenueCell.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		B248265B1E4F8E030070628D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B26493371E83306100878824 /* GoogleService-Info.plist */,
 				B248264C1E4F8DA50070628D /* Main.storyboard */,
 				B24826511E4F8DA50070628D /* LaunchScreen.storyboard */,
 				B24826541E4F8DA50070628D /* Info.plist */,
@@ -419,6 +422,7 @@
 				B291652E1E5268890045BA4F /* IssueDetailsVenueCell.xib in Resources */,
 				B248264E1E4F8DA50070628D /* Main.storyboard in Resources */,
 				B29165281E5267FD0045BA4F /* IssueDetailsTrackCell.xib in Resources */,
+				B26493381E83306100878824 /* GoogleService-Info.plist in Resources */,
 				B2B3B56E1E50788C0048218C /* IssueDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

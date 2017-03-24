@@ -11,4 +11,6 @@ target 'Saturdays' do
   pod 'AlamofireImage', '~> 3.1'
   pod 'KDCircularProgress'
   pod 'UnboxedAlamofire', '~> 2.0'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end
