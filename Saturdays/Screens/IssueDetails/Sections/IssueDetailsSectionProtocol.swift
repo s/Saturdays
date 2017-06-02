@@ -9,5 +9,5 @@
 import Foundation
 
 protocol IssueDetailsSectionProtocol : class {
-    func issueDetails(itemWasSelected item: ExternallyOpenable, in section: TableViewDataSourceGenericSectionModelProtocol)
+    func issueDetails(itemWasSelected item: ExternallyOpenable)
 }

@@ -21,6 +21,8 @@ class IssueDetailsTrackCell: UITableViewCell {
 }
 
 extension IssueDetailsTrackCell : ConfigurableCell {
+    typealias Model = Track
+    
     func configure(with model: Track) {
         self.nameLabel.text = model.name
         self.artistLabel.text = model.artist

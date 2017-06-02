@@ -28,7 +28,7 @@ class IssueListView: UIViewController {
     
     fileprivate func retrieveIssues()
     {
-        self.refreshControl.beginRefreshing()
+        self.startAnimatingRefreshControl()
         self.issueService.get { (result) in
             switch result {
             case .success(let issues):
@@ -39,7 +39,7 @@ class IssueListView: UIViewController {
                 print(error)
 ***REMOVED***
             
-            self.refreshControl.endRefreshing()
+            self.stopAnimatingRefreshControl()
         }
     }
     
@@ -50,6 +50,16 @@ class IssueListView: UIViewController {
     fileprivate func setupRefreshControl() {
         self.refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
         self.issuesCollectionView.refreshControl = self.refreshControl
+    }
+    
+    fileprivate func startAnimatingRefreshControl() {
+        self.issuesCollectionView.setContentOffset(CGPoint(x: 0, y: 64), animated: true)
+        self.refreshControl.beginRefreshing()
+    }
+    
+    fileprivate func stopAnimatingRefreshControl() {
+        self.issuesCollectionView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        self.refreshControl.endRefreshing()
     }
     
     @objc fileprivate func refresh(_ refreshControl: UIRefreshControl) {

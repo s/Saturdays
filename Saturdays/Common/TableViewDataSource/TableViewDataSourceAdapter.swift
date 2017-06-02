@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 class TableViewDataSourceAdapter: NSObject {
-    let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED***
+    let sections: ***REMOVED***TableViewDataSourceProtocol***REMOVED***
     
-    init(sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED***) {
+    init(sections: ***REMOVED***TableViewDataSourceProtocol***REMOVED***) {
         self.sections = sections
     }
     
-    fileprivate func section(at index: Int) -> TableViewDataSourceGenericSectionModelProtocol {
+    fileprivate func section(at index: Int) -> TableViewDataSourceProtocol {
         return self.sections***REMOVED***index***REMOVED***
     }
 }
@@ -27,28 +27,28 @@ extension TableViewDataSourceAdapter : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.section(at: section).sectionModel(tableView, numberOfRowsInSection: section)
+        return self.section(at: section).dataSource(tableView, numberOfRowsInSection: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.section(at: indexPath.section).sectionModel(tableView, cellForRowAt: indexPath)
+        return self.section(at: indexPath.section).dataSource(tableView, cellForRowAt: indexPath)
     }
 }
 
 extension TableViewDataSourceAdapter : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        return self.section(at: indexPath.section).sectionModel(tableView, didSelectRowAt: indexPath)
+        self.section(at: indexPath.section).dataSource(tableView, didSelectRowAt: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.section(at: section).sectionModel(tableView, heightForHeaderInSection: section)
+        return self.section(at: section).dataSource(tableView, heightForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return self.section(at: section).sectionModel(tableView, viewForHeaderInSection: section)
+        return self.section(at: section).dataSource(tableView, viewForHeaderInSection: section)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.section(at: indexPath.section).sectionModel(tableView, heightForRowAt: indexPath)
+        return self.section(at: indexPath.section).dataSource(tableView, heightForRowAt: indexPath)
     }
 }
