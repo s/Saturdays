@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ConfigurableCell {
-    associatedtype Model
+    associatedtype Model: ImageDownloadableModel, ExternallyOpenable
     func configure(with model: Model)
     func updateCell(with image: UIImage)
     func updateCellImageDownloadStatus(with fractionCompleted: Double)

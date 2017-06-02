@@ -8,19 +8,38 @@
 
 import UIKit
 
-class IssueDetailsTracksSection: TableViewDataSourceGenericSectionModel<IssueDetailsTrackCell, Track> {
+class IssueDetailsTracksSection: NSObject, TableViewDataSourceGenericSectionProtocol, TableViewDataSourceProtocol {
     
+    typealias Cell = IssueDetailsTrackCell
+    let items: ***REMOVED***Track***REMOVED***
     weak var delegate: IssueDetailsSectionProtocol?
+    var reuseIdentifier: String { return IssueDetailsTrackCell.name }
     
-    init(with items:***REMOVED***Track***REMOVED***) {
-        super.init(items: items, reuseIdentifier: IssueDetailsTrackCell.name)
+    init(items: ***REMOVED***Track***REMOVED***) {
+        self.items = items
     }
     
-    override func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func dataSource(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return genericSection(tableView, numberOfRowsInSection: section)
+    }
+    
+    func dataSource(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return genericSection(tableView, cellForRowAt: indexPath)
+    }
+    
+    func dataSource(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        genericSection(tableView, didSelectRowAt: indexPath)
+    }
+    
+    func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return genericSection(tableView, heightForHeaderInSection: section)
+    }
+    
+    func dataSource(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return TableHeaderView(with: .track)
     }
     
-    override func selectHandler(cell: IssueDetailsTrackCell, model: Track) {
-        self.delegate?.issueDetails(itemWasSelected: model, in: self)
+    func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return genericSection(tableView, heightForRowAt: indexPath)
     }
 }

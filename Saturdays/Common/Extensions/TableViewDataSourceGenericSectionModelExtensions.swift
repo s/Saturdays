@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import AlamofireImage
 
-extension TableViewDataSourceGenericSectionModel {
+extension TableViewDataSourceGenericSectionProtocol {
     func download(cellImage url: URL,
                   downloadProgressHandler: @escaping (Progress) -> Void,
                   completionHandler:@escaping (DataResponse<Image>) -> Void)

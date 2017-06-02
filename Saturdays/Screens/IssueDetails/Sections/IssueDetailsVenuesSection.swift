@@ -8,19 +8,39 @@
 
 import UIKit
 
-class IssueDetailsVenuesSection: TableViewDataSourceGenericSectionModel<IssueDetailsVenueCell, Venue> {
+class IssueDetailsVenuesSection: NSObject, TableViewDataSourceGenericSectionProtocol, TableViewDataSourceProtocol {
+    
+    typealias Cell = IssueDetailsVenueCell
     
     weak var delegate: IssueDetailsSectionProtocol?
+    let items: ***REMOVED***Venue***REMOVED***
+    var reuseIdentifier: String { return IssueDetailsVenueCell.name }
     
-    init(with items:***REMOVED***Venue***REMOVED***) {
-        super.init(items: items, reuseIdentifier: IssueDetailsVenueCell.name)
+    init(items:***REMOVED***Venue***REMOVED***) {
+        self.items = items
     }
     
-    override func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func dataSource(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return genericSection(tableView, numberOfRowsInSection: section)
+    }
+    
+    func dataSource(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return genericSection(tableView, cellForRowAt: indexPath)
+    }
+    
+    func dataSource(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        genericSection(tableView, didSelectRowAt: indexPath)
+    }
+    
+    func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return genericSection(tableView, heightForHeaderInSection: section)
+    }
+    
+    func dataSource(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return TableHeaderView(with: .venue)
     }
     
-    override func selectHandler(cell: IssueDetailsVenueCell, model: Venue) {
-        self.delegate?.issueDetails(itemWasSelected: model, in: self)
+    func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return genericSection(tableView, heightForRowAt: indexPath)
     }
 }

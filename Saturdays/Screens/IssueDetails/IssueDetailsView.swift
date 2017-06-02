@@ -41,20 +41,34 @@ class IssueDetailsView: UIViewController, UIGestureRecognizerDelegate {
     init(with issue:Issue) {
         self.issue = issue
         
-        let tracksSection = IssueDetailsTracksSection(with: issue.tracks)
-        let venuesSection = IssueDetailsVenuesSection(with: issue.venues)
-        let postsSection = IssueDetailsPostsSection(with: issue.posts)
+        var tracksSection : IssueDetailsTracksSection?
+        var venuesSection : IssueDetailsVenuesSection?
+        var postsSection  : IssueDetailsPostsSection?
         
-        let sections: ***REMOVED***TableViewDataSourceGenericSectionModelProtocol***REMOVED*** = ***REMOVED***tracksSection,
-                                                                          venuesSection,
-                                                                          postsSection***REMOVED***
+        var sections : ***REMOVED***TableViewDataSourceProtocol***REMOVED*** = ***REMOVED******REMOVED***
+        
+        if issue.tracks.count > 0 {
+            tracksSection = IssueDetailsTracksSection(items: issue.tracks)
+            sections.append(tracksSection!)
+        }
+        
+        if issue.venues.count > 0 {
+            venuesSection = IssueDetailsVenuesSection(items: issue.venues)
+            sections.append(venuesSection!)
+        }
+        
+        if issue.posts.count > 0 {
+            postsSection = IssueDetailsPostsSection(items: issue.posts)
+            sections.append(postsSection!)
+        }
+        
         self.dataSource = TableViewDataSourceAdapter(sections: sections)
         
         super.init(nibName: IssueDetailsView.name, bundle: nil)
         
-        tracksSection.delegate = self
-        venuesSection.delegate = self
-        postsSection.delegate = self
+        tracksSection?.delegate = self
+        venuesSection?.delegate = self
+        postsSection?.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,12 +108,11 @@ class IssueDetailsView: UIViewController, UIGestureRecognizerDelegate {
 }
 
 extension IssueDetailsView : IssueDetailsSectionProtocol {
-    func issueDetails(itemWasSelected item: ExternallyOpenable, in section: TableViewDataSourceGenericSectionModelProtocol) {
+    func issueDetails(itemWasSelected item: ExternallyOpenable) {
         if UIApplication.shared.canOpenURL(item.externalURL) {
             UIApplication.shared.open(item.externalURL,
                                       options:***REMOVED***:***REMOVED***,
                                       completionHandler: nil)
         }
-        print(item, section)
     }
 }

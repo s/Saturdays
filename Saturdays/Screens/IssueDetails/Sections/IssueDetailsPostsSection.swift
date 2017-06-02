@@ -8,30 +8,43 @@
 
 import UIKit
 
-class IssueDetailsPostsSection: TableViewDataSourceGenericSectionModel<IssueDetailsPostCell, Post> {
+class IssueDetailsPostsSection: NSObject, TableViewDataSourceGenericSectionProtocol, TableViewDataSourceProtocol {
     
+    typealias Cell = IssueDetailsPostCell
     let items: ***REMOVED***Post***REMOVED***
     weak var delegate: IssueDetailsSectionProtocol?
+    var reuseIdentifier: String { return IssueDetailsPostCell.name }
     
-    init(with items:***REMOVED***Post***REMOVED***) {
+    init(items:***REMOVED***Post***REMOVED***) {
         self.items = items
-        super.init(items: items, reuseIdentifier: IssueDetailsPostCell.name)
     }
     
-    override func sectionModel(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return TableHeaderView(with: .post)
+    func dataSource(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return genericSection(tableView, numberOfRowsInSection: section)
     }
     
-    override func sectionModel(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func dataSource(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return genericSection(tableView, cellForRowAt: indexPath)
+    }
+    
+    func dataSource(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        genericSection(tableView, didSelectRowAt: indexPath)
+    }
+    
+    func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return genericSection(tableView, heightForHeaderInSection: section)
+    }
+    
+    func dataSource(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return TableHeaderView(with: .track)
+    }
+    
+    func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         guard let imageSize = self.items***REMOVED***indexPath.row***REMOVED***.photo.size else {
-            return super.sectionModel(tableView, heightForRowAt: indexPath)
+            return genericSection(tableView, heightForRowAt: indexPath)
         }
         let imageHeight = ( tableView.frame.size.width * imageSize.height ) / imageSize.width
         let bottomSpacing: CGFloat = 1
         return imageHeight + bottomSpacing
-    }
-    
-    override func selectHandler(cell: IssueDetailsPostCell, model: Post) {
-        self.delegate?.issueDetails(itemWasSelected: model, in: self)
     }
 }

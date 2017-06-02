@@ -22,6 +22,7 @@ class IssueDetailsVenueCell: UITableViewCell {
 }
 
 extension IssueDetailsVenueCell : ConfigurableCell {
+    typealias Model = Venue
     func configure(with model: Venue) {
         self.nameLabel.text = model.name
         self.typeLabel.text = model.type
