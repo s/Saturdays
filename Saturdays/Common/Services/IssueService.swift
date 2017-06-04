@@ -106,7 +106,6 @@ class IssueService: NSObject{
         Alamofire.request(apiURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: authorizationHeaders).responseArray(keyPath: "issues") { (response: DataResponse<***REMOVED***Issue***REMOVED***>) in
             switch (response.result) {
             case .success(let issues):
-                print(issues)
                 completion(Result.success(issues))
             case .failure(let error):
                 completion(Result.failure(error))
