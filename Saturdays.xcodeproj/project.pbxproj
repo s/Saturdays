@@ -9,7 +9,13 @@
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
 		B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4451EE1E74C001DD091 /* NotificationService.swift */; };
+		B212B4481EE1EA02001DD091 /* RoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4471EE1EA02001DD091 /* RoutingService.swift */; };
+		B212B44A1EE20A85001DD091 /* IssueListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4491EE20A85001DD091 /* IssueListPresenter.swift */; };
+		B212B44C1EE20A8F001DD091 /* IssueListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B44B1EE20A8F001DD091 /* IssueListView.swift */; };
+		B212B44E1EE20A9B001DD091 /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B44D1EE20A9B001DD091 /* IssueViewModel.swift */; };
 		B212B4531EE21329001DD091 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4521EE21329001DD091 /* UIHelper.swift */; };
+		B212B4551EE2230B001DD091 /* IssueListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4541EE2230B001DD091 /* IssueListCell.swift */; };
+		B212B4571EE223AC001DD091 /* IssueListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */; };
 		B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */; };
 		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
 		B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */; };
@@ -53,7 +59,13 @@
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
 		B212B4451EE1E74C001DD091 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B212B4471EE1EA02001DD091 /* RoutingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingService.swift; sourceTree = "<group>"; };
+		B212B4491EE20A85001DD091 /* IssueListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListPresenter.swift; sourceTree = "<group>"; };
+		B212B44B1EE20A8F001DD091 /* IssueListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListView.swift; sourceTree = "<group>"; };
+		B212B44D1EE20A9B001DD091 /* IssueViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		B212B4521EE21329001DD091 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHelper.swift; path = Helpers/UIHelper.swift; sourceTree = "<group>"; };
+		B212B4541EE2230B001DD091 /* IssueListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListCell.swift; sourceTree = "<group>"; };
+		B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListViewDataSource.swift; sourceTree = "<group>"; };
 		B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
 		B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
@@ -155,6 +167,7 @@
 			children = (
 				B24826671E4F90E90070628D /* IssueService.swift */,
 				B212B4451EE1E74C001DD091 /* NotificationService.swift */,
+				B212B4471EE1EA02001DD091 /* RoutingService.swift */,
 				B28979F51EE36FC6005834E3 /* ImageDownloadService.swift */,
 			);
 			path = Services;
@@ -179,6 +192,7 @@
 				B24826611E4F8F760070628D /* demo.json */,
 				B2DEC2311E68EFCC00FFFD7D /* Enums */,
 				B24826741E4F98960070628D /* Extensions */,
+				B212B4511EE2130F001DD091 /* Helpers */,
 				B24826691E4F91720070628D /* Models */,
 				B291651A1E5081280045BA4F /* Protocols */,
 				B248265A1E4F8DFD0070628D /* Services */,
@@ -224,6 +238,11 @@
 		B24826771E4F9D150070628D /* IssueList */ = {
 			isa = PBXGroup;
 			children = (
+				B212B4541EE2230B001DD091 /* IssueListCell.swift */,
+				B212B4491EE20A85001DD091 /* IssueListPresenter.swift */,
+				B212B44B1EE20A8F001DD091 /* IssueListView.swift */,
+				B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */,
+				B212B44D1EE20A9B001DD091 /* IssueViewModel.swift */,
 			);
 			path = IssueList;
 			sourceTree = "<group>";
@@ -393,6 +412,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B212B4571EE223AC001DD091 /* IssueListViewDataSource.swift in Sources */,
+				B212B4481EE1EA02001DD091 /* RoutingService.swift in Sources */,
+				B212B44E1EE20A9B001DD091 /* IssueViewModel.swift in Sources */,
 				B2DEC2331E68EFE500FFFD7D /* IssueItemType.swift in Sources */,
 				B2DEC2301E68EEC100FFFD7D /* TableHeaderView.swift in Sources */,
 				B28979F61EE36FC6005834E3 /* ImageDownloadService.swift in Sources */,
@@ -403,11 +425,14 @@
 				B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */,
 				B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */,
 				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
+				B212B44A1EE20A85001DD091 /* IssueListPresenter.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
+				B212B4551EE2230B001DD091 /* IssueListCell.swift in Sources */,
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
 				B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */,
 				B2DEC2371E68F20400FFFD7D /* ExternallyOpenable.swift in Sources */,
 				B248266F1E4F91B70070628D /* Issue.swift in Sources */,
+				B212B44C1EE20A8F001DD091 /* IssueListView.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
