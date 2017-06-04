@@ -15,19 +15,31 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var notificationService : NotificationService?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: ***REMOVED***UIApplicationLaunchOptionsKey: Any***REMOVED***?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: ***REMOVED***UIApplicationLaunchOptionsKey: Any***REMOVED***?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.backgroundColor = UIColor.white
-        self.window?.makeKeyAndVisible()
+        guard let window = window else { return false }
         
-        let notificationService = NotificationService(with: application)
-        notificationService.registerForNotifications()
+        window.backgroundColor = UIColor.white
+        window.makeKeyAndVisible()
+        
+        self.notificationService = NotificationService(with: application)
+        notificationService?.registerForNotifications()
         
         let routingService = RoutingService()
-        self.window?.rootViewController = routingService.createRootViewController()
+        window.rootViewController = routingService.createRootViewController()
         
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        notificationService?.applicationDidBecomeActive(application)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        notificationService?.applicationDidEnterBackground(application)
     }
 }
