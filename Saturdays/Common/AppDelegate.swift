@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         self.window?.rootViewController = UIViewController()
         
+        let notificationService = NotificationService(with: application)
+        notificationService.registerForNotifications()
+        
         return true
     }
 }
