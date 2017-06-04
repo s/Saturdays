@@ -33,7 +33,6 @@
 		B2DEC2301E68EEC100FFFD7D /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEC22F1E68EEC100FFFD7D /* TableHeaderView.swift */; };
 		B2DEC2331E68EFE500FFFD7D /* IssueItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEC2321E68EFE500FFFD7D /* IssueItemType.swift */; };
 		B2DEC2371E68F20400FFFD7D /* ExternallyOpenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DEC2361E68F20400FFFD7D /* ExternallyOpenable.swift */; };
-		B2F0766B1E6799CF00EDFF32 /* ConfigurableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0766A1E6799CF00EDFF32 /* ConfigurableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,7 +79,6 @@
 		B2DEC22F1E68EEC100FFFD7D /* TableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableHeaderView.swift; path = Views/TableHeaderView.swift; sourceTree = "<group>"; };
 		B2DEC2321E68EFE500FFFD7D /* IssueItemType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssueItemType.swift; path = Enums/IssueItemType.swift; sourceTree = "<group>"; };
 		B2DEC2361E68F20400FFFD7D /* ExternallyOpenable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExternallyOpenable.swift; sourceTree = "<group>"; };
-		B2F0766A1E6799CF00EDFF32 /* ConfigurableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigurableCell.swift; sourceTree = "<group>"; };
 		CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,7 +229,6 @@
 		B291651A1E5081280045BA4F /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				B2F0766A1E6799CF00EDFF32 /* ConfigurableCell.swift */,
 				B2DEC2361E68F20400FFFD7D /* ExternallyOpenable.swift */,
 				B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */,
 			);
@@ -405,7 +402,6 @@
 				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
-				B2F0766B1E6799CF00EDFF32 /* ConfigurableCell.swift in Sources */,
 				B2DEC2371E68F20400FFFD7D /* ExternallyOpenable.swift in Sources */,
 				B248266F1E4F91B70070628D /* Issue.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
