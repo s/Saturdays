@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
 		B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4451EE1E74C001DD091 /* NotificationService.swift */; };
+		B212B4531EE21329001DD091 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4521EE21329001DD091 /* UIHelper.swift */; };
 		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
 		B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
 		B212B4451EE1E74C001DD091 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B212B4521EE21329001DD091 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIHelper.swift; path = Helpers/UIHelper.swift; sourceTree = "<group>"; };
 		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
 		B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +111,14 @@
 				5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B212B4511EE2130F001DD091 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B212B4521EE21329001DD091 /* UIHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		B248263C1E4F8DA50070628D = {
@@ -402,6 +412,7 @@
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
+				B212B4531EE21329001DD091 /* UIHelper.swift in Sources */,
 				B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
