@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
+		B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4451EE1E74C001DD091 /* NotificationService.swift */; };
 		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
 		B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 /* Begin PBXFileReference section */
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
+		B212B4451EE1E74C001DD091 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
 		B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				B24826671E4F90E90070628D /* IssueService.swift */,
+				B212B4451EE1E74C001DD091 /* NotificationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				B29165351E526B390045BA4F /* UITableViewExtensions.swift in Sources */,
 				B24826731E4F91B70070628D /* Venue.swift in Sources */,
 				B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */,
+				B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */,
 				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
