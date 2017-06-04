@@ -21,10 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
-        self.window?.rootViewController = UIViewController()
         
         let notificationService = NotificationService(with: application)
         notificationService.registerForNotifications()
+        
+        let routingService = RoutingService()
+        self.window?.rootViewController = routingService.createRootViewController()
         
         return true
     }
