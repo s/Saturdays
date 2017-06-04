@@ -29,6 +29,7 @@ PODS:
   - KDCircularProgress (1.5.2)
   - Protobuf (3.2.1)
   - Reveal-SDK (8)
+  - Shimmer (1.0.2)
   - Unbox (2.4.0)
   - UnboxedAlamofire (2.0.3):
     - Alamofire (~> 4.1)
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - KDCircularProgress
   - Reveal-SDK
+  - Shimmer
   - Unbox
   - UnboxedAlamofire (~> 2.0)
 
@@ -55,9 +57,10 @@ SPEC CHECKSUMS:
   KDCircularProgress: 12f677b2deb02409ab48c6cae1898d146b8ad549
   Protobuf: 2ccbaf193f6c65adc67745453ca0c13234c32796
   Reveal-SDK: 43be4e662864e937960d0d04d005135e29c4e53b
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   Unbox: c8b2ab69d3337597b4a3f47a0538807dc12db670
   UnboxedAlamofire: 3ecaf2a745aa018ba3497c0d61487b7338190ac6
 
-PODFILE CHECKSUM: 4119cb72600963b8fbc143752aa680410dedc66a
+PODFILE CHECKSUM: 0a524511e81fba3aed3a80c9776cfaf099157cd1
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

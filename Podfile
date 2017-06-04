@@ -13,4 +13,5 @@ target 'Saturdays' do
   pod 'UnboxedAlamofire', '~> 2.0'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'Shimmer'
 end
