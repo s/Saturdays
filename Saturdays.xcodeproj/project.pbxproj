@@ -33,6 +33,7 @@
 		B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826751E4F98AE0070628D /* DateExtensions.swift */; };
 		B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */; };
 		B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */; };
+		B2645EB61EE4CD500074FCD0 /* IssueDetailsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2645EB51EE4CD500074FCD0 /* IssueDetailsAnimator.swift */; };
 		B264932D1E81DF0C00878824 /* APICredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = B264932C1E81DF0C00878824 /* APICredentials.plist */; };
 		B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264932E1E81F51D00878824 /* UIButtonExtensions.swift */; };
 		B26493381E83306100878824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26493371E83306100878824 /* GoogleService-Info.plist */; };
@@ -86,6 +87,7 @@
 		B24826751E4F98AE0070628D /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		B2645EB51EE4CD500074FCD0 /* IssueDetailsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssueDetailsAnimator.swift; path = Animators/IssueDetailsAnimator.swift; sourceTree = "<group>"; };
 		B264932C1E81DF0C00878824 /* APICredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APICredentials.plist; sourceTree = "<group>"; };
 		B264932E1E81F51D00878824 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
 		B26493361E832E8000878824 /* Saturdays.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Saturdays.entitlements; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		B248265D1E4F8E250070628D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B2645EB41EE4CD060074FCD0 /* Animators */,
 				B24826481E4F8DA50070628D /* AppDelegate.swift */,
 				B248264F1E4F8DA50070628D /* Assets.xcassets */,
 				B24826611E4F8F760070628D /* demo.json */,
@@ -248,6 +251,14 @@
 				B212B44D1EE20A9B001DD091 /* IssueViewModel.swift */,
 			);
 			path = IssueList;
+			sourceTree = "<group>";
+		};
+		B2645EB41EE4CD060074FCD0 /* Animators */ = {
+			isa = PBXGroup;
+			children = (
+				B2645EB51EE4CD500074FCD0 /* IssueDetailsAnimator.swift */,
+			);
+			name = Animators;
 			sourceTree = "<group>";
 		};
 		B291651A1E5081280045BA4F /* Protocols */ = {
@@ -431,6 +442,7 @@
 				B212B44A1EE20A85001DD091 /* IssueListPresenter.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
 				B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */,
+				B2645EB61EE4CD500074FCD0 /* IssueDetailsAnimator.swift in Sources */,
 				B212B4551EE2230B001DD091 /* IssueListCell.swift in Sources */,
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
 				B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */,
