@@ -33,6 +33,8 @@
 		B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826751E4F98AE0070628D /* DateExtensions.swift */; };
 		B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */; };
 		B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */; };
+		B2645EB11EE4BD9F0074FCD0 /* IssueDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2645EB01EE4BD9F0074FCD0 /* IssueDetailsView.swift */; };
+		B2645EB31EE4C0410074FCD0 /* IssueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2645EB21EE4C0410074FCD0 /* IssueDetailsPresenter.swift */; };
 		B2645EB61EE4CD500074FCD0 /* IssueDetailsAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2645EB51EE4CD500074FCD0 /* IssueDetailsAnimator.swift */; };
 		B264932D1E81DF0C00878824 /* APICredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = B264932C1E81DF0C00878824 /* APICredentials.plist */; };
 		B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B264932E1E81F51D00878824 /* UIButtonExtensions.swift */; };
@@ -87,6 +89,8 @@
 		B24826751E4F98AE0070628D /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		B2645EB01EE4BD9F0074FCD0 /* IssueDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetailsView.swift; sourceTree = "<group>"; };
+		B2645EB21EE4C0410074FCD0 /* IssueDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetailsPresenter.swift; sourceTree = "<group>"; };
 		B2645EB51EE4CD500074FCD0 /* IssueDetailsAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssueDetailsAnimator.swift; path = Animators/IssueDetailsAnimator.swift; sourceTree = "<group>"; };
 		B264932C1E81DF0C00878824 /* APICredentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = APICredentials.plist; sourceTree = "<group>"; };
 		B264932E1E81F51D00878824 /* UIButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtensions.swift; sourceTree = "<group>"; };
@@ -274,6 +278,8 @@
 		B2B3B5681E5077900048218C /* IssueDetails */ = {
 			isa = PBXGroup;
 			children = (
+				B2645EB01EE4BD9F0074FCD0 /* IssueDetailsView.swift */,
+				B2645EB21EE4C0410074FCD0 /* IssueDetailsPresenter.swift */,
 			);
 			path = IssueDetails;
 			sourceTree = "<group>";
@@ -451,7 +457,9 @@
 				B212B44C1EE20A8F001DD091 /* IssueListView.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
+				B2645EB11EE4BD9F0074FCD0 /* IssueDetailsView.swift in Sources */,
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
+				B2645EB31EE4C0410074FCD0 /* IssueDetailsPresenter.swift in Sources */,
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
 				B212B4531EE21329001DD091 /* UIHelper.swift in Sources */,
 				B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */,
