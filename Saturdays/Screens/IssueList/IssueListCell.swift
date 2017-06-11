@@ -15,8 +15,9 @@ class IssueListCell: UITableViewCell {
     let issueImageView : UIImageView = {
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = UIDefines.Colors.lightGrayColor
+        imageView.backgroundColor = UIDefines.Colors.lightGray
         imageView.layer.masksToBounds = true
+        imageView.layer.cornerRadius = UIDefines.Sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()
@@ -28,14 +29,10 @@ class IssueListCell: UITableViewCell {
         
         titleView.addSubview(self.issueTitleLabel)
         NSLayoutConstraint.activate(***REMOVED***
-            self.issueTitleLabel.topAnchor.constraint(equalTo: titleView.topAnchor,
-                                                     constant:UIDefines.Spacings.singleUnit.rawValue),
-            self.issueTitleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor,
-                                                         constant: UIDefines.Spacings.singleUnit.rawValue),
-            self.issueTitleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor,
-                                                         constant: -UIDefines.Spacings.singleUnit.rawValue),
-            self.issueTitleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor,
-                                                           constant: -UIDefines.Spacings.singleUnit.rawValue)
+            self.issueTitleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant:UIDefines.Spacings.singleUnit),
+            self.issueTitleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: UIDefines.Spacings.singleUnit),
+            self.issueTitleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -UIDefines.Spacings.singleUnit),
+            self.issueTitleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -UIDefines.Spacings.singleUnit)
 ***REMOVED***)
         
         titleView.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
@@ -45,10 +42,24 @@ class IssueListCell: UITableViewCell {
     fileprivate let issueTitleLabel : UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIDefines.Fonts.bodyFont
-        label.textColor = UIDefines.Colors.whiteColor
+        label.font = UIDefines.Fonts.body
+        label.textColor = UIDefines.Colors.white
         return label
     }()
+    
+    
+    //MARK: Properties
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            var frame = newFrame
+            frame.size.width = frame.width - (2 * UIDefines.Spacings.doubleUnit)
+            frame.origin.x = UIDefines.Spacings.doubleUnit
+            super.frame = frame
+        }
+    }
     
     
     // MARK : Lifecycle
@@ -78,7 +89,7 @@ class IssueListCell: UITableViewCell {
     }
     
     fileprivate func setupLayoutConstraints() {
-        let spacing = UIDefines.Spacings.doubleUnit.rawValue
+        let spacing = UIDefines.Spacings.doubleUnit
         
         let trailingConstraintOfTitleView = self.issueTitleView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
                                                                                           constant: -spacing)
