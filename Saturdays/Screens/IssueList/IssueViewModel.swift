@@ -25,8 +25,12 @@ class IssueViewModel : NSObject, ViewModelProtocol {
         self.title = issue.title
         self.detailTitle = issue.detailHeading
         self.detailDescription = issue.detailDescription
-        self.photoURL = issue.coverPhoto?.url
         self.photoSize = issue.coverPhoto?.size
+        if let regularPhotoURL = issue.coverPhoto?.urls***REMOVED***CoverPhotoSize.regular***REMOVED*** {
+            self.photoURL = regularPhotoURL
+        } else {
+            self.photoURL = nil
+        }
         super.init()
     }
 }

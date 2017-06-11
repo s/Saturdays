@@ -15,7 +15,7 @@ struct Issue{
     let detailHeading: String
     let detailDescription: String
     let creationDate: Date?
-    let coverPhoto: Photo?
+    let coverPhoto: CoverPhoto?
 
     let tracks: ***REMOVED***Track***REMOVED***
     let venues: ***REMOVED***Venue***REMOVED***
