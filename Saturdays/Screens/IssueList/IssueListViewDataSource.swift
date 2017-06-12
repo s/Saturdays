@@ -110,7 +110,8 @@ extension IssueListViewDataSource : UITableViewDelegate {
 extension IssueListViewDataSource : UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
         for indexPath in indexPaths {
-            if let url = self.imageURL(at: indexPath) {
+            guard let url = self.imageURL(at: indexPath) else { continue }
+            DispatchQueue.global(qos: .background).async {
                 self.imageDownloadService.download(cellImage: url,
                                                    downloadProgressHandler: nil,
                                                    completionHandler: nil)
@@ -120,7 +121,8 @@ extension IssueListViewDataSource : UITableViewDataSourcePrefetching {
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
         for indexPath in indexPaths {
-            if let url = self.imageURL(at: indexPath) {
+            guard let url = self.imageURL(at: indexPath) else { continue }
+            DispatchQueue.global(qos: .background).async {
                 self.imageDownloadService.cancel(downloading: url)
 ***REMOVED***
         }
