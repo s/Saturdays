@@ -65,14 +65,10 @@ extension IssueListViewDataSource : UITableViewDataSource {
 extension IssueListViewDataSource : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let screenWidth = self.tableView.frame.size.width
-        
         guard let imageSize = self.items***REMOVED***indexPath.row***REMOVED***.photoSize else {
             return UIDefines.Sizes.defaultIssueCellHeight
         }
-        
-        let cellHeight = ( screenWidth * imageSize.height ) / imageSize.width
-        return cellHeight
+        return imageSize.appropriateSize(for: self.tableView.frame.size).height
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
