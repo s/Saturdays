@@ -6,22 +6,27 @@
 //  Copyright © 2017 Said Ozcan. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class IssueListPresenter : NSObject {
     
-    fileprivate let service : IssueService
+    fileprivate let routingService : RoutingService
+    fileprivate let issueService : IssueService
     weak var view : IssueListView?
     
-    init(with service:IssueService) {
-        self.service = service
+    //MARK: Lifecycle
+    init(issueService:IssueService, routingService:RoutingService) {
+        self.issueService = issueService
+        self.routingService = routingService
         super.init()
     }
     
+    
+    //MARK: Public Interface
     func retrieveIssues() {
         self.view?.showLoadingIndicator()
         
-        service.get { ***REMOVED***unowned self***REMOVED*** (result) in
+        issueService.get { ***REMOVED***unowned self***REMOVED*** (result) in
             self.view?.hideLoadingIndicator()
             
             switch (result) {
@@ -35,6 +40,11 @@ class IssueListPresenter : NSObject {
         }
     }
     
+    func getDetailView(for conf:IssueListViewDataSourceSelection) -> UIViewController {
+        return self.routingService.createIssueDetailModule(with: conf)
+    }
+    
+    //MARK: Private
     fileprivate func createViewModels(from issues:***REMOVED***Issue***REMOVED***) -> ***REMOVED***IssueViewModel***REMOVED*** {
         return issues.map { (issue) -> IssueViewModel in
             return IssueViewModel(with: issue)
