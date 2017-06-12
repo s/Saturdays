@@ -185,7 +185,7 @@ class IssueListView : UIViewController {
         let detailView = self.presenter.getDetailView(for: conf)
         detailView.transitioningDelegate = self
         DispatchQueue.main.async {
-            self.present(detailView, animated: true, completion: nil)
+//            self.present(detailView, animated: true, completion: nil)
         }
     }
 }
