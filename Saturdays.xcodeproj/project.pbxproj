@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
+		B20A8F511EEF4B57003E4DA7 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */; };
+		B20A8F531EEF4B5F003E4DA7 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */; };
+		B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */; };
 		B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4451EE1E74C001DD091 /* NotificationService.swift */; };
 		B212B4481EE1EA02001DD091 /* RoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4471EE1EA02001DD091 /* RoutingService.swift */; };
 		B212B44A1EE20A85001DD091 /* IssueListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4491EE20A85001DD091 /* IssueListPresenter.swift */; };
@@ -62,6 +65,9 @@
 /* Begin PBXFileReference section */
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
+		B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
+		B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewModel.swift; sourceTree = "<group>"; };
 		B212B4451EE1E74C001DD091 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B212B4471EE1EA02001DD091 /* RoutingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingService.swift; sourceTree = "<group>"; };
 		B212B4491EE20A85001DD091 /* IssueListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListPresenter.swift; sourceTree = "<group>"; };
@@ -131,6 +137,17 @@
 				5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B20A8F4F1EEF4B46003E4DA7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B212B44D1EE20A9B001DD091 /* IssueViewModel.swift */,
+				B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */,
+				B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */,
+				B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B212B4511EE2130F001DD091 /* Helpers */ = {
@@ -205,6 +222,7 @@
 				B24826691E4F91720070628D /* Models */,
 				B291651A1E5081280045BA4F /* Protocols */,
 				B248265A1E4F8DFD0070628D /* Services */,
+				B20A8F4F1EEF4B46003E4DA7 /* ViewModels */,
 				B2DEC2281E68E8CE00FFFD7D /* Views */,
 			);
 			path = Common;
@@ -252,7 +270,6 @@
 				B212B4491EE20A85001DD091 /* IssueListPresenter.swift */,
 				B212B44B1EE20A8F001DD091 /* IssueListView.swift */,
 				B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */,
-				B212B44D1EE20A9B001DD091 /* IssueViewModel.swift */,
 			);
 			path = IssueList;
 			sourceTree = "<group>";
@@ -446,6 +463,7 @@
 				B212B4461EE1E74C001DD091 /* NotificationService.swift in Sources */,
 				B24826681E4F90E90070628D /* IssueService.swift in Sources */,
 				B212B44A1EE20A85001DD091 /* IssueListPresenter.swift in Sources */,
+				B20A8F531EEF4B5F003E4DA7 /* PostViewModel.swift in Sources */,
 				B24826711E4F91B70070628D /* Post.swift in Sources */,
 				B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */,
 				B2645EB61EE4CD500074FCD0 /* IssueDetailsAnimator.swift in Sources */,
@@ -453,6 +471,7 @@
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
 				B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */,
 				B2DEC2371E68F20400FFFD7D /* ExternallyOpenable.swift in Sources */,
+				B20A8F511EEF4B57003E4DA7 /* TrackViewModel.swift in Sources */,
 				B248266F1E4F91B70070628D /* Issue.swift in Sources */,
 				B212B44C1EE20A8F001DD091 /* IssueListView.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
@@ -461,6 +480,7 @@
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
 				B2645EB31EE4C0410074FCD0 /* IssueDetailsPresenter.swift in Sources */,
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
+				B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */,
 				B212B4531EE21329001DD091 /* UIHelper.swift in Sources */,
 				B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */,
 			);

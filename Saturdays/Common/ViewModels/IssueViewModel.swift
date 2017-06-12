@@ -16,6 +16,9 @@ class IssueViewModel : NSObject, ViewModelProtocol {
     let detailDescription : String
     let photoURL : URL?
     let photoSize: CGSize?
+    let tracks : ***REMOVED***TrackViewModel***REMOVED***
+    let venues : ***REMOVED***VenueViewModel***REMOVED***
+    let posts : ***REMOVED***PostViewModel***REMOVED***
     
     fileprivate let issue : Issue
     
@@ -30,6 +33,15 @@ class IssueViewModel : NSObject, ViewModelProtocol {
             self.photoURL = regularPhotoURL
         } else {
             self.photoURL = nil
+        }
+        self.tracks = issue.tracks.map { (track) -> TrackViewModel in
+            return TrackViewModel(with: track)
+        }
+        self.venues = issue.venues.map { (venue) -> VenueViewModel in
+            return VenueViewModel(with: venue)
+        }
+        self.posts = issue.posts.map { (post) -> PostViewModel in
+            return PostViewModel(with: post)
         }
         super.init()
     }
