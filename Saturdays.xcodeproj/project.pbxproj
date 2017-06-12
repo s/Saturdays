@@ -22,7 +22,6 @@
 		B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */; };
 		B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BC8461EE9FB3700106042 /* CoverPhoto.swift */; };
 		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
-		B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
 		B24826501E4F8DA50070628D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B248264F1E4F8DA50070628D /* Assets.xcassets */; };
 		B24826531E4F8DA50070628D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24826511E4F8DA50070628D /* LaunchScreen.storyboard */; };
@@ -79,7 +78,6 @@
 		B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B21BC8461EE9FB3700106042 /* CoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhoto.swift; sourceTree = "<group>"; };
 		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
-		B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24826481E4F8DA50070628D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B248264F1E4F8DA50070628D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 				B248267E1E4F9DC20070628D /* NSObjectExtensions.swift */,
 				B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */,
 				B29165341E526B390045BA4F /* UITableViewExtensions.swift */,
-				B243FDE51E75FDAF003ACAA8 /* UIImageExtensions.swift */,
 				B264932E1E81F51D00878824 /* UIButtonExtensions.swift */,
 			);
 			path = Extensions;
@@ -482,7 +479,6 @@
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
 				B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */,
 				B212B4531EE21329001DD091 /* UIHelper.swift in Sources */,
-				B243FDE61E75FDAF003ACAA8 /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
