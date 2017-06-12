@@ -14,14 +14,36 @@ class RoutingService {
         return self.createIssueListModule()
     }
     
-    func createIssueListModule() -> UIViewController {
+    func createIssueDetailModule(with conf:IssueListViewDataSourceSelection) -> UIViewController {
+        let presenter = IssueDetailsPresenter(with: self)
+        let view = IssueDetailsView(with: presenter, item:conf.item, issueImage:conf.image)
+        presenter.view = view
+        return view
+    }
+    
+    //MARK: Private
+    fileprivate func createIssueListModule() -> UIViewController {
+        
         let issueService = IssueService()
-        let presenter = IssueListPresenter(with:issueService)
+        let presenter = IssueListPresenter(issueService:issueService, routingService:self)
         let issueListView =  IssueListView(with: presenter)
         
         presenter.view = issueListView
         
-        let navigationController = UINavigationController(rootViewController: issueListView)
+        if #available(iOS 11.0, *) {
+            return self.createNavigationController(with: issueListView)
+        } else {
+            return issueListView
+        }
+    }
+    
+    fileprivate func createNavigationController(with rootView:UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: rootView)
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.tintColor = UIDefines.Colors.navigationBarTintColor
+        if #available(iOS 11.0, *) {
+            navigationController.navigationBar.prefersLargeTitles = true
+        }
         return navigationController
     }
 }
