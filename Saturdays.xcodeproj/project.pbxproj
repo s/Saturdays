@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
+		B20A8F491EEF3133003E4DA7 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F481EEF3133003E4DA7 /* CGRectExtensions.swift */; };
 		B20A8F511EEF4B57003E4DA7 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */; };
 		B20A8F531EEF4B5F003E4DA7 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */; };
 		B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
+		B20A8F481EEF3133003E4DA7 /* CGRectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
 		B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewModel.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				B248267C1E4F9DA70070628D /* UICollectionViewExtensions.swift */,
 				B29165341E526B390045BA4F /* UITableViewExtensions.swift */,
 				B264932E1E81F51D00878824 /* UIButtonExtensions.swift */,
+				B20A8F481EEF3133003E4DA7 /* CGRectExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				B212B44C1EE20A8F001DD091 /* IssueListView.swift in Sources */,
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
+				B20A8F491EEF3133003E4DA7 /* CGRectExtensions.swift in Sources */,
 				B2645EB11EE4BD9F0074FCD0 /* IssueDetailsView.swift in Sources */,
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
 				B2645EB31EE4C0410074FCD0 /* IssueDetailsPresenter.swift in Sources */,
