@@ -68,8 +68,7 @@ class IssueListCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        self.selectionStyle = .none
-        self.contentView.layer.masksToBounds = true
+        self.setupCell()
         self.addSubviews()
         self.setupLayoutConstraints()
     }
@@ -85,6 +84,12 @@ class IssueListCell: UITableViewCell {
     }
     
     // MARK : Private
+    fileprivate func setupCell() {
+        self.backgroundColor = UIDefines.Colors.white
+        self.selectionStyle = .none
+        self.layer.masksToBounds = true
+    }
+    
     fileprivate func addSubviews() {
         self.contentView.addSubview(self.issueImageView)
         self.contentView.addSubview(self.issueTitleView)
