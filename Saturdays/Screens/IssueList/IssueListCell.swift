@@ -26,6 +26,8 @@ class IssueListCell: UITableViewCell {
         let titleView = UIView(frame: CGRect.zero)
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.backgroundColor = UIColor.black
+        titleView.layer.cornerRadius = UIDefines.Sizes.issueListCellCornerRadius
+        titleView.layer.masksToBounds = true
         
         titleView.addSubview(self.issueTitleLabel)
         NSLayoutConstraint.activate(***REMOVED***

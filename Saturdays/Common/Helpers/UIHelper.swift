@@ -16,6 +16,7 @@ struct UIDefines {
         static let small : CGFloat = 12.0
         static let medium: CGFloat = 14.0
         static let large : CGFloat = 16.0
+        static let xlarge: CGFloat = 18.0
         static let navigationBarLargeTitleViewTitle : CGFloat = 34.0
         static let navigationBarContentViewTitle : CGFloat = 17.0
     }
@@ -28,7 +29,7 @@ struct UIDefines {
     
     struct Fonts {
         static let title  = UIFont.systemFont(ofSize: UIDefines.FontSizes.large, weight: UIFontWeightRegular)
-        static let body   = UIFont.systemFont(ofSize: UIDefines.FontSizes.large, weight: UIFontWeightRegular)
+        static let body   = UIFont.systemFont(ofSize: UIDefines.FontSizes.xlarge, weight: UIFontWeightRegular)
         static let detail = UIFont.systemFont(ofSize: UIDefines.FontSizes.small, weight: UIFontWeightLight)
         static let navigationBarLargeTitleViewTitle = UIFont.systemFont(ofSize: UIDefines.FontSizes.navigationBarLargeTitleViewTitle,
                                                                    weight:UIFontWeightBold)
