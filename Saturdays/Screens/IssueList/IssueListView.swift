@@ -26,6 +26,7 @@ class IssueListView : UIViewController {
     //MARK: Properties
     fileprivate let osVersion : OSVersion
     fileprivate let presenter : IssueListPresenter
+    fileprivate let imageDownloadService : ImageDownloadService
     fileprivate lazy var tableViewDataSource : IssueListViewDataSource = { ***REMOVED***unowned self***REMOVED*** in
         
         let selectHandler : (IssueListViewDataSourceSelection) -> Void = { ***REMOVED***unowned self***REMOVED*** (conf) in
@@ -35,9 +36,6 @@ class IssueListView : UIViewController {
         return IssueListViewDataSource(with: self.tableView,
                                        imageDownloadService:self.imageDownloadService,
                                        selectHandler: selectHandler)
-    }()
-    fileprivate lazy var imageDownloadService : ImageDownloadService = {
-        return ImageDownloadService()
     }()
     fileprivate lazy var issueDetailsAnimator : IssueDetailsAnimator = {
         return IssueDetailsAnimator()
@@ -108,13 +106,14 @@ class IssueListView : UIViewController {
     }()
     
     //MARK: Lifecycle
-    init(with presenter:IssueListPresenter) {
+    init(presenter:IssueListPresenter, imageDownloadService:ImageDownloadService) {
         self.presenter = presenter
         if #available(iOS 11.0, *) {
             self.osVersion = .eleven
         } else {
             self.osVersion = .ten
         }
+        self.imageDownloadService = imageDownloadService
         super.init(nibName: nil, bundle: nil)
     }
     

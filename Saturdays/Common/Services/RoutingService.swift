@@ -10,12 +10,22 @@ import UIKit
 import Foundation
 
 class RoutingService {
+    
+    //MARK: Properties
+    fileprivate let imageDownloadService : ImageDownloadService
+    
+    //MARK: Lifecycle
+    init(imageDownloadService:ImageDownloadService) {
+        self.imageDownloadService = imageDownloadService
+    }
+    
+    //MARK: Public
     func createRootViewController() -> UIViewController {
         return self.createIssueListModule()
     }
     
     func createIssueDetailModule(with conf:IssueListViewDataSourceSelection) -> UIViewController {
-        let presenter = IssueDetailsPresenter(with: self)
+        let presenter = IssueDetailsPresenter(with:self)
         let view = IssueDetailsView(with: presenter, item:conf.item, issueImage:conf.image)
         presenter.view = view
         return view
@@ -26,7 +36,7 @@ class RoutingService {
         
         let issueService = IssueService()
         let presenter = IssueListPresenter(issueService:issueService, routingService:self)
-        let issueListView =  IssueListView(with: presenter)
+        let issueListView =  IssueListView(presenter: presenter, imageDownloadService: imageDownloadService)
         
         presenter.view = issueListView
         
