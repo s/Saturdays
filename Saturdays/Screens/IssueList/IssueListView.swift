@@ -42,12 +42,14 @@ class IssueListView : UIViewController {
     }()
     fileprivate var selectedIndexPath : IndexPath?
     
+    
     //MARK: Subviews
     fileprivate let loadingIndicator : UIStackView = {
         let blocks = UIHelper.createShimmerBlocks(numberOf: 3)
         blocks.translatesAutoresizingMaskIntoConstraints = false
         return blocks
     }()
+    
     fileprivate lazy var tableView : UITableView = { ***REMOVED***unowned self***REMOVED*** in
         let tableView = UITableView(frame:CGRect.zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +59,7 @@ class IssueListView : UIViewController {
         tableView.estimatedRowHeight = UIDefines.Sizes.defaultIssueCellHeight
         return tableView
     }()
+    
     fileprivate lazy var navigationBarView : UIView = { ***REMOVED***unowned self***REMOVED*** in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -78,6 +81,7 @@ class IssueListView : UIViewController {
 ***REMOVED***)
         return view
     }()
+    
     fileprivate lazy var navigationBarLargeTitleView : UIView = { ***REMOVED***unowned self***REMOVED*** in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -90,12 +94,14 @@ class IssueListView : UIViewController {
 ***REMOVED***)
         return view
     }()
+    
     fileprivate lazy var navigationBarContentView : UIView = { ***REMOVED***unowned self***REMOVED*** in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIDefines.Colors.navigationBarTintColor
         return view
     }()
+    
     fileprivate lazy var navigationBarLargeTitleLabel : UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -182,9 +188,9 @@ class IssueListView : UIViewController {
         self.selectedIndexPath = conf.indexPath
         
         let detailView = self.presenter.getDetailView(for: conf)
-        detailView.transitioningDelegate = self
+//        detailView.transitioningDelegate = self
         DispatchQueue.main.async {
-//            self.present(detailView, animated: true, completion: nil)
+            self.present(detailView, animated: true, completion: nil)
         }
     }
 }
