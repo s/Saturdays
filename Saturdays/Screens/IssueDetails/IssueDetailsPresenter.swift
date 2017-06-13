@@ -8,14 +8,15 @@
 
 import UIKit
 
-class IssueDetailsPresenter: NSObject {
+class IssueDetailsPresenter {
     
+    //MARK: Properties
     var view : IssueDetailsView?
+    
     fileprivate let routingService : RoutingService
     
+    //MARK: Lifecycle
     init(with routingService:RoutingService) {
         self.routingService = routingService
-        super.init()
     }
-
 }
