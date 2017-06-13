@@ -17,26 +17,33 @@ enum ImageDownloadServiceResult {
 
 class ImageDownloadService {
     
-    fileprivate var requests : ***REMOVED***URL:DownloadRequest***REMOVED*** = ***REMOVED***:***REMOVED***
+    //MARK: Properties
+    fileprivate lazy var imageDownloader : ImageDownloader = {
+        return ImageDownloader(
+            configuration: ImageDownloader.defaultURLSessionConfiguration(),
+            downloadPrioritization: .fifo,
+            maximumActiveDownloads: 4,
+            imageCache: AutoPurgingImageCache()
+        )
+    }()
+    fileprivate var requests : ***REMOVED***URL:URLRequest***REMOVED*** = ***REMOVED***:***REMOVED***
     
+    //MARK: Public
     func download(cellImage url: URL,
                   downloadProgressHandler: ((Progress) -> Void)?,
                   completionHandler:((ImageDownloadServiceResult, URL) -> Void)?)
     {
-        let downloadRequest = Alamofire.download(url)
-        self.requests***REMOVED***url***REMOVED*** = downloadRequest
+        let downloadRequest = URLRequest(url: url)
+//        self.requests***REMOVED***url***REMOVED*** = downloadRequest
         
-        downloadRequest.downloadProgress { (progress) in
-                downloadProgressHandler?(progress)
-        }.responseData(queue: DispatchQueue.main) { (response) in
+        imageDownloader.download(downloadRequest) { response in
             guard let completionHandler = completionHandler else { return }
             if let error = response.error {
                 completionHandler(ImageDownloadServiceResult.failure(error), url)
                 return
 ***REMOVED***
             
-            if let imageData = response.result.value,
-                let image = UIImage(data:imageData) {
+            if let image = response.result.value {
                 self.requests***REMOVED***url***REMOVED*** = nil
                 completionHandler(ImageDownloadServiceResult.success(image), url)
                 return
@@ -49,7 +56,7 @@ class ImageDownloadService {
     
     func cancel(downloading url:URL) {
         if let request = self.requests***REMOVED***url***REMOVED*** {
-            request.cancel()
+            
         }
     }
 }
