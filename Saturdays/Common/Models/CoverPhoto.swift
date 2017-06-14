@@ -45,7 +45,7 @@ extension CoverPhoto: Unboxable{
         }
         
         var allUrls : ***REMOVED***CoverPhotoSize:URL***REMOVED*** = ***REMOVED***:***REMOVED***
-        if let urls : ***REMOVED***String:String***REMOVED*** = try? unboxer.unbox(keyPath: "url.attributes.table") {
+        if let urls : ***REMOVED***String:String***REMOVED*** = try? unboxer.unbox(keyPath: "urls") {
             for (key, urlString) in urls {
                 if let size = CoverPhotoSize(rawValue: key),
                     let url = URL(string:urlString)
