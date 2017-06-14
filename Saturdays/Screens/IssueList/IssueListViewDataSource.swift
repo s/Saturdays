@@ -21,14 +21,14 @@ class IssueListViewDataSource : NSObject {
     fileprivate let tableView : UITableView
     fileprivate let selectHandler : (IssueListViewDataSourceSelection) -> Void
     fileprivate let cellIdentifier = String(describing: IssueListCell.self)
-    fileprivate let imageDownloadService : ImageDownloadService
+    fileprivate let imageDownloadingService : ImageDownloadingService
     
     init(with tableView:UITableView,
-         imageDownloadService:ImageDownloadService,
+         imageDownloadingService:ImageDownloadingService,
          selectHandler:@escaping (IssueListViewDataSourceSelection) -> Void) {
         self.tableView = tableView
         self.selectHandler = selectHandler
-        self.imageDownloadService = imageDownloadService
+        self.imageDownloadingService = imageDownloadingService
         self.tableView.register(IssueListCell.self, forCellReuseIdentifier: self.cellIdentifier)
     }
     
@@ -40,6 +40,16 @@ class IssueListViewDataSource : NSObject {
     fileprivate func imageURL(at indexPath:IndexPath) -> URL? {
         let item = self.items***REMOVED***indexPath.section***REMOVED***
         return item.photoURL
+    }
+    
+    fileprivate func imageUrls(for indexPaths:***REMOVED***IndexPath***REMOVED***) -> ***REMOVED***URL***REMOVED*** {
+        var urls : ***REMOVED***URL***REMOVED*** = ***REMOVED******REMOVED***
+        for indexPath in indexPaths {
+            if let url = self.imageURL(at: indexPath) {
+                urls.append(url)
+***REMOVED***
+        }
+        return urls
     }
 }
 
@@ -105,22 +115,10 @@ extension IssueListViewDataSource : UITableViewDelegate {
 
 extension IssueListViewDataSource : UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
-        for indexPath in indexPaths {
-            guard let url = self.imageURL(at: indexPath) else { continue }
-            DispatchQueue.global(qos: .background).async {
-                self.imageDownloadService.download(cellImage: url,
-                                                   downloadProgressHandler: nil,
-                                                   completionHandler: nil)
-***REMOVED***
-        }
+        self.imageDownloadingService.prefetch(self.imageUrls(for: indexPaths))
     }
     
     func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
-        for indexPath in indexPaths {
-            guard let url = self.imageURL(at: indexPath) else { continue }
-            DispatchQueue.global(qos: .background).async {
-                self.imageDownloadService.cancel(downloading: url)
-***REMOVED***
-        }
+        self.imageDownloadingService.cancelPrefetcing(self.imageUrls(for: indexPaths))
     }
 }
