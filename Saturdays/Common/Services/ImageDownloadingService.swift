@@ -1,5 +1,5 @@
 //
-//  ImageDownloadService.swift
+//  imageDownloadingService.swift
 //  Saturdays
 //
 //  Created by Said Ozcan on 04/06/2017.
@@ -15,18 +15,18 @@ enum ImageDownloadServiceResult {
     case failure(Error)
 }
 
-class ImageDownloadService {
+class ImageDownloadingService {
     
     //MARK: Properties
     fileprivate lazy var imageDownloader : ImageDownloader = {
         return ImageDownloader(
             configuration: ImageDownloader.defaultURLSessionConfiguration(),
-            downloadPrioritization: .fifo,
+            downloadPrioritization: .lifo,
             maximumActiveDownloads: 4,
             imageCache: AutoPurgingImageCache()
         )
     }()
-    fileprivate var requests : ***REMOVED***URL:URLRequest***REMOVED*** = ***REMOVED***:***REMOVED***
+    fileprivate var receipts : ***REMOVED***URL:RequestReceipt***REMOVED*** = ***REMOVED***:***REMOVED***
     
     //MARK: Public
     func download(cellImage url: URL,
@@ -34,9 +34,7 @@ class ImageDownloadService {
                   completionHandler:((ImageDownloadServiceResult, URL) -> Void)?)
     {
         let downloadRequest = URLRequest(url: url)
-//        self.requests***REMOVED***url***REMOVED*** = downloadRequest
-        
-        imageDownloader.download(downloadRequest) { response in
+        let receipt : RequestReceipt? = imageDownloader.download(downloadRequest) { response in
             guard let completionHandler = completionHandler else { return }
             if let error = response.error {
                 completionHandler(ImageDownloadServiceResult.failure(error), url)
@@ -44,7 +42,7 @@ class ImageDownloadService {
 ***REMOVED***
             
             if let image = response.result.value {
-                self.requests***REMOVED***url***REMOVED*** = nil
+                self.receipts***REMOVED***url***REMOVED*** = nil
                 completionHandler(ImageDownloadServiceResult.success(image), url)
                 return
 ***REMOVED*** else {
@@ -52,11 +50,26 @@ class ImageDownloadService {
                 return
 ***REMOVED***
         }
+        if let receipt = receipt {
+            self.receipts***REMOVED***url***REMOVED*** = receipt
+        }
     }
     
     func cancel(downloading url:URL) {
-        if let request = self.requests***REMOVED***url***REMOVED*** {
-            
+        if let receipt = self.receipts***REMOVED***url***REMOVED*** {
+            imageDownloader.cancelRequest(with: receipt)
+        }
+    }
+    
+    func prefetch(_ imageUrls:***REMOVED***URL***REMOVED***) {
+        for url in imageUrls {
+            self.download(cellImage: url, downloadProgressHandler: nil, completionHandler: nil)
+        }
+    }
+    
+    func cancelPrefetcing(_ imageUrls:***REMOVED***URL***REMOVED***) {
+        for url in imageUrls {
+            self.cancel(downloading: url)
         }
     }
 }

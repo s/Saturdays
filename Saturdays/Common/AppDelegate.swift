@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.notificationService = NotificationService(with: application)
         notificationService?.registerForNotifications()
         
-        let imageDownloadService = ImageDownloadService()
-        let routingService = RoutingService(imageDownloadService: imageDownloadService)
+        let imageDownloadingService = ImageDownloadingService()
+        let routingService = RoutingService(imageDownloadingService: imageDownloadingService)
         window.rootViewController = routingService.createRootViewController()
         
         return true
