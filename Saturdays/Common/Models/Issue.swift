@@ -15,7 +15,7 @@ struct Issue{
     let detailHeading: String
     let detailDescription: String
     let creationDate: Date?
-    let coverPhoto: CoverPhoto?
+    let coverPhoto: CoverPhoto
 
     let tracks: ***REMOVED***Track***REMOVED***
     let venues: ***REMOVED***Venue***REMOVED***
@@ -30,7 +30,7 @@ extension Issue: Unboxable{
         self.detailDescription = try unboxer.unbox(key: "detail_description")
         
         self.creationDate = unboxer.unbox(key: "created_at", formatter: Date.iso8601Formatter)
-        self.coverPhoto = unboxer.unbox(key: "photo")
+        self.coverPhoto = try unboxer.unbox(key: "photo")
         
         self.tracks = try unboxer.unbox(key: "tracks")
         self.venues = try unboxer.unbox(key: "venues")
