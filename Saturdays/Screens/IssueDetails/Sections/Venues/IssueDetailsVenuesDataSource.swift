@@ -13,12 +13,9 @@ class IssueDetailsVenuesDataSource : NSObject {
     //MARK: Properties
     fileprivate let venues : ***REMOVED***VenueViewModel***REMOVED***
     fileprivate let imageDownloadingService : ImageDownloadingService
-    fileprivate lazy var headerView : UILabel = { ***REMOVED***unowned self***REMOVED*** in
-        let label = UILabel(frame: CGRect.zero)
-        label.text = UIDefines.Copies.venuesTitle
-        label.font = UIDefines.Fonts.subtitle
-        return label
-        }()
+    fileprivate lazy var headerView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+        return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.venuesTitle)
+    }()
     
     //MARK: Lifecycle
     init(with venues:***REMOVED***VenueViewModel***REMOVED***, imageDownloadingService:ImageDownloadingService) {

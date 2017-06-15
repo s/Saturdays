@@ -50,6 +50,7 @@ struct UIDefines {
         static let saturdaysTitle = NSLocalizedString("SATURDAYS", comment: "")
         static let tracksTitle = NSLocalizedString("Tracks", comment: "")
         static let venuesTitle = NSLocalizedString("Venues", comment: "")
+        static let postsTitle  = NSLocalizedString("Posts", comment: "")
     }
     
     struct Sizes {
@@ -61,5 +62,6 @@ struct UIDefines {
         static let issueDetailsDismissIconDimension  : CGFloat = 40.0
         static let issueDetailsTrackAlbumArtDimension: CGFloat = 80
         static let issueDetailsTracksHeight          : CGFloat = 200.0
+        static let issueDetailsTableViewInset        : CGFloat = -20.0
     }
 }

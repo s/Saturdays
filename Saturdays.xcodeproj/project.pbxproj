@@ -45,6 +45,8 @@
 		B26493381E83306100878824 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B26493371E83306100878824 /* GoogleService-Info.plist */; };
 		B28979F61EE36FC6005834E3 /* ImageDownloadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */; };
 		B29165351E526B390045BA4F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29165341E526B390045BA4F /* UITableViewExtensions.swift */; };
+		B2CD11EF1EF2DA6D00518C0E /* IssueDetailsPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11EE1EF2DA6D00518C0E /* IssueDetailsPostCell.swift */; };
+		B2CD11F11EF2DA7F00518C0E /* IssueDetailsPostsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11F01EF2DA7F00518C0E /* IssueDetailsPostsDataSource.swift */; };
 		B2DCFED31EF088F4008B64C4 /* IssueDetailsTracksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCFED21EF088F4008B64C4 /* IssueDetailsTracksDataSource.swift */; };
 		B2DCFEDB1EF0A69D008B64C4 /* IssueDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCFEDA1EF0A69D008B64C4 /* IssueDetailsTitleCell.swift */; };
 		B2DCFEDD1EF0AA1A008B64C4 /* IssueDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DCFEDC1EF0AA1A008B64C4 /* IssueDetailsDataSource.swift */; };
@@ -116,6 +118,8 @@
 		B26493371E83306100878824 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadingService.swift; sourceTree = "<group>"; };
 		B29165341E526B390045BA4F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		B2CD11EE1EF2DA6D00518C0E /* IssueDetailsPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsPostCell.swift; sourceTree = "<group>"; };
+		B2CD11F01EF2DA7F00518C0E /* IssueDetailsPostsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsPostsDataSource.swift; sourceTree = "<group>"; };
 		B2DCFED21EF088F4008B64C4 /* IssueDetailsTracksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsTracksDataSource.swift; sourceTree = "<group>"; };
 		B2DCFEDA1EF0A69D008B64C4 /* IssueDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsTitleCell.swift; sourceTree = "<group>"; };
 		B2DCFEDC1EF0AA1A008B64C4 /* IssueDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsDataSource.swift; sourceTree = "<group>"; };
@@ -376,6 +380,8 @@
 		B2DCFED91EF0A624008B64C4 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
+				B2CD11EE1EF2DA6D00518C0E /* IssueDetailsPostCell.swift */,
+				B2CD11F01EF2DA7F00518C0E /* IssueDetailsPostsDataSource.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -572,6 +578,7 @@
 				B212B4551EE2230B001DD091 /* IssueListCell.swift in Sources */,
 				B24826761E4F98AE0070628D /* DateExtensions.swift in Sources */,
 				B2DCFEDB1EF0A69D008B64C4 /* IssueDetailsTitleCell.swift in Sources */,
+				B2CD11EF1EF2DA6D00518C0E /* IssueDetailsPostCell.swift in Sources */,
 				B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */,
 				B2DEC2371E68F20400FFFD7D /* ExternallyOpenable.swift in Sources */,
 				B20A8F511EEF4B57003E4DA7 /* TrackViewModel.swift in Sources */,
@@ -585,6 +592,7 @@
 				B2DCFEE51EF0BF12008B64C4 /* IssueDetailsTitleDataSource.swift in Sources */,
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
 				B2645EB31EE4C0410074FCD0 /* IssueDetailsPresenter.swift in Sources */,
+				B2CD11F11EF2DA7F00518C0E /* IssueDetailsPostsDataSource.swift in Sources */,
 				B20A8F4B1EEF402C003E4DA7 /* Images.swift in Sources */,
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
 				B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */,

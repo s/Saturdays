@@ -15,8 +15,6 @@ class IssueDetailsImageCell: UITableViewCell {
     fileprivate lazy var issueImageView : UIImageView = { ***REMOVED***unowned self***REMOVED*** in
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = UIDefines.Sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()

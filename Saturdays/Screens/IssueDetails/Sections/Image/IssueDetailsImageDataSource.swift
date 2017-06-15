@@ -34,4 +34,8 @@ extension IssueDetailsImageDataSource : IssueDetailsDataSourceProtocol {
         cell.configure(with:image)
         return cell
     }
+    
+    func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return image.size.appropriateSize(for: tableView.frame.size).height
+    }
 }

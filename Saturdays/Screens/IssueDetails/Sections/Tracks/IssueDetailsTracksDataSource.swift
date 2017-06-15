@@ -13,11 +13,8 @@ class IssueDetailsTracksDataSource : NSObject {
     //MARK: Properties
     fileprivate let tracks : ***REMOVED***TrackViewModel***REMOVED***
     fileprivate let imageDownloadingService : ImageDownloadingService
-    fileprivate lazy var headerView : UILabel = { ***REMOVED***unowned self***REMOVED*** in
-        let label = UILabel(frame: CGRect.zero)
-        label.text = UIDefines.Copies.tracksTitle
-        label.font = UIDefines.Fonts.subtitle
-        return label
+    fileprivate lazy var headerView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+        return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.tracksTitle)
     }()
     
     //MARK: Lifecycle

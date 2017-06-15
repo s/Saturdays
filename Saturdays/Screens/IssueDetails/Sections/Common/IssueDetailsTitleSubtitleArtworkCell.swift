@@ -76,14 +76,14 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
         
         NSLayoutConstraint.activate(***REMOVED***
             self.mediaImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:UIDefines.Spacings.singleUnit),
-            self.mediaImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.mediaImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
             self.mediaImageView.widthAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsTrackAlbumArtDimension),
             self.mediaImageView.heightAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsTrackAlbumArtDimension),
             imageViewBottomConstraint,
             
             self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:UIDefines.Spacings.singleUnit),
             self.stackView.leadingAnchor.constraint(equalTo: self.mediaImageView.trailingAnchor, constant:UIDefines.Spacings.singleUnit),
-            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit),
             stackViewBottomConstraint
 ***REMOVED***)
     }
