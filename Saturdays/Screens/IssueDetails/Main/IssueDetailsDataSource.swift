@@ -16,7 +16,7 @@ import UIKit
     @objc optional func dataSource(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***)
     @objc optional func dataSource(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     @objc optional func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
-//    func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    @objc optional func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
 }
 
 class IssueDetailsDataSource : NSObject {
@@ -68,7 +68,7 @@ extension IssueDetailsDataSource : UITableViewDelegate {
         if let height =  self.dataSources***REMOVED***section***REMOVED***.dataSource?(tableView, heightForHeaderInSection: section) {
             return height
         }
-        return 0.0
+        return CGFloat.leastNormalMagnitude
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -79,7 +79,7 @@ extension IssueDetailsDataSource : UITableViewDelegate {
         if !self.isLast(section: section) {
             return UIDefines.Spacings.cellSpacing
         }
-        return 0.0
+        return CGFloat.leastNormalMagnitude
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -89,9 +89,12 @@ extension IssueDetailsDataSource : UITableViewDelegate {
         return nil
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return self.dataSources***REMOVED***indexPath.section***REMOVED***.dataSource(tableView, heightForRowAt:indexPath)
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let height = self.dataSources***REMOVED***indexPath.section***REMOVED***.dataSource?(tableView, heightForRowAt:indexPath) {
+            return height
+        }
+        return tableView.rowHeight
+    }
 }
 
 extension IssueDetailsDataSource : UITableViewDataSourcePrefetching {

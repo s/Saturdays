@@ -72,4 +72,23 @@ class UIHelper: NSObject {
     static func getVenueCellLabels(for venue:VenueViewModel) -> ***REMOVED***UILabel***REMOVED*** {
         return self.createLabels(from: self.getVenueCellLabelDescriptors(from: venue))
     }
+    
+    static func getTableViewSectionHeader(with text:String) -> UIView {
+        let descriptor = UILabelDescriptor(text: text,
+                                           font: UIDefines.Fonts.subtitle,
+                                           textColor: UIDefines.Colors.black)
+        guard let label = self.createLabels(from: ***REMOVED***descriptor***REMOVED***).first else { return UIView() }
+        
+        let view = UIView(frame:CGRect.zero)
+        
+        view.backgroundColor = label.backgroundColor
+        view.addSubview(label)
+        view.addConstraints(***REMOVED***
+            label.topAnchor.constraint(equalTo: view.topAnchor),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
+            label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit),
+***REMOVED***)
+        return view
+    }
 }

@@ -33,6 +33,8 @@ class IssueDetailsView: UIViewController {
                                          imageDownloadingService: self.imageDownloadingService),
             IssueDetailsVenuesDataSource(with: self.item.venues,
                                          imageDownloadingService: self.imageDownloadingService),
+            IssueDetailsPostsDataSource(with: self.item.posts,
+                                        imageDownloadingService: self.imageDownloadingService)
 ***REMOVED***
         
         if let image = self.issueImage {
@@ -61,13 +63,17 @@ class IssueDetailsView: UIViewController {
     }()
     
     fileprivate lazy var tableView : UITableView = { ***REMOVED***unowned self***REMOVED*** in
-        let tableView = UITableView(frame:CGRect.zero)
+        let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UIDefines.Sizes.defaultIssueCellHeight
         tableView.showsVerticalScrollIndicator = false
+        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundView = nil
+        tableView.tableHeaderView = UIView()
+        tableView.contentInset = UIEdgeInsets(top: UIDefines.Sizes.issueDetailsTableViewInset, left: 0, bottom: 0, right: 0)
         return tableView
     }()
     
@@ -102,6 +108,7 @@ class IssueDetailsView: UIViewController {
         self.title = item.title
         self.view.backgroundColor = UIDefines.Colors.white
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.automaticallyAdjustsScrollViewInsets = false
         
         self.setupLayout()
         self.setupDismissIcon()
@@ -133,10 +140,10 @@ class IssueDetailsView: UIViewController {
             self.dismissIcon.widthAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsDismissIconDimension),
             self.dismissIcon.heightAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsDismissIconDimension),
             
-            self.tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:UIDefines.Spacings.doubleUnit),
-            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
+            self.tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit)
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
 ***REMOVED***)
     }
     

@@ -23,7 +23,7 @@ class IssueDetailsTitleCell: UITableViewCell {
     fileprivate lazy var issueDescriptionLabel : UILabel = { ***REMOVED***unowned self***REMOVED*** in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIDefines.Fonts.body
+        label.font = UIDefines.Fonts.detail
         label.numberOfLines = 0
         return label
     }()
@@ -63,9 +63,10 @@ class IssueDetailsTitleCell: UITableViewCell {
         self.contentView.addSubview(self.headerStackView)
         NSLayoutConstraint.activate(***REMOVED***
             self.headerStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
             self.headerStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
-            self.headerStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
+            self.headerStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
+                                                           constant:-(UIDefines.Spacings.doubleUnit+UIDefines.Sizes.issueDetailsDismissIconDimension))
 ***REMOVED***)
     }
 }
