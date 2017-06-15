@@ -57,6 +57,11 @@ class IssueListView : UIViewController {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = UIDefines.Sizes.defaultIssueCellHeight
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+        
         return tableView
     }()
     
@@ -130,14 +135,20 @@ class IssueListView : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = UIDefines.Copies.saturdaysTitle
+        self.setupUI()
         self.setupTableView()
+        self.setupPeekAndPopIfAvailable()
+        
         self.addSubviews()
         self.setupLayoutConstraints()
         self.presenter.retrieveIssues()
     }
     
     //MARK: Private
+    fileprivate func setupUI() {
+        self.title = UIDefines.Copies.saturdaysTitle
+    }
+    
     fileprivate func setupTableView() {
         self.tableView.dataSource = self.tableViewDataSource
         self.tableView.delegate = self.tableViewDataSource
@@ -189,8 +200,23 @@ class IssueListView : UIViewController {
         
         let detailView = self.presenter.getDetailView(for: conf)
 //        detailView.transitioningDelegate = self
+        self.show(detail:detailView)
+    }
+    
+    @objc fileprivate func refresh(_ refreshControl: UIRefreshControl) {
+        self.presenter.retrieveIssues()
+        refreshControl.endRefreshing()
+    }
+    
+    fileprivate func setupPeekAndPopIfAvailable() {
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: self.view)
+        }
+    }
+    
+    fileprivate func show(detail:UIViewController) {
         DispatchQueue.main.async {
-            self.present(detailView, animated: true, completion: nil)
+            self.present(detail, animated: true, completion: nil)
         }
     }
 }
@@ -203,8 +229,18 @@ extension IssueListView : IssueListViewProtocol {
     
     func hideLoadingIndicator() {
         self.loadingIndicator.removeFromSuperview()
-        self.loadingIndicator.isHidden = true
+        
+        self.tableView.alpha = 0.0
         self.tableView.isHidden = false
+        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.3,
+                       options: UIViewAnimationOptions.transitionCrossDissolve,
+                       animations: {
+                        self.tableView.alpha = 1.0
+        }) { (completed) in
+            
+        }
     }
     
     func showError(message:String) {
@@ -233,5 +269,21 @@ extension IssueListView : UIViewControllerTransitioningDelegate {
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return nil
+    }
+}
+
+extension IssueListView : UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = self.tableView.indexPathForRow(at: self.tableView.convert(location, from: self.view)),
+              let conf = self.tableViewDataSource.selectionConfiguration(for: indexPath) else {
+                return nil
+        }
+        return self.presenter.getDetailView(for: conf)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.show(detail: viewControllerToCommit)
     }
 }
