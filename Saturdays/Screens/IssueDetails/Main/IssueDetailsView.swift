@@ -19,30 +19,25 @@ class IssueDetailsView: UIViewController {
             
         }
     }
+    fileprivate var issueImage : UIImage?
     fileprivate let item : IssueViewModel
     fileprivate let presenter : IssueDetailsPresenter
-    fileprivate let issueImage : UIImage?
     fileprivate let imageDownloadingService : ImageDownloadingService
-    fileprivate lazy var dataSource : IssueDetailsDataSource = { ***REMOVED***unowned self***REMOVED*** in
-        return IssueDetailsDataSource(with:self.childDataSources, tableView:self.tableView)
-    }()
-    fileprivate lazy var childDataSources : ***REMOVED***IssueDetailsDataSourceProtocol***REMOVED*** = { ***REMOVED***unowned self***REMOVED*** in
-        var dataSources : ***REMOVED***IssueDetailsDataSourceProtocol***REMOVED*** = ***REMOVED***
-            IssueDetailsTitleDataSource(with:self.item),
-            IssueDetailsTracksDataSource(with: self.item.tracks,
-                                         imageDownloadingService: self.imageDownloadingService),
-            IssueDetailsVenuesDataSource(with: self.item.venues,
-                                         imageDownloadingService: self.imageDownloadingService),
-            IssueDetailsPostsDataSource(with: self.item.posts,
-                                        imageDownloadingService: self.imageDownloadingService)
-***REMOVED***
-        
-        if let image = self.issueImage {
-            let imageDataSource = IssueDetailsImageDataSource(with:image)
-            dataSources.insert(imageDataSource, at: 1)
+    fileprivate var dataSource : IssueDetailsDataSource?
+    fileprivate var childDataSources : ***REMOVED***IssueDetailsDataSourceProtocol***REMOVED*** {
+        get {
+            return ***REMOVED***
+                IssueDetailsTitleDataSource(with:self.item),
+                IssueDetailsImageDataSource(with:self.issueImage, imageSize:self.item.photoSize),
+                IssueDetailsTracksDataSource(with: self.item.tracks,
+                                             imageDownloadingService: self.imageDownloadingService),
+                IssueDetailsVenuesDataSource(with: self.item.venues,
+                                             imageDownloadingService: self.imageDownloadingService),
+                IssueDetailsPostsDataSource(with: self.item.posts,
+                                            imageDownloadingService: self.imageDownloadingService)
+    ***REMOVED***
         }
-        return dataSources
-    }()
+    }
     
     //MARK: Subviews
     fileprivate lazy var imageView : UIImageView = { ***REMOVED***unowned self***REMOVED*** in
@@ -105,27 +100,60 @@ class IssueDetailsView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = item.title
-        self.view.backgroundColor = UIDefines.Colors.white
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.automaticallyAdjustsScrollViewInsets = false
+        self.setupUI()
+        self.setupDismissIcon()
+        self.setupTableViewDataSources()
         
         self.setupLayout()
-        self.setupDismissIcon()
-        self.setupTableView()
+        self.downloadIssueImageIfNeeded()
     }
     
     
     //MARK: Private
-    fileprivate func setupTableView() {
-        self.tableView.dataSource = dataSource
-        self.tableView.delegate = dataSource
-        self.tableView.prefetchDataSource = dataSource
+    fileprivate func setupUI() {
+        self.title = item.title
+        self.view.backgroundColor = UIDefines.Colors.white
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.automaticallyAdjustsScrollViewInsets = false
+    }
+    
+    fileprivate func setupDismissIcon() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissIssue))
+        self.dismissIcon.addGestureRecognizer(tapGesture)
+    }
+    
+    fileprivate func setupTableViewDataSources() {
+        self.dataSource = IssueDetailsDataSource(with:self.childDataSources,
+                                                 tableView:self.tableView)
+        
+        tableView.dataSource = self.dataSource
+        tableView.delegate = self.dataSource
+        tableView.prefetchDataSource = self.dataSource
     }
     
     fileprivate func setupLayout() {
         self.addSubviews()
         self.setupLayoutConstraints()
+    }
+    
+    fileprivate func downloadIssueImageIfNeeded() {
+        guard nil == self.issueImage, let url = item.photoURL else { return }
+        
+        self.imageView.af_setImage(withURL: url) { ***REMOVED***unowned self***REMOVED*** response in
+            guard let data = response.data else { return }
+            
+            self.issueImage = UIImage(data: data)
+            DispatchQueue.main.async {
+                self.setupTableViewDataSources()
+                self.tableView.reloadSections(***REMOVED***self.getImageSectionNumber()***REMOVED***,
+                                              with: .fade)
+***REMOVED***
+        }
+    }
+    
+    fileprivate func reloadTableView() {
+        self.setupTableViewDataSources()
+        self.tableView.reloadData()
     }
     
     fileprivate func addSubviews() {
@@ -147,12 +175,16 @@ class IssueDetailsView: UIViewController {
 ***REMOVED***)
     }
     
-    fileprivate func setupDismissIcon() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissIssue))
-        self.dismissIcon.addGestureRecognizer(tapGesture)
-    }
-    
     @objc fileprivate func dismissIssue() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    fileprivate func getImageSectionNumber() -> Int {
+        for (index, childDataSource) in self.childDataSources.enumerated() {
+            if childDataSource is IssueDetailsImageDataSource {
+                return index
+***REMOVED***
+        }
+        fatalError("Image section is not used.")
     }
 }

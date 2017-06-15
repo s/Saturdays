@@ -16,6 +16,7 @@ class IssueDetailsImageCell: UITableViewCell {
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIViewContentMode.scaleAspectFill
+        imageView.backgroundColor = UIDefines.Colors.lightGray
         return imageView
     }()
     
@@ -30,7 +31,7 @@ class IssueDetailsImageCell: UITableViewCell {
     }
     
     //MARK: Public
-    func configure(with image:UIImage) {
+    func configure(with image:UIImage?) {
         self.issueImageView.image = image
     }
     

@@ -11,12 +11,13 @@ import UIKit
 class IssueDetailsImageDataSource {
     
     //MARK: Properties
-    fileprivate let image : UIImage
+    fileprivate let image : UIImage?
+    fileprivate let imageSize : CGSize
     
-    required init(with image: UIImage) {
+    required init(with image: UIImage?, imageSize:CGSize) {
         self.image = image
+        self.imageSize = imageSize
     }
-    
 }
 
 extension IssueDetailsImageDataSource : IssueDetailsDataSourceProtocol {
