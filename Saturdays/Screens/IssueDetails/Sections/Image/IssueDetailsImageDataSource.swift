@@ -36,6 +36,6 @@ extension IssueDetailsImageDataSource : IssueDetailsDataSourceProtocol {
     }
     
     func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return image.size.appropriateSize(for: tableView.frame.size).height
+        return imageSize.appropriateSize(for: tableView.frame.size).height
     }
 }
