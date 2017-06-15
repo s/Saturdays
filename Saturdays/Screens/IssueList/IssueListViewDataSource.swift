@@ -36,6 +36,15 @@ class IssueListViewDataSource : NSObject {
         self.items = items
     }
     
+    func selectionConfiguration(for indexPath:IndexPath) -> IssueListViewDataSourceSelection? {
+        let item = self.items***REMOVED***indexPath.section***REMOVED***
+        guard let cell = self.tableView(self.tableView, cellForRowAt: indexPath) as? IssueListCell else { return nil }
+        
+        return IssueListViewDataSourceSelection(indexPath: indexPath,
+                                                item: item,
+                                                image: cell.issueImageView.image)
+    }
+    
     // MARK : Private
     fileprivate func imageURL(at indexPath:IndexPath) -> URL? {
         let item = self.items***REMOVED***indexPath.section***REMOVED***
@@ -75,9 +84,7 @@ extension IssueListViewDataSource : UITableViewDataSource {
 extension IssueListViewDataSource : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let imageSize = self.items***REMOVED***indexPath.row***REMOVED***.photoSize else {
-            return UIDefines.Sizes.defaultIssueCellHeight
-        }
+        let imageSize = self.items***REMOVED***indexPath.row***REMOVED***.photoSize
         return imageSize.appropriateSize(for: self.tableView.frame.size).height
     }
     
@@ -104,11 +111,7 @@ extension IssueListViewDataSource : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.items***REMOVED***indexPath.section***REMOVED***
-        let cell = self.tableView.cellForRow(at: indexPath) as! IssueListCell
-        let conf = IssueListViewDataSourceSelection(indexPath: indexPath,
-                                                    item: item,
-                                                    image: cell.issueImageView.image)
+        guard let conf = self.selectionConfiguration(for: indexPath) else { return }
         self.selectHandler(conf)
     }
 }
