@@ -65,8 +65,6 @@ extension IssueDetailsPostsDataSource : IssueDetailsDataSourceProtocol {
         return self.headerView
     }
     
-    
-    
     func dataSource(_ tableView: UITableView, prefetchRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
         self.imageDownloadingService.prefetch(self.imageUrls(for: indexPaths))
     }
