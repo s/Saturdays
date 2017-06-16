@@ -17,19 +17,22 @@ import UIKit
     @objc optional func dataSource(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     @objc optional func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     @objc optional func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    @objc optional func deeplinkUrl(for indexPath:IndexPath) -> URL
 }
 
 class IssueDetailsDataSource : NSObject {
     
     //MARK: Properties
     fileprivate let dataSources : ***REMOVED***IssueDetailsDataSourceProtocol***REMOVED***
+    fileprivate let selectionHandler : (URL) -> ()
     
     //MARK: Lifecycle
-    init(with dataSources:***REMOVED***IssueDetailsDataSourceProtocol***REMOVED***, tableView:UITableView) {
+    init(with dataSources:***REMOVED***IssueDetailsDataSourceProtocol***REMOVED***, tableView:UITableView, selectionHandler:@escaping (URL)->()) {
         for source in dataSources {
             tableView.register(source.cellClass, forCellReuseIdentifier: String(describing:source.cellClass.self))
         }
         self.dataSources = dataSources
+        self.selectionHandler = selectionHandler
         super.init()
     }
     
@@ -94,6 +97,12 @@ extension IssueDetailsDataSource : UITableViewDelegate {
             return height
         }
         return tableView.rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let url = self.dataSources***REMOVED***indexPath.section***REMOVED***.deeplinkUrl?(for: indexPath) {
+            self.selectionHandler(url)
+        }
     }
 }
 

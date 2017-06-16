@@ -75,4 +75,8 @@ extension IssueDetailsPostsDataSource : IssueDetailsDataSourceProtocol {
         self.imageDownloadingService.cancelPrefetcing(self.imageUrls(for: indexPaths))
     }
     
+    func deeplinkUrl(for indexPath: IndexPath) -> URL {
+        let item = self.posts***REMOVED***indexPath.row***REMOVED***
+        return item.deeplinkURL
+    }
 }

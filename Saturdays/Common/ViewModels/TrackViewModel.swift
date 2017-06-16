@@ -15,6 +15,7 @@ class TrackViewModel : NSObject, ViewModelProtocol {
     let artistName : String
     let albumArtUrl : URL
     let albumArtSize: CGSize?
+    let deeplinkURL : URL
     
     // MARK : Lifecycle
     init(with track:Track) {
@@ -22,6 +23,7 @@ class TrackViewModel : NSObject, ViewModelProtocol {
         self.artistName = track.artist
         self.albumArtUrl = track.albumArt.url
         self.albumArtSize = track.albumArt.size
+        self.deeplinkURL = track.externalURL
         super.init()
     }
 }

@@ -15,6 +15,7 @@ class PostViewModel : NSObject, ViewModelProtocol {
     let url : URL?
     let photoUrl : URL
     let photoSize: CGSize?
+    let deeplinkURL : URL
     
     // MARK : Lifecycle
     init(with post:Post) {
@@ -22,6 +23,7 @@ class PostViewModel : NSObject, ViewModelProtocol {
         self.url = post.url
         self.photoUrl = post.photo.url
         self.photoSize = post.photo.size
+        self.deeplinkURL = post.externalURL
         super.init()
     }
 }
