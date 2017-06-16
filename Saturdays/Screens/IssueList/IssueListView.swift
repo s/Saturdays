@@ -156,7 +156,7 @@ class IssueListView : UIViewController {
     }
     
     fileprivate func addSubviews() {
-            self.view.addSubview(self.tableView)
+        self.view.addSubview(self.tableView)
         self.view.addSubview(self.loadingIndicator)
         if osVersion == .ten {
             self.view.addSubview(self.navigationBarView)
