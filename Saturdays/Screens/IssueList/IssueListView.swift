@@ -84,6 +84,12 @@ class IssueListView : UIViewController {
             self.navigationBarLargeTitleView.heightAnchor.constraint(equalToConstant:UIDefines.Sizes.navigationBarLargeTitleViewHeight),
             
 ***REMOVED***)
+        
+        let bottomBorderLayer = CALayer()
+        bottomBorderLayer.backgroundColor = UIDefines.Colors.lightGray.cgColor
+        bottomBorderLayer.frame = CGRect(x: 0, y: UIDefines.Sizes.navigationBarViewHeight, width: self.view.frame.width, height: 0.5)
+        view.layer.addSublayer(bottomBorderLayer)
+        
         return view
     }()
     
