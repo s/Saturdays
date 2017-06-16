@@ -123,8 +123,12 @@ class IssueDetailsView: UIViewController {
     }
     
     fileprivate func setupTableViewDataSources() {
+        let selectionHandler : (URL) -> () = { ***REMOVED***weak self***REMOVED*** url in
+            self?.handleDeepLink(url)
+        }
         self.dataSource = IssueDetailsDataSource(with:self.childDataSources,
-                                                 tableView:self.tableView)
+                                                 tableView:self.tableView,
+                                                 selectionHandler:selectionHandler)
         
         tableView.dataSource = self.dataSource
         tableView.delegate = self.dataSource
@@ -186,5 +190,13 @@ class IssueDetailsView: UIViewController {
 ***REMOVED***
         }
         fatalError("Image section is not used.")
+    }
+    
+    fileprivate func handleDeepLink(_ url:URL) {
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url,
+                                      options:***REMOVED***:***REMOVED***,
+                                      completionHandler: nil)
+        }
     }
 }

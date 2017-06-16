@@ -65,4 +65,8 @@ extension IssueDetailsTracksDataSource : IssueDetailsDataSourceProtocol {
     func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
+    
+    func deeplinkUrl(for indexPath: IndexPath) -> URL {
+        return self.tracks***REMOVED***indexPath.row***REMOVED***.deeplinkURL
+    }
 }

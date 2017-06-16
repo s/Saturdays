@@ -65,5 +65,9 @@ extension IssueDetailsVenuesDataSource : IssueDetailsDataSourceProtocol {
     func dataSource(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return self.headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
+    
+    func deeplinkUrl(for indexPath: IndexPath) -> URL {
+        return self.venues***REMOVED***indexPath.row***REMOVED***.deeplinkURL
+    }
 }
 

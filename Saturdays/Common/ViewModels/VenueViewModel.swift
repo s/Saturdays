@@ -16,6 +16,7 @@ class VenueViewModel : NSObject, ViewModelProtocol {
     let locationInfo : String
     let photoUrl : URL
     let photoSize : CGSize?
+    let deeplinkURL : URL
     
     // MARK : Lifecycle
     init(with venue:Venue) {
@@ -24,6 +25,7 @@ class VenueViewModel : NSObject, ViewModelProtocol {
         self.locationInfo = venue.locationInfo
         self.photoUrl = venue.photo.url
         self.photoSize = venue.photo.size
+        self.deeplinkURL = venue.externalURL
         super.init()
     }
 }
