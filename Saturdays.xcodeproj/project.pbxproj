@@ -23,6 +23,7 @@
 		B212B4571EE223AC001DD091 /* IssueListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */; };
 		B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */; };
 		B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BC8461EE9FB3700106042 /* CoverPhoto.swift */; };
+		B224B75F1EF57D01004575E5 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224B75E1EF57D01004575E5 /* NotificationAction.swift */; };
 		B2356F471EF4A08400AF59D0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2356F461EF4A08400AF59D0 /* NotificationService.swift */; };
 		B2356F4B1EF4A08400AF59D0 /* SaturdaysNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B2356F561EF4A28400AF59D0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2356F551EF4A28400AF59D0 /* UserNotifications.framework */; };
@@ -129,6 +130,7 @@
 		B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListViewDataSource.swift; sourceTree = "<group>"; };
 		B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B21BC8461EE9FB3700106042 /* CoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhoto.swift; sourceTree = "<group>"; };
+		B224B75E1EF57D01004575E5 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationAction.swift; path = Helpers/NotificationAction.swift; sourceTree = "<group>"; };
 		B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaturdaysNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2356F461EF4A08400AF59D0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B2356F481EF4A08400AF59D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			);
 			name = Defines;
 			sourceTree = "<group>";
+		};
 		B2356F451EF4A08400AF59D0 /* SaturdaysNotificationService */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,6 +504,7 @@
 			isa = PBXGroup;
 			children = (
 				B2DEC2321E68EFE500FFFD7D /* IssueItemType.swift */,
+				B224B75E1EF57D01004575E5 /* NotificationAction.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -731,6 +735,7 @@
 				B2DCFED31EF088F4008B64C4 /* IssueDetailsTracksDataSource.swift in Sources */,
 				B2DEC2301E68EEC100FFFD7D /* TableHeaderView.swift in Sources */,
 				B28979F61EE36FC6005834E3 /* ImageDownloadingService.swift in Sources */,
+				B224B75F1EF57D01004575E5 /* NotificationAction.swift in Sources */,
 				B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */,
 				B248267D1E4F9DA70070628D /* UICollectionViewExtensions.swift in Sources */,
 				B29165351E526B390045BA4F /* UITableViewExtensions.swift in Sources */,
