@@ -246,10 +246,9 @@
 		B212B4511EE2130F001DD091 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B224B7661EF598F2004575E5 /* Defines */,
 				B212B4521EE21329001DD091 /* UIHelper.swift */,
-				B20A8F4A1EEF402C003E4DA7 /* Images.swift */,
 				B2FD04B31EF1FA3B004ED046 /* UILabelDescriptor.swift */,
-				B2FD04B51EF1FD81004ED046 /* UIDefines.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -258,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				B20A8F4A1EEF402C003E4DA7 /* ImageDefines.swift */,
+				B2FD04B51EF1FD81004ED046 /* UIDefines.swift */,
 			);
 			name = Defines;
 			sourceTree = "<group>";
