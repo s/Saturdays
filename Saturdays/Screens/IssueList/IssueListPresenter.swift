@@ -26,22 +26,30 @@ class IssueListPresenter : NSObject {
     func retrieveIssues() {
         self.view?.showLoadingIndicator()
         
-        issueService.get { ***REMOVED***unowned self***REMOVED*** (result) in
-            self.view?.hideLoadingIndicator()
+        issueService.get { ***REMOVED***weak self***REMOVED*** (result) in
+            guard let strongSelf = self else { return }
+            strongSelf.view?.hideLoadingIndicator()
             
             switch (result) {
             case .success(let issues):
-                let viewModels = self.createViewModels(from: issues)
-                self.view?.show(issues: viewModels)
+                let viewModels = strongSelf.createViewModels(from: issues)
+                strongSelf.view?.show(issues: viewModels)
                 
             case .failure(let error):
-                self.view?.showError(message: error.localizedDescription)
+                strongSelf.view?.showError(message: error.localizedDescription)
 ***REMOVED***
         }
     }
     
-    func getDetailView(for conf:IssueListViewDataSourceSelection) -> UIViewController {
+    func getDetailView(for conf:IssueDetailsOpeningConfiguration) -> UIViewController {
         return self.routingService.createIssueDetailModule(with: conf)
+    }
+    
+    func getDetailView(for viewModel:IssueViewModel) -> UIViewController {
+        let conf = IssueDetailsOpeningConfiguration(indexPath: nil,
+                                                    item: viewModel,
+                                                    image: nil)
+        return self.getDetailView(for: conf)
     }
     
     //MARK: Private

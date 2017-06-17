@@ -29,7 +29,7 @@ class IssueListView : UIViewController {
     fileprivate let imageDownloadingService : ImageDownloadingService
     fileprivate lazy var tableViewDataSource : IssueListViewDataSource = { ***REMOVED***unowned self***REMOVED*** in
         
-        let selectHandler : (IssueListViewDataSourceSelection) -> Void = { ***REMOVED***unowned self***REMOVED*** (conf) in
+        let selectHandler : (IssueDetailsOpeningConfiguration) -> Void = { ***REMOVED***unowned self***REMOVED*** (conf) in
             self.handleSelection(with:conf)
         }
         
@@ -41,6 +41,8 @@ class IssueListView : UIViewController {
         return IssueDetailsAnimator()
     }()
     fileprivate var selectedIndexPath : IndexPath?
+    fileprivate let shouldOpenAnIssueOnStartup : Bool
+    fileprivate let issueNumberToOpenOnStartup : Int?
     
     
     //MARK: Subviews
@@ -123,7 +125,9 @@ class IssueListView : UIViewController {
     }()
     
     //MARK: Lifecycle
-    init(presenter:IssueListPresenter, imageDownloadingService:ImageDownloadingService) {
+    init(presenter:IssueListPresenter,
+         imageDownloadingService:ImageDownloadingService,
+         needsToOpenIssueNumber issueNumber:Int?=nil) {
         self.presenter = presenter
         if #available(iOS 11.0, *) {
             self.osVersion = .eleven
@@ -131,6 +135,8 @@ class IssueListView : UIViewController {
             self.osVersion = .ten
         }
         self.imageDownloadingService = imageDownloadingService
+        self.shouldOpenAnIssueOnStartup = issueNumber != nil
+        self.issueNumberToOpenOnStartup = issueNumber
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -201,7 +207,7 @@ class IssueListView : UIViewController {
         NSLayoutConstraint.activate(constraints)
     }
     
-    fileprivate func handleSelection(with conf:IssueListViewDataSourceSelection) {
+    fileprivate func handleSelection(with conf:IssueDetailsOpeningConfiguration) {
         self.selectedIndexPath = conf.indexPath
         
         let detailView = self.presenter.getDetailView(for: conf)
@@ -224,6 +230,12 @@ class IssueListView : UIViewController {
         DispatchQueue.main.async {
             self.present(detail, animated: true, completion: nil)
         }
+    }
+    
+    fileprivate func showIssue(number issueNumber:Int) {
+        guard let relevantIssue = self.tableViewDataSource.getIssue(number: issueNumber) else { return }
+        let detailView = self.presenter.getDetailView(for: relevantIssue)
+        self.show(detail: detailView)
     }
 }
 
@@ -256,6 +268,13 @@ extension IssueListView : IssueListViewProtocol {
     func show(issues:***REMOVED***IssueViewModel***REMOVED***) {
         self.tableViewDataSource.update(with: issues)
         self.tableView.reloadData()
+        
+        if self.shouldOpenAnIssueOnStartup {
+            if let issueNumberToShow = self.issueNumberToOpenOnStartup {
+                self.showIssue(number: issueNumberToShow)
+                UIApplication.shared.applicationIconBadgeNumber = 0
+***REMOVED***
+        }
     }
 }
 
