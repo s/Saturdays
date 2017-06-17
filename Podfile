@@ -6,11 +6,10 @@ target 'Saturdays' do
   use_frameworks!
 
   # Pods for Saturdays
-  pod 'Unbox'
+  pod 'Unbox', '~> 2.5.0'
   pod 'Reveal-SDK', :configurations => ***REMOVED***'Debug'***REMOVED*** 
   pod 'AlamofireImage', '~> 3.1'
-  pod 'KDCircularProgress'
-  pod 'UnboxedAlamofire', '~> 2.0'
+  pod 'UnboxedAlamofire'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
   pod 'Shimmer'
