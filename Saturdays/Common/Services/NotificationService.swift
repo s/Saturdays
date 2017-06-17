@@ -19,28 +19,29 @@ protocol NotificationServiceProtocol {
 
 class NotificationService : NSObject {
     
-    fileprivate weak var application:UIApplication?
-    fileprivate let gcmMessageIDKey = "gcm.message_id"
     
-    init(with application:UIApplication) {
-        self.application = application
-        super.init()
-    }
+    fileprivate let newIssueIdentifier = "new_issue"
     
     func registerForNotifications() {
-        guard let application = application else { return }
-        
-        UNUserNotificationCenter.current().delegate = self
+        let notificationCenter = UNUserNotificationCenter.current()
         let authOptions: UNAuthorizationOptions = ***REMOVED***.alert, .badge, .sound***REMOVED***
-        UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: {_, _ in })
-        application.registerForRemoteNotifications()
+        
+        let openIssueAction = UNNotificationAction(identifier: NotificationAction.openIssue.rawValue, title: UIDefines.Copies.openIssue, options: ***REMOVED***UNNotificationActionOptions.foreground***REMOVED***)
+        let dismissAction   = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: UIDefines.Copies.dismiss, options: ***REMOVED******REMOVED***)
+        let generalCategory = UNNotificationCategory(identifier: newIssueIdentifier,
+                                                     actions: ***REMOVED***openIssueAction, dismissAction***REMOVED***,
+                                                     intentIdentifiers: ***REMOVED******REMOVED***,
+                                                     options: .customDismissAction)
+        
+        notificationCenter.setNotificationCategories(***REMOVED***generalCategory***REMOVED***)
+        notificationCenter.requestAuthorization(options: authOptions, completionHandler: {_, _ in })
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(self.tokenRefreshNotification),
                                                name: .firInstanceIDTokenRefresh,
                                                object: nil)
-        
         FIRApp.configure()
+        FIRMessaging.messaging().remoteMessageDelegate = self
     }
     
     @objc fileprivate func tokenRefreshNotification(_ notification: Notification) {
@@ -82,20 +83,4 @@ extension NotificationService : NotificationServiceProtocol {
     }
 }
 
-extension NotificationService : UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        // Print message ID.
-        if let messageID = userInfo***REMOVED***gcmMessageIDKey***REMOVED*** {
-            print("Message ID: \(messageID)")
-        }
-        
-        // Print full message.
-        print(userInfo)
-        
-        completionHandler()
-    }
-}
+
