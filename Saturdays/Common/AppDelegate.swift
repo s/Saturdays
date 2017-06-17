@@ -23,11 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return false }
         
-        window.backgroundColor = UIColor.white
-        window.makeKeyAndVisible()
+        self.setupWindowUI()
         
-        self.notificationService = NotificationService(with: application)
+        self.notificationService = NotificationService()
         notificationService?.registerForNotifications()
+        UNUserNotificationCenter.current().delegate = self
+        application.registerForRemoteNotifications()
         
         let imageDownloadingService = ImageDownloadingService()
         let routingService = RoutingService(imageDownloadingService: imageDownloadingService)
@@ -43,4 +44,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         notificationService?.applicationDidEnterBackground(application)
     }
+    
+    fileprivate func setupWindowUI() {
+        guard let window = window else { return }
+        
+        window.backgroundColor = UIColor.white
+        window.makeKeyAndVisible()
+    }
 }
+
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Swift.Void) {
+        
+        guard let actionIdentifier = NotificationAction(rawValue: response.actionIdentifier) else {
+            completionHandler()
+            return
+        }
+        
+        let issueNumberKey = "gcm.notification.issue_number"
+        let userInfo = response.notification.request.content.userInfo
+        
+        switch actionIdentifier {
+        case .openIssue, .tap:
+            guard
+                let issueNumberString = userInfo***REMOVED***issueNumberKey***REMOVED*** as? String,
+                let issueNumber = Int(issueNumberString)
+            else {
+                completionHandler()
+                return
+***REMOVED***
+            
+            self.setupWindowUI()
+            let imageDownloadingService = ImageDownloadingService()
+            let routingService = RoutingService(imageDownloadingService: imageDownloadingService)
+            self.window?.rootViewController = routingService.openIssueForRemoteNotification(number: issueNumber)
+            
+        case .dismiss: break
+        }
+        completionHandler()
+    }
+}
+
