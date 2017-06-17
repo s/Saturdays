@@ -23,6 +23,13 @@
 		B212B4571EE223AC001DD091 /* IssueListViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */; };
 		B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */; };
 		B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BC8461EE9FB3700106042 /* CoverPhoto.swift */; };
+		B2356F471EF4A08400AF59D0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2356F461EF4A08400AF59D0 /* NotificationService.swift */; };
+		B2356F4B1EF4A08400AF59D0 /* SaturdaysNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B2356F561EF4A28400AF59D0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2356F551EF4A28400AF59D0 /* UserNotifications.framework */; };
+		B2356F581EF4A28400AF59D0 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2356F571EF4A28400AF59D0 /* UserNotificationsUI.framework */; };
+		B2356F5B1EF4A28400AF59D0 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2356F5A1EF4A28400AF59D0 /* NotificationViewController.swift */; };
+		B2356F5E1EF4A28400AF59D0 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2356F5C1EF4A28400AF59D0 /* MainInterface.storyboard */; };
+		B2356F621EF4A28400AF59D0 /* SaturdaysNotificationContent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2356F541EF4A28400AF59D0 /* SaturdaysNotificationContent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B23940761E6AFB8000E07AF2 /* ImageDownloadableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */; };
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
 		B24826501E4F8DA50070628D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B248264F1E4F8DA50070628D /* Assets.xcassets */; };
@@ -62,7 +69,36 @@
 		B2FD04B61EF1FD81004ED046 /* UIDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD04B51EF1FD81004ED046 /* UIDefines.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B2356F491EF4A08400AF59D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B248263D1E4F8DA50070628D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2356F431EF4A08400AF59D0;
+			remoteInfo = SaturdaysNotificationService;
+		};
+		B2356F601EF4A28400AF59D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B248263D1E4F8DA50070628D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2356F531EF4A28400AF59D0;
+			remoteInfo = SaturdaysNotificationContent;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		B2356F4F1EF4A08400AF59D0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B2356F621EF4A28400AF59D0 /* SaturdaysNotificationContent.appex in Embed App Extensions */,
+				B2356F4B1EF4A08400AF59D0 /* SaturdaysNotificationService.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2F0767F1E679A7300EDFF32 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +129,15 @@
 		B212B4561EE223AC001DD091 /* IssueListViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueListViewDataSource.swift; sourceTree = "<group>"; };
 		B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B21BC8461EE9FB3700106042 /* CoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhoto.swift; sourceTree = "<group>"; };
+		B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaturdaysNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2356F461EF4A08400AF59D0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B2356F481EF4A08400AF59D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2356F541EF4A28400AF59D0 /* SaturdaysNotificationContent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaturdaysNotificationContent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2356F551EF4A28400AF59D0 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		B2356F571EF4A28400AF59D0 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		B2356F5A1EF4A28400AF59D0 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		B2356F5D1EF4A28400AF59D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B2356F5F1EF4A28400AF59D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B23940751E6AFB8000E07AF2 /* ImageDownloadableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadableModel.swift; sourceTree = "<group>"; };
 		B24826451E4F8DA50070628D /* Saturdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saturdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24826481E4F8DA50070628D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +182,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B2356F411EF4A08400AF59D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2356F511EF4A28400AF59D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2356F581EF4A28400AF59D0 /* UserNotificationsUI.framework in Frameworks */,
+				B2356F561EF4A28400AF59D0 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B24826421E4F8DA50070628D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				238E30299D6622745C3493F4 /* Pods_Saturdays.framework */,
+				B2356F551EF4A28400AF59D0 /* UserNotifications.framework */,
+				B2356F571EF4A28400AF59D0 /* UserNotificationsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,10 +250,31 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		B2356F451EF4A08400AF59D0 /* SaturdaysNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				B2356F461EF4A08400AF59D0 /* NotificationService.swift */,
+				B2356F481EF4A08400AF59D0 /* Info.plist */,
+			);
+			path = SaturdaysNotificationService;
+			sourceTree = "<group>";
+		};
+		B2356F591EF4A28400AF59D0 /* SaturdaysNotificationContent */ = {
+			isa = PBXGroup;
+			children = (
+				B2356F5A1EF4A28400AF59D0 /* NotificationViewController.swift */,
+				B2356F5C1EF4A28400AF59D0 /* MainInterface.storyboard */,
+				B2356F5F1EF4A28400AF59D0 /* Info.plist */,
+			);
+			path = SaturdaysNotificationContent;
+			sourceTree = "<group>";
+		};
 		B248263C1E4F8DA50070628D = {
 			isa = PBXGroup;
 			children = (
 				B24826471E4F8DA50070628D /* Saturdays */,
+				B2356F451EF4A08400AF59D0 /* SaturdaysNotificationService */,
+				B2356F591EF4A28400AF59D0 /* SaturdaysNotificationContent */,
 				B24826461E4F8DA50070628D /* Products */,
 				8E10D16DCD698039AFE6A007 /* Pods */,
 				4B3E7B4354EAFF99EA5AA38A /* Frameworks */,
@@ -201,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				B24826451E4F8DA50070628D /* Saturdays.app */,
+				B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */,
+				B2356F541EF4A28400AF59D0 /* SaturdaysNotificationContent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -423,6 +509,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B2356F431EF4A08400AF59D0 /* SaturdaysNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2356F4E1EF4A08400AF59D0 /* Build configuration list for PBXNativeTarget "SaturdaysNotificationService" */;
+			buildPhases = (
+				B2356F401EF4A08400AF59D0 /* Sources */,
+				B2356F411EF4A08400AF59D0 /* Frameworks */,
+				B2356F421EF4A08400AF59D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaturdaysNotificationService;
+			productName = SaturdaysNotificationService;
+			productReference = B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		B2356F531EF4A28400AF59D0 /* SaturdaysNotificationContent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2356F631EF4A28400AF59D0 /* Build configuration list for PBXNativeTarget "SaturdaysNotificationContent" */;
+			buildPhases = (
+				B2356F501EF4A28400AF59D0 /* Sources */,
+				B2356F511EF4A28400AF59D0 /* Frameworks */,
+				B2356F521EF4A28400AF59D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaturdaysNotificationContent;
+			productName = SaturdaysNotificationContent;
+			productReference = B2356F541EF4A28400AF59D0 /* SaturdaysNotificationContent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B24826441E4F8DA50070628D /* Saturdays */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B24826571E4F8DA50070628D /* Build configuration list for PBXNativeTarget "Saturdays" */;
@@ -434,10 +554,13 @@
 				1592D0BD42E4124446F69357 /* ***REMOVED***CP***REMOVED*** Embed Pods Frameworks */,
 				1D1241FDA195898B0B61676C /* ***REMOVED***CP***REMOVED*** Copy Pods Resources */,
 				B2F0767F1E679A7300EDFF32 /* Embed Frameworks */,
+				B2356F4F1EF4A08400AF59D0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B2356F4A1EF4A08400AF59D0 /* PBXTargetDependency */,
+				B2356F611EF4A28400AF59D0 /* PBXTargetDependency */,
 			);
 			name = Saturdays;
 			productName = Saturdays;
@@ -450,10 +573,18 @@
 		B248263D1E4F8DA50070628D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Said Ozcan";
 				TargetAttributes = {
+					B2356F431EF4A08400AF59D0 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = Z2EVZ5Y6JY;
+					};
+					B2356F531EF4A28400AF59D0 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = Z2EVZ5Y6JY;
+					};
 					B24826441E4F8DA50070628D = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = Z2EVZ5Y6JY;
@@ -480,11 +611,28 @@
 			projectRoot = "";
 			targets = (
 				B24826441E4F8DA50070628D /* Saturdays */,
+				B2356F431EF4A08400AF59D0 /* SaturdaysNotificationService */,
+				B2356F531EF4A28400AF59D0 /* SaturdaysNotificationContent */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B2356F421EF4A08400AF59D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2356F521EF4A28400AF59D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2356F5E1EF4A28400AF59D0 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B24826431E4F8DA50070628D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,6 +696,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B2356F401EF4A08400AF59D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2356F471EF4A08400AF59D0 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2356F501EF4A28400AF59D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2356F5B1EF4A28400AF59D0 /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B24826411E4F8DA50070628D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,7 +768,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B2356F4A1EF4A08400AF59D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2356F431EF4A08400AF59D0 /* SaturdaysNotificationService */;
+			targetProxy = B2356F491EF4A08400AF59D0 /* PBXContainerItemProxy */;
+		};
+		B2356F611EF4A28400AF59D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2356F531EF4A28400AF59D0 /* SaturdaysNotificationContent */;
+			targetProxy = B2356F601EF4A28400AF59D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		B2356F5C1EF4A28400AF59D0 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2356F5D1EF4A28400AF59D0 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		B24826511E4F8DA50070628D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -617,6 +802,104 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B2356F4C1EF4A08400AF59D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SaturdaysNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays.SaturdaysNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2356F4D1EF4A08400AF59D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SaturdaysNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays.SaturdaysNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B2356F641EF4A28400AF59D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SaturdaysNotificationContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays.SaturdaysNotificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2356F651EF4A28400AF59D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SaturdaysNotificationContent/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.saidozcan.Saturdays.SaturdaysNotificationContent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B24826551E4F8DA50070628D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,8 +1001,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CEA9740A43EA50B9EBE2CB27 /* Pods-Saturdays.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Saturdays/Saturdays.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
 				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
@@ -735,8 +1020,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Saturdays/Saturdays.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY***REMOVED***sdk=iphoneos****REMOVED***" = "iPhone Developer";
 				DEVELOPMENT_TEAM = Z2EVZ5Y6JY;
 				INFOPLIST_FILE = "$(SRCROOT)/Saturdays/Supporting Files/Info.plist";
@@ -751,6 +1038,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B2356F4E1EF4A08400AF59D0 /* Build configuration list for PBXNativeTarget "SaturdaysNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2356F4C1EF4A08400AF59D0 /* Debug */,
+				B2356F4D1EF4A08400AF59D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2356F631EF4A28400AF59D0 /* Build configuration list for PBXNativeTarget "SaturdaysNotificationContent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2356F641EF4A28400AF59D0 /* Debug */,
+				B2356F651EF4A28400AF59D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B24826401E4F8DA50070628D /* Build configuration list for PBXProject "Saturdays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
