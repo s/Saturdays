@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 
 class IssueListViewDataSource : NSObject {
-    fileprivate var items : ***REMOVED***IssueViewModel***REMOVED*** = ***REMOVED******REMOVED***
+    fileprivate var items : [IssueViewModel] = []
     fileprivate let tableView : UITableView
     fileprivate let selectHandler : (IssueDetailsOpeningConfiguration) -> Void
     fileprivate let cellIdentifier = String(describing: IssueListCell.self)
@@ -26,12 +26,12 @@ class IssueListViewDataSource : NSObject {
         self.tableView.register(IssueListCell.self, forCellReuseIdentifier: self.cellIdentifier)
     }
     
-    func update(with items:***REMOVED***IssueViewModel***REMOVED***) {
+    func update(with items:[IssueViewModel]) {
         self.items = items
     }
     
     func selectionConfiguration(for indexPath:IndexPath) -> IssueDetailsOpeningConfiguration? {
-        let item = self.items***REMOVED***indexPath.section***REMOVED***
+        let item = self.items[indexPath.section]
         guard let cell = self.tableView(self.tableView, cellForRowAt: indexPath) as? IssueListCell else { return nil }
         
         return IssueDetailsOpeningConfiguration(indexPath: indexPath,
@@ -47,16 +47,16 @@ class IssueListViewDataSource : NSObject {
     
     // MARK : Private
     fileprivate func imageURL(at indexPath:IndexPath) -> URL? {
-        let item = self.items***REMOVED***indexPath.section***REMOVED***
+        let item = self.items[indexPath.section]
         return item.photoURL
     }
     
-    fileprivate func imageUrls(for indexPaths:***REMOVED***IndexPath***REMOVED***) -> ***REMOVED***URL***REMOVED*** {
-        var urls : ***REMOVED***URL***REMOVED*** = ***REMOVED******REMOVED***
+    fileprivate func imageUrls(for indexPaths:[IndexPath]) -> [URL] {
+        var urls : [URL] = []
         for indexPath in indexPaths {
             if let url = self.imageURL(at: indexPath) {
                 urls.append(url)
-***REMOVED***
+            }
         }
         return urls
     }
@@ -73,7 +73,7 @@ extension IssueListViewDataSource : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! IssueListCell
-        cell.configure(with: self.items***REMOVED***indexPath.section***REMOVED***)
+        cell.configure(with: self.items[indexPath.section])
         if let imageURL = self.imageURL(at: indexPath) {
             cell.issueImageView.af_setImage(withURL: imageURL)
         }
@@ -84,7 +84,7 @@ extension IssueListViewDataSource : UITableViewDataSource {
 extension IssueListViewDataSource : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let imageSize = self.items***REMOVED***indexPath.row***REMOVED***.photoSize
+        let imageSize = self.items[indexPath.row].photoSize
         return imageSize.appropriateSize(for: self.tableView.frame.size).height
     }
     
@@ -117,11 +117,11 @@ extension IssueListViewDataSource : UITableViewDelegate {
 }
 
 extension IssueListViewDataSource : UITableViewDataSourcePrefetching {
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         self.imageDownloadingService.prefetch(self.imageUrls(for: indexPaths))
     }
     
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         self.imageDownloadingService.cancelPrefetcing(self.imageUrls(for: indexPaths))
     }
 }

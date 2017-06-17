@@ -26,7 +26,7 @@ class IssueListPresenter : NSObject {
     func retrieveIssues() {
         self.view?.showLoadingIndicator()
         
-        issueService.get { ***REMOVED***weak self***REMOVED*** (result) in
+        issueService.get { [weak self] (result) in
             guard let strongSelf = self else { return }
             strongSelf.view?.hideLoadingIndicator()
             
@@ -37,7 +37,7 @@ class IssueListPresenter : NSObject {
                 
             case .failure(let error):
                 strongSelf.view?.showError(message: error.localizedDescription)
-***REMOVED***
+            }
         }
     }
     
@@ -53,7 +53,7 @@ class IssueListPresenter : NSObject {
     }
     
     //MARK: Private
-    fileprivate func createViewModels(from issues:***REMOVED***Issue***REMOVED***) -> ***REMOVED***IssueViewModel***REMOVED*** {
+    fileprivate func createViewModels(from issues:[Issue]) -> [IssueViewModel] {
         return issues.map { (issue) -> IssueViewModel in
             return IssueViewModel(with: issue)
         }

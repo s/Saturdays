@@ -11,23 +11,23 @@ import UIKit
 class IssueDetailsVenuesDataSource : NSObject {
     
     //MARK: Properties
-    fileprivate let venues : ***REMOVED***VenueViewModel***REMOVED***
+    fileprivate let venues : [VenueViewModel]
     fileprivate let imageDownloadingService : ImageDownloadingService
-    fileprivate lazy var headerView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var headerView : UIView = { [unowned self] in
         return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.venuesTitle)
     }()
     
     //MARK: Lifecycle
-    init(with venues:***REMOVED***VenueViewModel***REMOVED***, imageDownloadingService:ImageDownloadingService) {
+    init(with venues:[VenueViewModel], imageDownloadingService:ImageDownloadingService) {
         self.imageDownloadingService = imageDownloadingService
         self.venues = venues
         super.init()
     }
     
     //MARK: Private
-    fileprivate func imageUrls(for indexPaths:***REMOVED***IndexPath***REMOVED***) -> ***REMOVED***URL***REMOVED*** {
+    fileprivate func imageUrls(for indexPaths:[IndexPath]) -> [URL] {
         return indexPaths.map({ (indexPath) -> URL in
-            return self.venues***REMOVED***indexPath.row***REMOVED***.photoUrl
+            return self.venues[indexPath.row].photoUrl
         })
     }
 }
@@ -44,17 +44,17 @@ extension IssueDetailsVenuesDataSource : IssueDetailsDataSourceProtocol {
     
     func dataSource(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:cellClass.self), for: indexPath) as! IssueDetailsTitleSubtitleArtworkCell
-        let item = self.venues***REMOVED***indexPath.row***REMOVED***
+        let item = self.venues[indexPath.row]
         cell.mediaImageView.af_setImage(withURL: item.photoUrl)
         cell.configure(with: UIHelper.getVenueCellLabels(for: item))
         return cell
     }
     
-    func dataSource(_ tableView: UITableView, prefetchRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
+    func dataSource(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         self.imageDownloadingService.prefetch(self.imageUrls(for: indexPaths))
     }
     
-    func dataSource(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
+    func dataSource(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         self.imageDownloadingService.cancelPrefetcing(self.imageUrls(for: indexPaths))
     }
     
@@ -67,7 +67,7 @@ extension IssueDetailsVenuesDataSource : IssueDetailsDataSourceProtocol {
     }
     
     func deeplinkUrl(for indexPath: IndexPath) -> URL {
-        return self.venues***REMOVED***indexPath.row***REMOVED***.deeplinkURL
+        return self.venues[indexPath.row].deeplinkURL
     }
 }
 

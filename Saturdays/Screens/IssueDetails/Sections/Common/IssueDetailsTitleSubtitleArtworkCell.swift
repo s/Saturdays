@@ -21,7 +21,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
         return imageView
     }()
     
-    fileprivate lazy var stackView : UIStackView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var stackView : UIStackView = { [unowned self] in
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = UIDefines.Spacings.singleUnit / 2
@@ -45,7 +45,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
     }
     
     //MARK: Public
-    func configure(with labels:***REMOVED***UILabel***REMOVED***) {
+    func configure(with labels:[UILabel]) {
         for label in self.stackView.arrangedSubviews {
             self.stackView.removeArrangedSubview(label)
             label.removeFromSuperview()
@@ -74,7 +74,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
         let stackViewBottomConstraint = self.stackView.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant:-UIDefines.Spacings.singleUnit)
         stackViewBottomConstraint.priority = UILayoutPriorityDefaultHigh - 1
         
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.mediaImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:UIDefines.Spacings.singleUnit),
             self.mediaImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
             self.mediaImageView.widthAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsTrackAlbumArtDimension),
@@ -85,7 +85,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
             self.stackView.leadingAnchor.constraint(equalTo: self.mediaImageView.trailingAnchor, constant:UIDefines.Spacings.singleUnit),
             self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit),
             stackViewBottomConstraint
-***REMOVED***)
+        ])
     }
 }
 

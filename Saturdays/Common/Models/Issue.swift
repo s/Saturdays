@@ -17,9 +17,9 @@ struct Issue{
     let creationDate: Date?
     let coverPhoto: CoverPhoto
 
-    let tracks: ***REMOVED***Track***REMOVED***
-    let venues: ***REMOVED***Venue***REMOVED***
-    let posts: ***REMOVED***Post***REMOVED***
+    let tracks: [Track]
+    let venues: [Venue]
+    let posts: [Post]
 }
 
 extension Issue: Unboxable{

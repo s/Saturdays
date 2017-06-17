@@ -11,13 +11,13 @@ import UIKit
 class IssueDetailsPostCell: UITableViewCell {
     
     //MARK: Properties
-    lazy var postImageView : UIImageView = { ***REMOVED***unowned self***REMOVED*** in
+    lazy var postImageView : UIImageView = { [unowned self] in
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()
-    fileprivate lazy var postImageViewHeightConstraint : NSLayoutConstraint = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var postImageViewHeightConstraint : NSLayoutConstraint = { [unowned self] in
         return self.postImageView.heightAnchor.constraint(equalToConstant: 0.0)
     }()
     
@@ -49,13 +49,13 @@ class IssueDetailsPostCell: UITableViewCell {
         bottomAnchor.priority = UILayoutPriorityDefaultHigh - 1
         
         self.contentView.addSubview(self.postImageView)
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.postImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             self.postImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             self.postImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             bottomAnchor,
             self.postImageViewHeightConstraint
-***REMOVED***)
+        ])
     }
 }
 

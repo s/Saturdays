@@ -13,7 +13,7 @@ protocol IssueListViewProtocol {
     func showLoadingIndicator()
     func hideLoadingIndicator()
     func showError(message:String)
-    func show(issues:***REMOVED***IssueViewModel***REMOVED***)
+    func show(issues:[IssueViewModel])
 }
 
 fileprivate enum OSVersion : Int {
@@ -27,9 +27,9 @@ class IssueListView : UIViewController {
     fileprivate let osVersion : OSVersion
     fileprivate let presenter : IssueListPresenter
     fileprivate let imageDownloadingService : ImageDownloadingService
-    fileprivate lazy var tableViewDataSource : IssueListViewDataSource = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var tableViewDataSource : IssueListViewDataSource = { [unowned self] in
         
-        let selectHandler : (IssueDetailsOpeningConfiguration) -> Void = { ***REMOVED***unowned self***REMOVED*** (conf) in
+        let selectHandler : (IssueDetailsOpeningConfiguration) -> Void = { [unowned self] (conf) in
             self.handleSelection(with:conf)
         }
         
@@ -52,7 +52,7 @@ class IssueListView : UIViewController {
         return blocks
     }()
     
-    fileprivate lazy var tableView : UITableView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var tableView : UITableView = { [unowned self] in
         let tableView = UITableView(frame:CGRect.zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
@@ -67,14 +67,14 @@ class IssueListView : UIViewController {
         return tableView
     }()
     
-    fileprivate lazy var navigationBarView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var navigationBarView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIDefines.Colors.navigationBarTintColor
         view.addSubview(self.navigationBarContentView)
         view.addSubview(self.navigationBarLargeTitleView)
         view.bringSubview(toFront: self.navigationBarContentView)
-        view.addConstraints(***REMOVED***
+        view.addConstraints([
             self.navigationBarContentView.topAnchor.constraint(equalTo:view.topAnchor),
             self.navigationBarContentView.leadingAnchor.constraint(equalTo:view.leadingAnchor),
             self.navigationBarContentView.trailingAnchor.constraint(equalTo:view.trailingAnchor),
@@ -85,7 +85,7 @@ class IssueListView : UIViewController {
             self.navigationBarLargeTitleView.trailingAnchor.constraint(equalTo:view.trailingAnchor),
             self.navigationBarLargeTitleView.heightAnchor.constraint(equalToConstant:UIDefines.Sizes.navigationBarLargeTitleViewHeight),
             
-***REMOVED***)
+        ])
         
         let bottomBorderLayer = CALayer()
         bottomBorderLayer.backgroundColor = UIDefines.Colors.lightGray.cgColor
@@ -95,20 +95,20 @@ class IssueListView : UIViewController {
         return view
     }()
     
-    fileprivate lazy var navigationBarLargeTitleView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var navigationBarLargeTitleView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIDefines.Colors.navigationBarTintColor
         view.addSubview(self.navigationBarLargeTitleLabel)
-        view.addConstraints(***REMOVED***
+        view.addConstraints([
             self.navigationBarLargeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
             self.navigationBarLargeTitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-UIDefines.Spacings.singleUnit),
             self.navigationBarLargeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit)
-***REMOVED***)
+        ])
         return view
     }()
     
-    fileprivate lazy var navigationBarContentView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var navigationBarContentView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIDefines.Colors.navigationBarTintColor
@@ -183,7 +183,7 @@ class IssueListView : UIViewController {
             topAnchor = self.view.topAnchor
         }
         
-        var constraints : ***REMOVED***NSLayoutConstraint***REMOVED*** = ***REMOVED***
+        var constraints : [NSLayoutConstraint] = [
             loadingIndicator.topAnchor.constraint(equalTo: topAnchor),
             loadingIndicator.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             loadingIndicator.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor),
@@ -193,15 +193,15 @@ class IssueListView : UIViewController {
             tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomLayoutGuide.topAnchor),
             tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-***REMOVED***
+        ]
         
         if osVersion == .ten {
-            constraints.append(contentsOf: ***REMOVED***
+            constraints.append(contentsOf: [
                 navigationBarView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
                 navigationBarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
                 navigationBarView.heightAnchor.constraint(equalToConstant: UIDefines.Sizes.navigationBarViewHeight),
                 navigationBarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-    ***REMOVED***)
+            ])
         }
         
         NSLayoutConstraint.activate(constraints)
@@ -265,7 +265,7 @@ extension IssueListView : IssueListViewProtocol {
         print(message)
     }
     
-    func show(issues:***REMOVED***IssueViewModel***REMOVED***) {
+    func show(issues:[IssueViewModel]) {
         self.tableViewDataSource.update(with: issues)
         self.tableView.reloadData()
         
@@ -273,7 +273,7 @@ extension IssueListView : IssueListViewProtocol {
             if let issueNumberToShow = self.issueNumberToOpenOnStartup {
                 self.showIssue(number: issueNumberToShow)
                 UIApplication.shared.applicationIconBadgeNumber = 0
-***REMOVED***
+            }
         }
     }
 }

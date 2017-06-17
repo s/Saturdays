@@ -26,7 +26,7 @@ class NotificationService: UNNotificationServiceExtension {
             return
         }
         
-        guard let attachmentUrlString = request.content.userInfo***REMOVED***attachmentUrlKey***REMOVED*** as? String else {
+        guard let attachmentUrlString = request.content.userInfo[attachmentUrlKey] as? String else {
             contentHandler(bestAttemptContent)
             return
         }
@@ -37,14 +37,14 @@ class NotificationService: UNNotificationServiceExtension {
         }
         
         let session = URLSession(configuration: URLSessionConfiguration.default)
-        let task = session.downloadTask(with: requestUrl) { ***REMOVED***weak self***REMOVED*** (temporaryFileLocationUrl, _, _) in
+        let task = session.downloadTask(with: requestUrl) { [weak self] (temporaryFileLocationUrl, _, _) in
             session.finishTasksAndInvalidate()
             
             guard let location = temporaryFileLocationUrl,
                 let attachmentIdentifier = self?.attachmentIdentifier else {
                 contentHandler(bestAttemptContent)
                 return
-***REMOVED***
+            }
             
             let temporaryDirectory = NSTemporaryDirectory()
             let fileUrlStringOnDisk = "file://\(temporaryDirectory)\(requestUrl.lastPathComponent).jpg"
@@ -52,20 +52,20 @@ class NotificationService: UNNotificationServiceExtension {
             guard let fileURL = URL(string: fileUrlStringOnDisk) else {
                 contentHandler(bestAttemptContent)
                 return
-***REMOVED***
+            }
             
             do {
                 if FileManager.default.fileExists(atPath: fileURL.relativePath) {
                     try FileManager.default.removeItem(at: fileURL)
-***REMOVED***
+                }
                 try FileManager.default.moveItem(at: location, to: fileURL)
                 
                 let attachment = try UNNotificationAttachment(identifier: attachmentIdentifier, url: fileURL)
-                bestAttemptContent.attachments = ***REMOVED***attachment***REMOVED***
+                bestAttemptContent.attachments = [attachment]
                 
-***REMOVED*** catch let error {
+            } catch let error {
                 print("Error: \(error)")
-***REMOVED***
+            }
             
             contentHandler(bestAttemptContent)
         }

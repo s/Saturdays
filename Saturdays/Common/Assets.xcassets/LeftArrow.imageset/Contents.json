@@ -1,10 +1,10 @@
 {
-  "images" : ***REMOVED***
+  "images" : [
     {
       "idiom" : "universal",
       "filename" : "LeftArrow.pdf"
     }
-  ***REMOVED***,
+  ],
   "info" : {
     "version" : 1,
     "author" : "xcode"

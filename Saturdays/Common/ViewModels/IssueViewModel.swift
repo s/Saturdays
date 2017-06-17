@@ -17,9 +17,9 @@ class IssueViewModel : NSObject, ViewModelProtocol {
     let photoURL : URL?
     let photoSize: CGSize
     let number : Int
-    let tracks : ***REMOVED***TrackViewModel***REMOVED***
-    let venues : ***REMOVED***VenueViewModel***REMOVED***
-    let posts : ***REMOVED***PostViewModel***REMOVED***
+    let tracks : [TrackViewModel]
+    let venues : [VenueViewModel]
+    let posts : [PostViewModel]
     
     // MARK : Lifecycle
     init(with issue:Issue) {
@@ -28,7 +28,7 @@ class IssueViewModel : NSObject, ViewModelProtocol {
         self.detailDescription = issue.detailDescription
         self.photoSize = issue.coverPhoto.size
         self.number = issue.number
-        if let regularPhotoURL = issue.coverPhoto.urls***REMOVED***CoverPhotoSize.regular***REMOVED*** {
+        if let regularPhotoURL = issue.coverPhoto.urls[CoverPhotoSize.regular] {
             self.photoURL = regularPhotoURL
         } else {
             self.photoURL = nil

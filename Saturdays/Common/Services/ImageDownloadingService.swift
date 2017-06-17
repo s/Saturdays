@@ -26,7 +26,7 @@ class ImageDownloadingService {
             imageCache: AutoPurgingImageCache()
         )
     }()
-    fileprivate var receipts : ***REMOVED***URL:RequestReceipt***REMOVED*** = ***REMOVED***:***REMOVED***
+    fileprivate var receipts : [URL:RequestReceipt] = [:]
     
     //MARK: Public
     func download(cellImage url: URL,
@@ -39,35 +39,35 @@ class ImageDownloadingService {
             if let error = response.error {
                 completionHandler(ImageDownloadServiceResult.failure(error), url)
                 return
-***REMOVED***
+            }
             
             if let image = response.result.value {
-                self.receipts***REMOVED***url***REMOVED*** = nil
+                self.receipts[url] = nil
                 completionHandler(ImageDownloadServiceResult.success(image), url)
                 return
-***REMOVED*** else {
+            } else {
                 //TODO: return an error
                 return
-***REMOVED***
+            }
         }
         if let receipt = receipt {
-            self.receipts***REMOVED***url***REMOVED*** = receipt
+            self.receipts[url] = receipt
         }
     }
     
     func cancel(downloading url:URL) {
-        if let receipt = self.receipts***REMOVED***url***REMOVED*** {
+        if let receipt = self.receipts[url] {
             imageDownloader.cancelRequest(with: receipt)
         }
     }
     
-    func prefetch(_ imageUrls:***REMOVED***URL***REMOVED***) {
+    func prefetch(_ imageUrls:[URL]) {
         for url in imageUrls {
             self.download(cellImage: url, downloadProgressHandler: nil, completionHandler: nil)
         }
     }
     
-    func cancelPrefetcing(_ imageUrls:***REMOVED***URL***REMOVED***) {
+    func cancelPrefetcing(_ imageUrls:[URL]) {
         for url in imageUrls {
             self.cancel(downloading: url)
         }

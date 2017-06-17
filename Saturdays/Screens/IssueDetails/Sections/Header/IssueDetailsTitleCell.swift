@@ -11,7 +11,7 @@ import UIKit
 class IssueDetailsTitleCell: UITableViewCell {
     
     //MARK: Properties
-    fileprivate lazy var issueTitleLabel : UILabel = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var issueTitleLabel : UILabel = { [unowned self] in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIDefines.Fonts.navigationBarLargeTitleViewTitle
@@ -20,7 +20,7 @@ class IssueDetailsTitleCell: UITableViewCell {
         return label
     }()
     
-    fileprivate lazy var issueDescriptionLabel : UILabel = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var issueDescriptionLabel : UILabel = { [unowned self] in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIDefines.Fonts.detail
@@ -28,11 +28,11 @@ class IssueDetailsTitleCell: UITableViewCell {
         return label
     }()
     
-    fileprivate lazy var headerStackView : UIStackView = { ***REMOVED***unowned self***REMOVED*** in
-        let stackView = UIStackView(arrangedSubviews: ***REMOVED***
+    fileprivate lazy var headerStackView : UIStackView = { [unowned self] in
+        let stackView = UIStackView(arrangedSubviews: [
             self.issueTitleLabel,
             self.issueDescriptionLabel
-***REMOVED***)
+        ])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = UILayoutConstraintAxis.vertical
         stackView.spacing = UIDefines.Spacings.singleUnit
@@ -61,12 +61,12 @@ class IssueDetailsTitleCell: UITableViewCell {
     //MARK: Private
     fileprivate func setupLayout() {
         self.contentView.addSubview(self.headerStackView)
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.headerStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
             self.headerStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.headerStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
                                                            constant:-(UIDefines.Spacings.doubleUnit+UIDefines.Sizes.issueDetailsDismissIconDimension))
-***REMOVED***)
+        ])
     }
 }

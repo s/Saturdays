@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var notificationService : NotificationService?
     
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: ***REMOVED***UIApplicationLaunchOptionsKey: Any***REMOVED***?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = window else { return false }
@@ -70,12 +70,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         switch actionIdentifier {
         case .openIssue, .tap:
             guard
-                let issueNumberString = userInfo***REMOVED***issueNumberKey***REMOVED*** as? String,
+                let issueNumberString = userInfo[issueNumberKey] as? String,
                 let issueNumber = Int(issueNumberString)
             else {
                 completionHandler()
                 return
-***REMOVED***
+            }
             
             self.setupWindowUI()
             let imageDownloadingService = ImageDownloadingService()

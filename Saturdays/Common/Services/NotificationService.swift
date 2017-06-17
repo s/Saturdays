@@ -24,16 +24,16 @@ class NotificationService : NSObject {
     
     func registerForNotifications() {
         let notificationCenter = UNUserNotificationCenter.current()
-        let authOptions: UNAuthorizationOptions = ***REMOVED***.alert, .badge, .sound***REMOVED***
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         
-        let openIssueAction = UNNotificationAction(identifier: NotificationAction.openIssue.rawValue, title: UIDefines.Copies.openIssue, options: ***REMOVED***UNNotificationActionOptions.foreground***REMOVED***)
-        let dismissAction   = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: UIDefines.Copies.dismiss, options: ***REMOVED******REMOVED***)
+        let openIssueAction = UNNotificationAction(identifier: NotificationAction.openIssue.rawValue, title: UIDefines.Copies.openIssue, options: [UNNotificationActionOptions.foreground])
+        let dismissAction   = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: UIDefines.Copies.dismiss, options: [])
         let generalCategory = UNNotificationCategory(identifier: newIssueIdentifier,
-                                                     actions: ***REMOVED***openIssueAction, dismissAction***REMOVED***,
-                                                     intentIdentifiers: ***REMOVED******REMOVED***,
+                                                     actions: [openIssueAction, dismissAction],
+                                                     intentIdentifiers: [],
                                                      options: .customDismissAction)
         
-        notificationCenter.setNotificationCategories(***REMOVED***generalCategory***REMOVED***)
+        notificationCenter.setNotificationCategories([generalCategory])
         notificationCenter.requestAuthorization(options: authOptions, completionHandler: {_, _ in })
         
         NotificationCenter.default.addObserver(self,
@@ -64,9 +64,9 @@ class NotificationService : NSObject {
         FIRMessaging.messaging().connect { (error) in
             if error != nil {
                 print("Unable to connect with FCM. \(String(describing: error?.localizedDescription))")
-***REMOVED*** else {
+            } else {
                 print("Connected to FCM.")
-***REMOVED***
+            }
         }
     }
 }

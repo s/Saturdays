@@ -24,9 +24,9 @@ class IssueDetailsView: UIViewController {
     fileprivate let presenter : IssueDetailsPresenter
     fileprivate let imageDownloadingService : ImageDownloadingService
     fileprivate var dataSource : IssueDetailsDataSource?
-    fileprivate var childDataSources : ***REMOVED***IssueDetailsDataSourceProtocol***REMOVED*** {
+    fileprivate var childDataSources : [IssueDetailsDataSourceProtocol] {
         get {
-            return ***REMOVED***
+            return [
                 IssueDetailsTitleDataSource(with:self.item),
                 IssueDetailsImageDataSource(with:self.issueImage, imageSize:self.item.photoSize),
                 IssueDetailsTracksDataSource(with: self.item.tracks,
@@ -35,12 +35,12 @@ class IssueDetailsView: UIViewController {
                                              imageDownloadingService: self.imageDownloadingService),
                 IssueDetailsPostsDataSource(with: self.item.posts,
                                             imageDownloadingService: self.imageDownloadingService)
-    ***REMOVED***
+            ]
         }
     }
     
     //MARK: Subviews
-    fileprivate lazy var imageView : UIImageView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var imageView : UIImageView = { [unowned self] in
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = self.issueImage
@@ -50,14 +50,14 @@ class IssueDetailsView: UIViewController {
         return imageView
     }()
     
-    fileprivate lazy var dismissIcon : UIImageView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var dismissIcon : UIImageView = { [unowned self] in
         let imageView = UIImageView(image: Images.dismissIcon)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
         return imageView
     }()
     
-    fileprivate lazy var tableView : UITableView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var tableView : UITableView = { [unowned self] in
         let tableView = UITableView(frame: CGRect.zero, style: UITableViewStyle.grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
@@ -123,7 +123,7 @@ class IssueDetailsView: UIViewController {
     }
     
     fileprivate func setupTableViewDataSources() {
-        let selectionHandler : (URL) -> () = { ***REMOVED***weak self***REMOVED*** url in
+        let selectionHandler : (URL) -> () = { [weak self] url in
             self?.handleDeepLink(url)
         }
         self.dataSource = IssueDetailsDataSource(with:self.childDataSources,
@@ -143,19 +143,19 @@ class IssueDetailsView: UIViewController {
     fileprivate func downloadIssueImageIfNeeded() {
         guard nil == self.issueImage, let url = item.photoURL else { return }
         
-        self.imageView.af_setImage(withURL: url) { ***REMOVED***weak self***REMOVED*** response in
+        self.imageView.af_setImage(withURL: url) { [weak self] response in
             guard let strongSelf = self else { return }
             switch response.result {
             case .success(let image):
                 strongSelf.issueImage = image
                 DispatchQueue.main.async {
                     strongSelf.setupTableViewDataSources()
-                    strongSelf.tableView.reloadSections(***REMOVED***strongSelf.getImageSectionNumber()***REMOVED***,
+                    strongSelf.tableView.reloadSections([strongSelf.getImageSectionNumber()],
                                                         with: .fade)
-***REMOVED***
+                }
             case .failure(let error):
                 print(error)
-***REMOVED***
+            }
         }
     }
     
@@ -170,7 +170,7 @@ class IssueDetailsView: UIViewController {
     }
     
     fileprivate func setupLayoutConstraints() {
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.dismissIcon.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:UIDefines.Spacings.doubleUnit),
             self.dismissIcon.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit),
             self.dismissIcon.widthAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsDismissIconDimension),
@@ -180,7 +180,7 @@ class IssueDetailsView: UIViewController {
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
-***REMOVED***)
+        ])
     }
     
     @objc fileprivate func dismissIssue() {
@@ -191,7 +191,7 @@ class IssueDetailsView: UIViewController {
         for (index, childDataSource) in self.childDataSources.enumerated() {
             if childDataSource is IssueDetailsImageDataSource {
                 return index
-***REMOVED***
+            }
         }
         fatalError("Image section is not used.")
     }
@@ -199,7 +199,7 @@ class IssueDetailsView: UIViewController {
     fileprivate func handleDeepLink(_ url:URL) {
         if UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url,
-                                      options:***REMOVED***:***REMOVED***,
+                                      options:[:],
                                       completionHandler: nil)
         }
     }
