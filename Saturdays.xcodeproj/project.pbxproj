@@ -24,6 +24,7 @@
 		B212B4591EE2CF71001DD091 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */; };
 		B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BC8461EE9FB3700106042 /* CoverPhoto.swift */; };
 		B224B75F1EF57D01004575E5 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224B75E1EF57D01004575E5 /* NotificationAction.swift */; };
+		B224B79E1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224B79D1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift */; };
 		B2356F471EF4A08400AF59D0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2356F461EF4A08400AF59D0 /* NotificationService.swift */; };
 		B2356F4B1EF4A08400AF59D0 /* SaturdaysNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B2356F561EF4A28400AF59D0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2356F551EF4A28400AF59D0 /* UserNotifications.framework */; };
@@ -131,6 +132,7 @@
 		B212B4581EE2CF71001DD091 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		B21BC8461EE9FB3700106042 /* CoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhoto.swift; sourceTree = "<group>"; };
 		B224B75E1EF57D01004575E5 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationAction.swift; path = Helpers/NotificationAction.swift; sourceTree = "<group>"; };
+		B224B79D1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsOpeningConfiguration.swift; sourceTree = "<group>"; };
 		B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaturdaysNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2356F461EF4A08400AF59D0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B2356F481EF4A08400AF59D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				B2645EB01EE4BD9F0074FCD0 /* IssueDetailsView.swift */,
 				B2645EB21EE4C0410074FCD0 /* IssueDetailsPresenter.swift */,
 				B2DCFEDC1EF0AA1A008B64C4 /* IssueDetailsDataSource.swift */,
+				B224B79D1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
 				B20A8F491EEF3133003E4DA7 /* CGRectExtensions.swift in Sources */,
+				B224B79E1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift in Sources */,
 				B2645EB11EE4BD9F0074FCD0 /* IssueDetailsView.swift in Sources */,
 				B2DCFEE51EF0BF12008B64C4 /* IssueDetailsTitleDataSource.swift in Sources */,
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
