@@ -10,22 +10,16 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-struct IssueListViewDataSourceSelection {
-    let indexPath:IndexPath
-    let item:IssueViewModel
-    let image:UIImage?
-}
-
 class IssueListViewDataSource : NSObject {
     fileprivate var items : ***REMOVED***IssueViewModel***REMOVED*** = ***REMOVED******REMOVED***
     fileprivate let tableView : UITableView
-    fileprivate let selectHandler : (IssueListViewDataSourceSelection) -> Void
+    fileprivate let selectHandler : (IssueDetailsOpeningConfiguration) -> Void
     fileprivate let cellIdentifier = String(describing: IssueListCell.self)
     fileprivate let imageDownloadingService : ImageDownloadingService
     
     init(with tableView:UITableView,
          imageDownloadingService:ImageDownloadingService,
-         selectHandler:@escaping (IssueListViewDataSourceSelection) -> Void) {
+         selectHandler:@escaping (IssueDetailsOpeningConfiguration) -> Void) {
         self.tableView = tableView
         self.selectHandler = selectHandler
         self.imageDownloadingService = imageDownloadingService
@@ -36,13 +30,19 @@ class IssueListViewDataSource : NSObject {
         self.items = items
     }
     
-    func selectionConfiguration(for indexPath:IndexPath) -> IssueListViewDataSourceSelection? {
+    func selectionConfiguration(for indexPath:IndexPath) -> IssueDetailsOpeningConfiguration? {
         let item = self.items***REMOVED***indexPath.section***REMOVED***
         guard let cell = self.tableView(self.tableView, cellForRowAt: indexPath) as? IssueListCell else { return nil }
         
-        return IssueListViewDataSourceSelection(indexPath: indexPath,
+        return IssueDetailsOpeningConfiguration(indexPath: indexPath,
                                                 item: item,
                                                 image: cell.issueImageView.image)
+    }
+    
+    func getIssue(number issueNumber:Int) -> IssueViewModel? {
+        return self.items.filter { (viewModel) -> Bool in
+            return viewModel.number == issueNumber
+        }.first
     }
     
     // MARK : Private

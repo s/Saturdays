@@ -24,7 +24,7 @@ class RoutingService {
         return self.createIssueListModule()
     }
     
-    func createIssueDetailModule(with conf:IssueListViewDataSourceSelection) -> UIViewController {
+    func createIssueDetailModule(with conf:IssueDetailsOpeningConfiguration) -> UIViewController {
         let presenter = IssueDetailsPresenter(with:self)
         let view = IssueDetailsView(with: presenter,
                                     item:conf.item,
@@ -34,12 +34,18 @@ class RoutingService {
         return view
     }
     
+    func openIssueForRemoteNotification(number issueNumber:Int) -> UIViewController {
+        return self.createIssueListModule(needsToOpenIssueNumber: issueNumber)
+    }
+    
     //MARK: Private
-    fileprivate func createIssueListModule() -> UIViewController {
+    fileprivate func createIssueListModule(needsToOpenIssueNumber issueNumber:Int?=nil) -> UIViewController {
         
         let issueService = IssueService()
         let presenter = IssueListPresenter(issueService:issueService, routingService:self)
-        let issueListView =  IssueListView(presenter: presenter, imageDownloadingService: imageDownloadingService)
+        let issueListView =  IssueListView(presenter: presenter,
+                                           imageDownloadingService: imageDownloadingService,
+                                           needsToOpenIssueNumber:issueNumber)
         
         presenter.view = issueListView
         
