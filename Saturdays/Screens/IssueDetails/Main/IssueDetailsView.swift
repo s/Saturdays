@@ -143,14 +143,18 @@ class IssueDetailsView: UIViewController {
     fileprivate func downloadIssueImageIfNeeded() {
         guard nil == self.issueImage, let url = item.photoURL else { return }
         
-        self.imageView.af_setImage(withURL: url) { ***REMOVED***unowned self***REMOVED*** response in
-            guard let data = response.data else { return }
-            
-            self.issueImage = UIImage(data: data)
-            DispatchQueue.main.async {
-                self.setupTableViewDataSources()
-                self.tableView.reloadSections(***REMOVED***self.getImageSectionNumber()***REMOVED***,
-                                              with: .fade)
+        self.imageView.af_setImage(withURL: url) { ***REMOVED***weak self***REMOVED*** response in
+            guard let strongSelf = self else { return }
+            switch response.result {
+            case .success(let image):
+                strongSelf.issueImage = image
+                DispatchQueue.main.async {
+                    strongSelf.setupTableViewDataSources()
+                    strongSelf.tableView.reloadSections(***REMOVED***strongSelf.getImageSectionNumber()***REMOVED***,
+                                                        with: .fade)
+***REMOVED***
+            case .failure(let error):
+                print(error)
 ***REMOVED***
         }
     }
