@@ -41,7 +41,6 @@ class NotificationService : NSObject {
                                                name: .firInstanceIDTokenRefresh,
                                                object: nil)
         FIRApp.configure()
-        FIRMessaging.messaging().remoteMessageDelegate = self
     }
     
     @objc fileprivate func tokenRefreshNotification(_ notification: Notification) {
