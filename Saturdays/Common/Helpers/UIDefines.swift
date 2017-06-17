@@ -51,6 +51,8 @@ struct UIDefines {
         static let tracksTitle = NSLocalizedString("Tracks", comment: "")
         static let venuesTitle = NSLocalizedString("Venues", comment: "")
         static let postsTitle  = NSLocalizedString("Posts", comment: "")
+        static let openIssue   = NSLocalizedString("Open Issue", comment: "")
+        static let dismiss     = NSLocalizedString("Dismiss", comment: "")
     }
     
     struct Sizes {
