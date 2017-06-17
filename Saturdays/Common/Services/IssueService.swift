@@ -12,7 +12,7 @@ import Alamofire
 import UnboxedAlamofire
 
 internal enum Result<T> {
-    case success(***REMOVED***T***REMOVED***)
+    case success([T])
     case failure(Error)
 }
 
@@ -59,15 +59,15 @@ class IssueService: NSObject{
                 let readingError = JSONDataRetrivalError.jsonDataReadingError(message: "Can't serialize json data.")
                 completion(Result.failure(readingError))
                 return
-***REMOVED***
+            }
             
-            guard let allItems = jsonDictionary***REMOVED***"issues"***REMOVED*** as? ***REMOVED***UnboxableDictionary***REMOVED*** else {
+            guard let allItems = jsonDictionary["issues"] as? [UnboxableDictionary] else {
                 let mappingError = JSONDataRetrivalError.mappingError(message: "Can't map")
                 completion(Result.failure(mappingError))
                 return
-***REMOVED***
+            }
             
-            let unboxedIssueItems: ***REMOVED***Issue***REMOVED*** = try unbox(dictionaries: allItems)
+            let unboxedIssueItems: [Issue] = try unbox(dictionaries: allItems)
             completion(Result.success(unboxedIssueItems))
             
             print(unboxedIssueItems)
@@ -93,23 +93,23 @@ class IssueService: NSObject{
             return
         }
         
-        guard let apiURL = credentials***REMOVED***"api_url"***REMOVED*** as? String, let token = credentials***REMOVED***"authentication_token"***REMOVED*** as? String else {
+        guard let apiURL = credentials["api_url"] as? String, let token = credentials["authentication_token"] as? String else {
             let readingError = JSONDataRetrivalError.jsonDataReadingError(message: "Can't find credentials in the APICredentials.plist file.")
             completion(Result.failure(readingError))
             return
         }
         
-        let authorizationHeaders = ***REMOVED***"Authorization": "Token \(token)",
+        let authorizationHeaders = ["Authorization": "Token \(token)",
                                     "Content-Type": "application/json",
-                                    "Accept": "application/json"***REMOVED***
+                                    "Accept": "application/json"]
         
-        Alamofire.request(apiURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: authorizationHeaders).responseArray(keyPath: "issues") { (response: DataResponse<***REMOVED***Issue***REMOVED***>) in
+        Alamofire.request(apiURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: authorizationHeaders).responseArray(keyPath: "issues") { (response: DataResponse<[Issue]>) in
             switch (response.result) {
             case .success(let issues):
                 completion(Result.success(issues))
             case .failure(let error):
                 completion(Result.failure(error))
-***REMOVED***
+            }
         }
     }
 }

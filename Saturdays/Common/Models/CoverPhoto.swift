@@ -29,7 +29,7 @@ enum CoverPhotoSize : String {
 }
 
 struct CoverPhoto{
-    let urls:***REMOVED***CoverPhotoSize:URL***REMOVED***
+    let urls:[CoverPhotoSize:URL]
     let size: CGSize
 }
 
@@ -39,15 +39,15 @@ extension CoverPhoto: Unboxable{
         let height: Double = try unboxer.unbox(key: "height")
         self.size = CGSize(width: width, height: height)
         
-        var allUrls : ***REMOVED***CoverPhotoSize:URL***REMOVED*** = ***REMOVED***:***REMOVED***
-        if let urls : ***REMOVED***String:String***REMOVED*** = try? unboxer.unbox(keyPath: "urls") {
+        var allUrls : [CoverPhotoSize:URL] = [:]
+        if let urls : [String:String] = try? unboxer.unbox(keyPath: "urls") {
             for (key, urlString) in urls {
                 if let size = CoverPhotoSize(rawValue: key),
                     let url = URL(string:urlString)
                 {
-                    allUrls***REMOVED***size***REMOVED*** = url
-***REMOVED***
-***REMOVED***
+                    allUrls[size] = url
+                }
+            }
         }
         self.urls = allUrls
     }

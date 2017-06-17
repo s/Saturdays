@@ -11,23 +11,23 @@ import UIKit
 class IssueDetailsPostsDataSource : NSObject {
     
     //MARK: Properties
-    fileprivate let posts : ***REMOVED***PostViewModel***REMOVED***
+    fileprivate let posts : [PostViewModel]
     fileprivate let imageDownloadingService : ImageDownloadingService
-    fileprivate lazy var headerView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var headerView : UIView = { [unowned self] in
         return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.postsTitle)
     }()
     
     //MARK: Lifecycle
-    init(with posts:***REMOVED***PostViewModel***REMOVED***, imageDownloadingService:ImageDownloadingService) {
+    init(with posts:[PostViewModel], imageDownloadingService:ImageDownloadingService) {
         self.imageDownloadingService = imageDownloadingService
         self.posts = posts
         super.init()
     }
     
     //MARK: Private
-    fileprivate func imageUrls(for indexPaths:***REMOVED***IndexPath***REMOVED***) -> ***REMOVED***URL***REMOVED*** {
+    fileprivate func imageUrls(for indexPaths:[IndexPath]) -> [URL] {
         return indexPaths.map({ (indexPath) -> URL in
-            return self.posts***REMOVED***indexPath.row***REMOVED***.photoUrl
+            return self.posts[indexPath.row].photoUrl
         })
     }
 }
@@ -43,7 +43,7 @@ extension IssueDetailsPostsDataSource : IssueDetailsDataSourceProtocol {
     }
     
     func dataSource(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        guard let imageSize = self.posts***REMOVED***indexPath.row***REMOVED***.photoSize else {
+        guard let imageSize = self.posts[indexPath.row].photoSize else {
             return CGFloat.leastNormalMagnitude
         }
         return imageSize.appropriateSize(for: tableView.frame.size).height
@@ -51,7 +51,7 @@ extension IssueDetailsPostsDataSource : IssueDetailsDataSourceProtocol {
     
     func dataSource(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing:cellClass.self), for: indexPath) as! IssueDetailsPostCell
-        let item = self.posts***REMOVED***indexPath.row***REMOVED***
+        let item = self.posts[indexPath.row]
         cell.postImageView.af_setImage(withURL: item.photoUrl)
         cell.configure(with: item)
         return cell
@@ -65,16 +65,16 @@ extension IssueDetailsPostsDataSource : IssueDetailsDataSourceProtocol {
         return self.headerView
     }
     
-    func dataSource(_ tableView: UITableView, prefetchRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
+    func dataSource(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         self.imageDownloadingService.prefetch(self.imageUrls(for: indexPaths))
     }
     
-    func dataSource(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: ***REMOVED***IndexPath***REMOVED***) {
+    func dataSource(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
         self.imageDownloadingService.cancelPrefetcing(self.imageUrls(for: indexPaths))
     }
     
     func deeplinkUrl(for indexPath: IndexPath) -> URL {
-        let item = self.posts***REMOVED***indexPath.row***REMOVED***
+        let item = self.posts[indexPath.row]
         return item.deeplinkURL
     }
 }

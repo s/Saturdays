@@ -7,7 +7,7 @@ target 'Saturdays' do
 
   # Pods for Saturdays
   pod 'Unbox', '~> 2.5.0'
-  pod 'Reveal-SDK', :configurations => ***REMOVED***'Debug'***REMOVED*** 
+  pod 'Reveal-SDK', :configurations => ['Debug'] 
   pod 'AlamofireImage', '~> 3.1'
   pod 'UnboxedAlamofire'
   pod 'Firebase/Core'

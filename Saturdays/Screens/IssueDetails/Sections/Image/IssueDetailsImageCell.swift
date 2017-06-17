@@ -12,7 +12,7 @@ class IssueDetailsImageCell: UITableViewCell {
     
     //MARK: Properties
     
-    fileprivate lazy var issueImageView : UIImageView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var issueImageView : UIImageView = { [unowned self] in
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIViewContentMode.scaleAspectFill
@@ -38,12 +38,12 @@ class IssueDetailsImageCell: UITableViewCell {
     //MARK: Private
     fileprivate func setupLayout() {
         self.contentView.addSubview(self.issueImageView)
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.issueImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             self.issueImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             self.issueImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.issueImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor)
-***REMOVED***)
+        ])
     }
 }
 

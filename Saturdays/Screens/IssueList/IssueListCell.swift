@@ -22,7 +22,7 @@ class IssueListCell: UITableViewCell {
         return imageView
     }()
     
-    fileprivate lazy var issueTitleView : UIView = { ***REMOVED***unowned self***REMOVED*** in
+    fileprivate lazy var issueTitleView : UIView = { [unowned self] in
         let titleView = UIView(frame: CGRect.zero)
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.backgroundColor = UIColor.black
@@ -30,12 +30,12 @@ class IssueListCell: UITableViewCell {
         titleView.layer.masksToBounds = true
         
         titleView.addSubview(self.issueTitleLabel)
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.issueTitleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant:UIDefines.Spacings.singleUnit),
             self.issueTitleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: UIDefines.Spacings.singleUnit),
             self.issueTitleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -UIDefines.Spacings.singleUnit),
             self.issueTitleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -UIDefines.Spacings.singleUnit)
-***REMOVED***)
+        ])
         
         titleView.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
         return titleView
@@ -101,7 +101,7 @@ class IssueListCell: UITableViewCell {
         let trailingConstraintOfTitleView = self.issueTitleView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
                                                                                           constant: -spacing)
         trailingConstraintOfTitleView.priority = UILayoutPriorityDefaultLow - 1
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             self.issueImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
             self.issueImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             self.issueImageView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
@@ -112,7 +112,7 @@ class IssueListCell: UITableViewCell {
             self.issueTitleView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor,
                                                         constant: -spacing),
             trailingConstraintOfTitleView
-***REMOVED***)
+        ])
     }
     
     // MARK : Public Interface

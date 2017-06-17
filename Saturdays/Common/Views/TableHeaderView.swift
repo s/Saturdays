@@ -30,7 +30,7 @@ class TableHeaderView: UIView {
         
         self.addSubview(iconView)
         
-        NSLayoutConstraint.activate(***REMOVED***
+        NSLayoutConstraint.activate([
             NSLayoutConstraint(item: iconView,
                                attribute: .width,
                                relatedBy: .equal,
@@ -59,6 +59,6 @@ class TableHeaderView: UIView {
                                attribute: .centerX,
                                multiplier: 1,
                                constant: 0)
-    ***REMOVED***)
+            ])
     }
 }
