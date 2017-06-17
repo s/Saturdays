@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A8F0197FB7C5A43409AAFD7 /* Pods_Saturdays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238E30299D6622745C3493F4 /* Pods_Saturdays.framework */; };
 		B20A8F491EEF3133003E4DA7 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F481EEF3133003E4DA7 /* CGRectExtensions.swift */; };
-		B20A8F4B1EEF402C003E4DA7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F4A1EEF402C003E4DA7 /* Images.swift */; };
+		B20A8F4B1EEF402C003E4DA7 /* ImageDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F4A1EEF402C003E4DA7 /* ImageDefines.swift */; };
 		B20A8F511EEF4B57003E4DA7 /* TrackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */; };
 		B20A8F531EEF4B5F003E4DA7 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */; };
 		B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */; };
@@ -115,7 +115,7 @@
 		238E30299D6622745C3493F4 /* Pods_Saturdays.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Saturdays.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72490E8F48CB8DD85CFFDE /* Pods-Saturdays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Saturdays.release.xcconfig"; path = "Pods/Target Support Files/Pods-Saturdays/Pods-Saturdays.release.xcconfig"; sourceTree = "<group>"; };
 		B20A8F481EEF3133003E4DA7 /* CGRectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
-		B20A8F4A1EEF402C003E4DA7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Images.swift; path = Helpers/Images.swift; sourceTree = "<group>"; };
+		B20A8F4A1EEF402C003E4DA7 /* ImageDefines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDefines.swift; path = Helpers/ImageDefines.swift; sourceTree = "<group>"; };
 		B20A8F501EEF4B57003E4DA7 /* TrackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackViewModel.swift; sourceTree = "<group>"; };
 		B20A8F521EEF4B5F003E4DA7 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		B20A8F541EEF4B73003E4DA7 /* VenueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueViewModel.swift; sourceTree = "<group>"; };
@@ -250,6 +250,13 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		B224B7661EF598F2004575E5 /* Defines */ = {
+			isa = PBXGroup;
+			children = (
+				B20A8F4A1EEF402C003E4DA7 /* ImageDefines.swift */,
+			);
+			name = Defines;
+			sourceTree = "<group>";
 		B2356F451EF4A08400AF59D0 /* SaturdaysNotificationService */ = {
 			isa = PBXGroup;
 			children = (
@@ -757,7 +764,7 @@
 				B264932F1E81F51D00878824 /* UIButtonExtensions.swift in Sources */,
 				B2645EB31EE4C0410074FCD0 /* IssueDetailsPresenter.swift in Sources */,
 				B2CD11F11EF2DA7F00518C0E /* IssueDetailsPostsDataSource.swift in Sources */,
-				B20A8F4B1EEF402C003E4DA7 /* Images.swift in Sources */,
+				B20A8F4B1EEF402C003E4DA7 /* ImageDefines.swift in Sources */,
 				B248267F1E4F9DC20070628D /* NSObjectExtensions.swift in Sources */,
 				B20A8F551EEF4B73003E4DA7 /* VenueViewModel.swift in Sources */,
 				B212B4531EE21329001DD091 /* UIHelper.swift in Sources */,
