@@ -25,6 +25,7 @@
 		B21BC8471EE9FB3700106042 /* CoverPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21BC8461EE9FB3700106042 /* CoverPhoto.swift */; };
 		B224B75F1EF57D01004575E5 /* NotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224B75E1EF57D01004575E5 /* NotificationAction.swift */; };
 		B224B79E1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224B79D1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift */; };
+		B232CEAB1EF5FD080097928B /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = B232CEAA1EF5FD080097928B /* demo.json */; };
 		B2356F471EF4A08400AF59D0 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2356F461EF4A08400AF59D0 /* NotificationService.swift */; };
 		B2356F4B1EF4A08400AF59D0 /* SaturdaysNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B2356F561EF4A28400AF59D0 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2356F551EF4A28400AF59D0 /* UserNotifications.framework */; };
@@ -36,7 +37,6 @@
 		B24826491E4F8DA50070628D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826481E4F8DA50070628D /* AppDelegate.swift */; };
 		B24826501E4F8DA50070628D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B248264F1E4F8DA50070628D /* Assets.xcassets */; };
 		B24826531E4F8DA50070628D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24826511E4F8DA50070628D /* LaunchScreen.storyboard */; };
-		B24826621E4F8F760070628D /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = B24826611E4F8F760070628D /* demo.json */; };
 		B24826681E4F90E90070628D /* IssueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24826671E4F90E90070628D /* IssueService.swift */; };
 		B248266F1E4F91B70070628D /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266A1E4F91B70070628D /* Issue.swift */; };
 		B24826701E4F91B70070628D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B248266B1E4F91B70070628D /* Photo.swift */; };
@@ -133,6 +133,7 @@
 		B21BC8461EE9FB3700106042 /* CoverPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverPhoto.swift; sourceTree = "<group>"; };
 		B224B75E1EF57D01004575E5 /* NotificationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationAction.swift; path = Helpers/NotificationAction.swift; sourceTree = "<group>"; };
 		B224B79D1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsOpeningConfiguration.swift; sourceTree = "<group>"; };
+		B232CEAA1EF5FD080097928B /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		B2356F441EF4A08400AF59D0 /* SaturdaysNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SaturdaysNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2356F461EF4A08400AF59D0 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		B2356F481EF4A08400AF59D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +149,6 @@
 		B248264F1E4F8DA50070628D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B24826521E4F8DA50070628D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B24826541E4F8DA50070628D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B24826611E4F8F760070628D /* demo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		B24826671E4F90E90070628D /* IssueService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueService.swift; sourceTree = "<group>"; };
 		B248266A1E4F91B70070628D /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		B248266B1E4F91B70070628D /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -342,7 +342,6 @@
 				B2645EB41EE4CD060074FCD0 /* Animators */,
 				B24826481E4F8DA50070628D /* AppDelegate.swift */,
 				B248264F1E4F8DA50070628D /* Assets.xcassets */,
-				B24826611E4F8F760070628D /* demo.json */,
 				B2DEC2311E68EFCC00FFFD7D /* Enums */,
 				B24826741E4F98960070628D /* Extensions */,
 				B212B4511EE2130F001DD091 /* Helpers */,
@@ -351,6 +350,7 @@
 				B248265A1E4F8DFD0070628D /* Services */,
 				B20A8F4F1EEF4B46003E4DA7 /* ViewModels */,
 				B2DEC2281E68E8CE00FFFD7D /* Views */,
+				B232CEAA1EF5FD080097928B /* demo.json */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -654,8 +654,8 @@
 				B24826531E4F8DA50070628D /* LaunchScreen.storyboard in Resources */,
 				B27191CA1EF5F62D002C402D /* GoogleService-Info.plist in Resources */,
 				B24826501E4F8DA50070628D /* Assets.xcassets in Resources */,
+				B232CEAB1EF5FD080097928B /* demo.json in Resources */,
 				B27191CC1EF5F63E002C402D /* APICredentials.plist in Resources */,
-				B24826621E4F8F760070628D /* demo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
