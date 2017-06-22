@@ -11,6 +11,7 @@ import UserNotifications
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
+import Alamofire
 
 protocol NotificationServiceProtocol {
     func applicationDidBecomeActive(_ application: UIApplication)
@@ -19,9 +20,16 @@ protocol NotificationServiceProtocol {
 
 class NotificationService : NSObject {
     
-    
+    //MARK: Properties
     fileprivate let newIssueIdentifier = "new_issue"
+    private let credentialsHelper : CredentialsHelper
     
+    //MARK: Lifecycle
+    init(credentialsHelper:CredentialsHelper) {
+        self.credentialsHelper = credentialsHelper
+    }
+    
+    //MARK: Interface
     func registerForNotifications() {
         let notificationCenter = UNUserNotificationCenter.current()
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
@@ -43,12 +51,28 @@ class NotificationService : NSObject {
         FIRApp.configure()
     }
     
-    @objc fileprivate func tokenRefreshNotification(_ notification: Notification) {
-        if let refreshedToken = FIRInstanceID.instanceID().token() {
-            print("InstanceID token: \(refreshedToken)")
+    func registerDevice(deviceUUID:String, fcmToken:String) {
+        if Platform.isSimulator {
+            return
         }
         
-        // Connect to FCM since connection may have failed when attempted before having a token.
+        Alamofire.request(credentialsHelper.apiURL.appending(ServiceEndpoint.registerDevice.rawValue),
+                          method: .post,
+                          parameters: ["uuid":deviceUUID, "token":fcmToken],
+                          encoding: JSONEncoding.default,
+                          headers: credentialsHelper.authorizationHeaders)
+    }
+    
+    //MARK: Private Methods
+    @objc fileprivate func tokenRefreshNotification(_ notification: Notification) {
+        guard
+            let refreshedToken = FIRInstanceID.instanceID().token(),
+            let deviceUUID = UIDevice.current.identifierForVendor?.uuidString
+        else {
+            return
+        }
+        
+        self.registerDevice(deviceUUID: deviceUUID, fcmToken: refreshedToken)
         connectToFcm()
     }
     
