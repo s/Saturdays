@@ -53,6 +53,7 @@
 		B27191CA1EF5F62D002C402D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27191C91EF5F62D002C402D /* GoogleService-Info.plist */; };
 		B27191CC1EF5F63E002C402D /* APICredentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = B27191CB1EF5F63E002C402D /* APICredentials.plist */; };
 		B279C1DB1EFB2C4900E72D5A /* CredentialsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */; };
+		B279C1DD1EFB305A00E72D5A /* DataRetrivalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1DC1EFB305A00E72D5A /* DataRetrivalError.swift */; };
 		B28979F61EE36FC6005834E3 /* ImageDownloadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */; };
 		B29165351E526B390045BA4F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29165341E526B390045BA4F /* UITableViewExtensions.swift */; };
 		B2CD11EF1EF2DA6D00518C0E /* IssueDetailsPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CD11EE1EF2DA6D00518C0E /* IssueDetailsPostCell.swift */; };
@@ -167,6 +168,7 @@
 		B27191C91EF5F62D002C402D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B27191CB1EF5F63E002C402D /* APICredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APICredentials.plist; sourceTree = "<group>"; };
 		B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsHelper.swift; sourceTree = "<group>"; };
+		B279C1DC1EFB305A00E72D5A /* DataRetrivalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataRetrivalError.swift; path = Enums/DataRetrivalError.swift; sourceTree = "<group>"; };
 		B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadingService.swift; sourceTree = "<group>"; };
 		B29165341E526B390045BA4F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		B2CD11EE1EF2DA6D00518C0E /* IssueDetailsPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailsPostCell.swift; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 			children = (
 				B2DEC2321E68EFE500FFFD7D /* IssueItemType.swift */,
 				B224B75E1EF57D01004575E5 /* NotificationAction.swift */,
+				B279C1DC1EFB305A00E72D5A /* DataRetrivalError.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -783,6 +786,7 @@
 				B2DCFEE31EF0B53F008B64C4 /* IssueDetailsImageCell.swift in Sources */,
 				B2FD04B01EF1F6EB004ED046 /* IssueDetailsTitleSubtitleArtworkCell.swift in Sources */,
 				B279C1DB1EFB2C4900E72D5A /* CredentialsHelper.swift in Sources */,
+				B279C1DD1EFB305A00E72D5A /* DataRetrivalError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
