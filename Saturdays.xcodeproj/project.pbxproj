@@ -55,6 +55,7 @@
 		B279C1DB1EFB2C4900E72D5A /* CredentialsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */; };
 		B279C1DD1EFB305A00E72D5A /* DataRetrivalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1DC1EFB305A00E72D5A /* DataRetrivalError.swift */; };
 		B279C1DF1EFB311700E72D5A /* DataRetrivalArrayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1DE1EFB311700E72D5A /* DataRetrivalArrayResult.swift */; };
+		B279C1E11EFB445C00E72D5A /* PlatformHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1E01EFB445C00E72D5A /* PlatformHelper.swift */; };
 		B279C1E31EFB4AD100E72D5A /* ServiceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B279C1E21EFB4AD100E72D5A /* ServiceEndpoint.swift */; };
 		B28979F61EE36FC6005834E3 /* ImageDownloadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */; };
 		B29165351E526B390045BA4F /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29165341E526B390045BA4F /* UITableViewExtensions.swift */; };
@@ -172,6 +173,7 @@
 		B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsHelper.swift; sourceTree = "<group>"; };
 		B279C1DC1EFB305A00E72D5A /* DataRetrivalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataRetrivalError.swift; path = Enums/DataRetrivalError.swift; sourceTree = "<group>"; };
 		B279C1DE1EFB311700E72D5A /* DataRetrivalArrayResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataRetrivalArrayResult.swift; path = Enums/DataRetrivalArrayResult.swift; sourceTree = "<group>"; };
+		B279C1E01EFB445C00E72D5A /* PlatformHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformHelper.swift; sourceTree = "<group>"; };
 		B279C1E21EFB4AD100E72D5A /* ServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceEndpoint.swift; path = Enums/ServiceEndpoint.swift; sourceTree = "<group>"; };
 		B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadingService.swift; sourceTree = "<group>"; };
 		B29165341E526B390045BA4F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				B212B4521EE21329001DD091 /* UIHelper.swift */,
 				B2FD04B31EF1FA3B004ED046 /* UILabelDescriptor.swift */,
 				B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */,
+				B279C1E01EFB445C00E72D5A /* PlatformHelper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				B24826701E4F91B70070628D /* Photo.swift in Sources */,
 				B24826721E4F91B70070628D /* Track.swift in Sources */,
 				B20A8F491EEF3133003E4DA7 /* CGRectExtensions.swift in Sources */,
+				B279C1E11EFB445C00E72D5A /* PlatformHelper.swift in Sources */,
 				B224B79E1EF5A4BB004575E5 /* IssueDetailsOpeningConfiguration.swift in Sources */,
 				B2645EB11EE4BD9F0074FCD0 /* IssueDetailsView.swift in Sources */,
 				B2DCFEE51EF0BF12008B64C4 /* IssueDetailsTitleDataSource.swift in Sources */,
