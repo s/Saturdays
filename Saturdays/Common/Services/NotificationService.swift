@@ -11,6 +11,7 @@ import UserNotifications
 import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
+import Alamofire
 
 protocol NotificationServiceProtocol {
     func applicationDidBecomeActive(_ application: UIApplication)
@@ -19,9 +20,16 @@ protocol NotificationServiceProtocol {
 
 class NotificationService : NSObject {
     
-    
+    //MARK: Properties
     fileprivate let newIssueIdentifier = "new_issue"
+    private let credentialsHelper : CredentialsHelper
     
+    //MARK: Lifecycle
+    init(credentialsHelper:CredentialsHelper) {
+        self.credentialsHelper = credentialsHelper
+    }
+    
+    //MARK: Interface
     func registerForNotifications() {
         let notificationCenter = UNUserNotificationCenter.current()
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]

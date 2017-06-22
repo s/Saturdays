@@ -13,10 +13,12 @@ class RoutingService {
     
     //MARK: Properties
     fileprivate let imageDownloadingService : ImageDownloadingService
+    private let credentialsHelper : CredentialsHelper
     
     //MARK: Lifecycle
-    init(imageDownloadingService:ImageDownloadingService) {
+    init(imageDownloadingService:ImageDownloadingService, credentialsHelper:CredentialsHelper) {
         self.imageDownloadingService = imageDownloadingService
+        self.credentialsHelper = credentialsHelper
     }
     
     //MARK: Public
@@ -41,7 +43,7 @@ class RoutingService {
     //MARK: Private
     fileprivate func createIssueListModule(needsToOpenIssueNumber issueNumber:Int?=nil) -> UIViewController {
         
-        let issueService = IssueService()
+        let issueService = IssueService(credentialsHelper: credentialsHelper)
         let presenter = IssueListPresenter(issueService:issueService, routingService:self)
         let issueListView =  IssueListView(presenter: presenter,
                                            imageDownloadingService: imageDownloadingService,
