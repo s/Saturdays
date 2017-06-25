@@ -256,7 +256,6 @@
 		B212B4511EE2130F001DD091 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B224B7661EF598F2004575E5 /* Defines */,
 				B212B4521EE21329001DD091 /* UIHelper.swift */,
 				B2FD04B31EF1FA3B004ED046 /* UILabelDescriptor.swift */,
 				B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */,
@@ -354,6 +353,7 @@
 				B2645EB41EE4CD060074FCD0 /* Animators */,
 				B24826481E4F8DA50070628D /* AppDelegate.swift */,
 				B248264F1E4F8DA50070628D /* Assets.xcassets */,
+				B224B7661EF598F2004575E5 /* Defines */,
 				B2DEC2311E68EFCC00FFFD7D /* Enums */,
 				B24826741E4F98960070628D /* Extensions */,
 				B212B4511EE2130F001DD091 /* Helpers */,
