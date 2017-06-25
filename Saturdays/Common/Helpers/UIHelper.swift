@@ -31,7 +31,7 @@ class UIHelper: NSObject {
         shimmeringView.translatesAutoresizingMaskIntoConstraints = false
         
         let view = UIView(frame: CGRect.zero)
-        view.backgroundColor = Defines.Colors.lightGray
+        view.backgroundColor = Defines.colors.lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         
         shimmeringView.contentView = view
@@ -52,8 +52,8 @@ class UIHelper: NSObject {
     
     static func getTrackCellLabelDescriptors(from track:TrackViewModel) -> [UILabelDescriptor] {
         return [
-            UILabelDescriptor(text: track.trackName, font: Defines.Fonts.body, textColor: Defines.Colors.black),
-            UILabelDescriptor(text: track.artistName, font: Defines.Fonts.detail, textColor: Defines.Colors.black)
+            UILabelDescriptor(text: track.trackName, font: Defines.Fonts.body, textColor: Defines.colors.black),
+            UILabelDescriptor(text: track.artistName, font: Defines.Fonts.detail, textColor: Defines.colors.black)
         ]
     }
     
@@ -63,9 +63,9 @@ class UIHelper: NSObject {
     
     static func getVenueCellLabelDescriptors(from venue:VenueViewModel) -> [UILabelDescriptor] {
         return [
-            UILabelDescriptor(text: venue.venueName, font: Defines.Fonts.body, textColor: Defines.Colors.black),
-            UILabelDescriptor(text: venue.locationInfo, font: Defines.Fonts.detail, textColor: Defines.Colors.black),
-            UILabelDescriptor(text: venue.type, font: Defines.Fonts.subDetail, textColor: Defines.Colors.black)
+            UILabelDescriptor(text: venue.venueName, font: Defines.Fonts.body, textColor: Defines.colors.black),
+            UILabelDescriptor(text: venue.locationInfo, font: Defines.Fonts.detail, textColor: Defines.colors.black),
+            UILabelDescriptor(text: venue.type, font: Defines.Fonts.subDetail, textColor: Defines.colors.black)
         ]
     }
     
@@ -76,7 +76,7 @@ class UIHelper: NSObject {
     static func getTableViewSectionHeader(with text:String) -> UIView {
         let descriptor = UILabelDescriptor(text: text,
                                            font: Defines.Fonts.subtitle,
-                                           textColor: Defines.Colors.black)
+                                           textColor: Defines.colors.black)
         guard let label = self.createLabels(from: [descriptor]).first else { return UIView() }
         
         let view = UIView(frame:CGRect.zero)

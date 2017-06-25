@@ -15,7 +15,7 @@ class IssueListCell: UITableViewCell {
     let issueImageView : UIImageView = {
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = Defines.Colors.lightGray
+        imageView.backgroundColor = Defines.colors.lightGray
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
@@ -45,7 +45,7 @@ class IssueListCell: UITableViewCell {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Defines.Fonts.body
-        label.textColor = Defines.Colors.white
+        label.textColor = Defines.colors.white
         return label
     }()
     
@@ -85,7 +85,7 @@ class IssueListCell: UITableViewCell {
     
     // MARK : Private
     fileprivate func setupCell() {
-        self.backgroundColor = Defines.Colors.white
+        self.backgroundColor = Defines.colors.white
         self.selectionStyle = .none
         self.layer.masksToBounds = true
     }

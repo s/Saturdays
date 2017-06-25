@@ -112,7 +112,7 @@ class IssueDetailsView: UIViewController {
     //MARK: Private
     fileprivate func setupUI() {
         self.title = item.title
-        self.view.backgroundColor = Defines.Colors.white
+        self.view.backgroundColor = Defines.colors.white
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.automaticallyAdjustsScrollViewInsets = false
     }

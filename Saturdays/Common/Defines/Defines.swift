@@ -11,6 +11,7 @@ import UIKit
 struct Defines {
     static let issueDetailsTransitionDuration : TimeInterval = 3
     
+    static let colors   = ColorDefines()
     static let spacings = SpacingDefines()
     
     fileprivate struct FontSizes {
@@ -33,13 +34,6 @@ struct Defines {
                                                                         weight:UIFontWeightBold)
         static let navigationBarContentViewTitle = UIFont.systemFont(ofSize: Defines.FontSizes.navigationBarContentViewTitle,
                                                                      weight:UIFontWeightSemibold)
-    }
-    
-    struct Colors {
-        static let lightGray              = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1.0)
-        static let white                  = UIColor.white
-        static let black                  = UIColor.black
-        static let navigationBarTintColor = Defines.Colors.white
     }
     
     struct Copies {

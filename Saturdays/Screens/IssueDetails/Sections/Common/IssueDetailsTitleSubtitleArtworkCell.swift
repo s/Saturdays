@@ -14,7 +14,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
     let mediaImageView : UIImageView = {
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = Defines.Colors.lightGray
+        imageView.backgroundColor = Defines.colors.lightGray
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill

@@ -70,7 +70,7 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Defines.Colors.navigationBarTintColor
+        view.backgroundColor = Defines.colors.navigationBarTintColor
         view.addSubview(self.navigationBarContentView)
         view.addSubview(self.navigationBarLargeTitleView)
         view.bringSubview(toFront: self.navigationBarContentView)
@@ -88,7 +88,7 @@ class IssueListView : UIViewController {
         ])
         
         let bottomBorderLayer = CALayer()
-        bottomBorderLayer.backgroundColor = Defines.Colors.lightGray.cgColor
+        bottomBorderLayer.backgroundColor = Defines.colors.lightGray.cgColor
         bottomBorderLayer.frame = CGRect(x: 0, y: Defines.Sizes.navigationBarViewHeight, width: self.view.frame.width, height: 0.5)
         view.layer.addSublayer(bottomBorderLayer)
         
@@ -98,7 +98,7 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarLargeTitleView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Defines.Colors.navigationBarTintColor
+        view.backgroundColor = Defines.colors.navigationBarTintColor
         view.addSubview(self.navigationBarLargeTitleLabel)
         view.addConstraints([
             self.navigationBarLargeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.spacings.doubleUnit),
@@ -111,7 +111,7 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarContentView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Defines.Colors.navigationBarTintColor
+        view.backgroundColor = Defines.colors.navigationBarTintColor
         return view
     }()
     
@@ -120,7 +120,7 @@ class IssueListView : UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Defines.Fonts.navigationBarLargeTitleViewTitle
         label.text = Defines.Copies.saturdaysTitle
-        label.textColor = Defines.Colors.black
+        label.textColor = Defines.colors.black
         return label
     }()
     
