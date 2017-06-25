@@ -118,7 +118,7 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarLargeTitleLabel : UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Defines.Fonts.navigationBarLargeTitleViewTitle
+        label.font = Defines.fonts.navigationBarLargeTitleViewTitle
         label.text = Defines.copies.saturdaysTitle
         label.textColor = Defines.colors.black
         return label

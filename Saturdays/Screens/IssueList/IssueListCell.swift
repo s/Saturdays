@@ -44,7 +44,7 @@ class IssueListCell: UITableViewCell {
     fileprivate let issueTitleLabel : UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Defines.Fonts.body
+        label.font = Defines.fonts.body
         label.textColor = Defines.colors.white
         return label
     }()

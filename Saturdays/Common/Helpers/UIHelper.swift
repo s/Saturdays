@@ -52,8 +52,8 @@ class UIHelper: NSObject {
     
     static func getTrackCellLabelDescriptors(from track:TrackViewModel) -> [UILabelDescriptor] {
         return [
-            UILabelDescriptor(text: track.trackName, font: Defines.Fonts.body, textColor: Defines.colors.black),
-            UILabelDescriptor(text: track.artistName, font: Defines.Fonts.detail, textColor: Defines.colors.black)
+            UILabelDescriptor(text: track.trackName, font: Defines.fonts.body, textColor: Defines.colors.black),
+            UILabelDescriptor(text: track.artistName, font: Defines.fonts.detail, textColor: Defines.colors.black)
         ]
     }
     
@@ -63,9 +63,9 @@ class UIHelper: NSObject {
     
     static func getVenueCellLabelDescriptors(from venue:VenueViewModel) -> [UILabelDescriptor] {
         return [
-            UILabelDescriptor(text: venue.venueName, font: Defines.Fonts.body, textColor: Defines.colors.black),
-            UILabelDescriptor(text: venue.locationInfo, font: Defines.Fonts.detail, textColor: Defines.colors.black),
-            UILabelDescriptor(text: venue.type, font: Defines.Fonts.subDetail, textColor: Defines.colors.black)
+            UILabelDescriptor(text: venue.venueName, font: Defines.fonts.body, textColor: Defines.colors.black),
+            UILabelDescriptor(text: venue.locationInfo, font: Defines.fonts.detail, textColor: Defines.colors.black),
+            UILabelDescriptor(text: venue.type, font: Defines.fonts.subDetail, textColor: Defines.colors.black)
         ]
     }
     
@@ -75,7 +75,7 @@ class UIHelper: NSObject {
     
     static func getTableViewSectionHeader(with text:String) -> UIView {
         let descriptor = UILabelDescriptor(text: text,
-                                           font: Defines.Fonts.subtitle,
+                                           font: Defines.fonts.subtitle,
                                            textColor: Defines.colors.black)
         guard let label = self.createLabels(from: [descriptor]).first else { return UIView() }
         

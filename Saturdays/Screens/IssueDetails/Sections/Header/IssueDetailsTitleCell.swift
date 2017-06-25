@@ -14,7 +14,7 @@ class IssueDetailsTitleCell: UITableViewCell {
     fileprivate lazy var issueTitleLabel : UILabel = { [unowned self] in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Defines.Fonts.navigationBarLargeTitleViewTitle
+        label.font = Defines.fonts.navigationBarLargeTitleViewTitle
         label.numberOfLines = 0
         label.setContentHuggingPriority(UILayoutPriorityRequired, for: UILayoutConstraintAxis.vertical)
         return label
@@ -23,7 +23,7 @@ class IssueDetailsTitleCell: UITableViewCell {
     fileprivate lazy var issueDescriptionLabel : UILabel = { [unowned self] in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = Defines.Fonts.detail
+        label.font = Defines.fonts.detail
         label.numberOfLines = 0
         return label
     }()
