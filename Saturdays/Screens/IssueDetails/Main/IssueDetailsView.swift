@@ -51,7 +51,7 @@ class IssueDetailsView: UIViewController {
     }()
     
     fileprivate lazy var dismissIcon : UIImageView = { [unowned self] in
-        let imageView = UIImageView(image: ImageDefines.dismissIcon)
+        let imageView = UIImageView(image: Defines.images.dismissIcon)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
         return imageView

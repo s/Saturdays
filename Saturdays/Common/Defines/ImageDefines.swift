@@ -9,5 +9,5 @@
 import UIKit
 
 struct ImageDefines {
-    static let dismissIcon = UIImage(named: "Dismiss")
+    let dismissIcon = UIImage(named: "Dismiss")
 }

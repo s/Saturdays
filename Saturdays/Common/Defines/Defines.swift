@@ -14,6 +14,7 @@ struct Defines {
     static let colors   = ColorDefines()
     static let copies   = CopyDefines()
     static let fonts    = FontDefines()
+    static let images   = ImageDefines()
     static let sizes    = SizeDefines()
     static let spacings = SpacingDefines()
 }
