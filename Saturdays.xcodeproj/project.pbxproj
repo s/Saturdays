@@ -170,10 +170,10 @@
 		B26493361E832E8000878824 /* Saturdays.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Saturdays.entitlements; sourceTree = "<group>"; };
 		B27191C91EF5F62D002C402D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B27191CB1EF5F63E002C402D /* APICredentials.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APICredentials.plist; sourceTree = "<group>"; };
-		B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsHelper.swift; sourceTree = "<group>"; };
+		B279C1DA1EFB2C4900E72D5A /* CredentialsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CredentialsHelper.swift; path = Helpers/CredentialsHelper.swift; sourceTree = "<group>"; };
 		B279C1DC1EFB305A00E72D5A /* DataRetrivalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataRetrivalError.swift; path = Enums/DataRetrivalError.swift; sourceTree = "<group>"; };
 		B279C1DE1EFB311700E72D5A /* DataRetrivalArrayResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataRetrivalArrayResult.swift; path = Enums/DataRetrivalArrayResult.swift; sourceTree = "<group>"; };
-		B279C1E01EFB445C00E72D5A /* PlatformHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformHelper.swift; sourceTree = "<group>"; };
+		B279C1E01EFB445C00E72D5A /* PlatformHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlatformHelper.swift; path = Helpers/PlatformHelper.swift; sourceTree = "<group>"; };
 		B279C1E21EFB4AD100E72D5A /* ServiceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceEndpoint.swift; path = Enums/ServiceEndpoint.swift; sourceTree = "<group>"; };
 		B28979F51EE36FC6005834E3 /* ImageDownloadingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadingService.swift; sourceTree = "<group>"; };
 		B29165341E526B390045BA4F /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
