@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notificationService.registerForNotifications()
         UNUserNotificationCenter.current().delegate = self
         application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = 0
         
         //Navigation setup
         window.rootViewController = routingService.createRootViewController()

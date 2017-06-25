@@ -272,7 +272,6 @@ extension IssueListView : IssueListViewProtocol {
         if self.shouldOpenAnIssueOnStartup {
             if let issueNumberToShow = self.issueNumberToOpenOnStartup {
                 self.showIssue(number: issueNumberToShow)
-                UIApplication.shared.applicationIconBadgeNumber = 0
             }
         }
     }
