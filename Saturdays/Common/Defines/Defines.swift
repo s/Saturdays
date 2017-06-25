@@ -12,6 +12,7 @@ struct Defines {
     static let issueDetailsTransitionDuration : TimeInterval = 3
     
     static let colors   = ColorDefines()
+    static let copies   = CopyDefines()
     static let spacings = SpacingDefines()
     
     fileprivate struct FontSizes {
@@ -34,15 +35,6 @@ struct Defines {
                                                                         weight:UIFontWeightBold)
         static let navigationBarContentViewTitle = UIFont.systemFont(ofSize: Defines.FontSizes.navigationBarContentViewTitle,
                                                                      weight:UIFontWeightSemibold)
-    }
-    
-    struct Copies {
-        static let saturdaysTitle = NSLocalizedString("SATURDAYS", comment: "")
-        static let tracksTitle = NSLocalizedString("Tracks", comment: "")
-        static let venuesTitle = NSLocalizedString("Venues", comment: "")
-        static let postsTitle  = NSLocalizedString("Posts", comment: "")
-        static let openIssue   = NSLocalizedString("Open Issue", comment: "")
-        static let dismiss     = NSLocalizedString("Dismiss", comment: "")
     }
     
     struct Sizes {

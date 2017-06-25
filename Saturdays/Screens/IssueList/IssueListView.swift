@@ -119,7 +119,7 @@ class IssueListView : UIViewController {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = Defines.Fonts.navigationBarLargeTitleViewTitle
-        label.text = Defines.Copies.saturdaysTitle
+        label.text = Defines.copies.saturdaysTitle
         label.textColor = Defines.colors.black
         return label
     }()
@@ -158,7 +158,7 @@ class IssueListView : UIViewController {
     
     //MARK: Private
     fileprivate func setupUI() {
-        self.title = Defines.Copies.saturdaysTitle
+        self.title = Defines.copies.saturdaysTitle
     }
     
     fileprivate func setupTableView() {
