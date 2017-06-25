@@ -14,7 +14,7 @@ class IssueDetailsPostsDataSource : NSObject {
     fileprivate let posts : [PostViewModel]
     fileprivate let imageDownloadingService : ImageDownloadingService
     fileprivate lazy var headerView : UIView = { [unowned self] in
-        return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.postsTitle)
+        return UIHelper.getTableViewSectionHeader(with: Defines.Copies.postsTitle)
     }()
     
     //MARK: Lifecycle

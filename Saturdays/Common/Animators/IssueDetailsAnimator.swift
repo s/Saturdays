@@ -23,7 +23,7 @@ class IssueDetailsAnimator: NSObject {
 
 extension IssueDetailsAnimator : UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return UIDefines.issueDetailsTransitionDuration
+        return Defines.issueDetailsTransitionDuration
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

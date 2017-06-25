@@ -58,7 +58,7 @@ class IssueListView : UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = UIDefines.Sizes.defaultIssueCellHeight
+        tableView.estimatedRowHeight = Defines.Sizes.defaultIssueCellHeight
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
@@ -70,7 +70,7 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIDefines.Colors.navigationBarTintColor
+        view.backgroundColor = Defines.Colors.navigationBarTintColor
         view.addSubview(self.navigationBarContentView)
         view.addSubview(self.navigationBarLargeTitleView)
         view.bringSubview(toFront: self.navigationBarContentView)
@@ -78,18 +78,18 @@ class IssueListView : UIViewController {
             self.navigationBarContentView.topAnchor.constraint(equalTo:view.topAnchor),
             self.navigationBarContentView.leadingAnchor.constraint(equalTo:view.leadingAnchor),
             self.navigationBarContentView.trailingAnchor.constraint(equalTo:view.trailingAnchor),
-            self.navigationBarContentView.heightAnchor.constraint(equalToConstant:UIDefines.Sizes.navigationBarContentViewHeight),
+            self.navigationBarContentView.heightAnchor.constraint(equalToConstant:Defines.Sizes.navigationBarContentViewHeight),
             
             self.navigationBarLargeTitleView.topAnchor.constraint(equalTo:self.navigationBarContentView.bottomAnchor),
             self.navigationBarLargeTitleView.leadingAnchor.constraint(equalTo:view.leadingAnchor),
             self.navigationBarLargeTitleView.trailingAnchor.constraint(equalTo:view.trailingAnchor),
-            self.navigationBarLargeTitleView.heightAnchor.constraint(equalToConstant:UIDefines.Sizes.navigationBarLargeTitleViewHeight),
+            self.navigationBarLargeTitleView.heightAnchor.constraint(equalToConstant:Defines.Sizes.navigationBarLargeTitleViewHeight),
             
         ])
         
         let bottomBorderLayer = CALayer()
-        bottomBorderLayer.backgroundColor = UIDefines.Colors.lightGray.cgColor
-        bottomBorderLayer.frame = CGRect(x: 0, y: UIDefines.Sizes.navigationBarViewHeight, width: self.view.frame.width, height: 0.5)
+        bottomBorderLayer.backgroundColor = Defines.Colors.lightGray.cgColor
+        bottomBorderLayer.frame = CGRect(x: 0, y: Defines.Sizes.navigationBarViewHeight, width: self.view.frame.width, height: 0.5)
         view.layer.addSublayer(bottomBorderLayer)
         
         return view
@@ -98,12 +98,12 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarLargeTitleView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIDefines.Colors.navigationBarTintColor
+        view.backgroundColor = Defines.Colors.navigationBarTintColor
         view.addSubview(self.navigationBarLargeTitleLabel)
         view.addConstraints([
-            self.navigationBarLargeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
-            self.navigationBarLargeTitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-UIDefines.Spacings.singleUnit),
-            self.navigationBarLargeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit)
+            self.navigationBarLargeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.Spacings.doubleUnit),
+            self.navigationBarLargeTitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-Defines.Spacings.singleUnit),
+            self.navigationBarLargeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-Defines.Spacings.doubleUnit)
         ])
         return view
     }()
@@ -111,16 +111,16 @@ class IssueListView : UIViewController {
     fileprivate lazy var navigationBarContentView : UIView = { [unowned self] in
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIDefines.Colors.navigationBarTintColor
+        view.backgroundColor = Defines.Colors.navigationBarTintColor
         return view
     }()
     
     fileprivate lazy var navigationBarLargeTitleLabel : UILabel = {
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIDefines.Fonts.navigationBarLargeTitleViewTitle
-        label.text = UIDefines.Copies.saturdaysTitle
-        label.textColor = UIDefines.Colors.black
+        label.font = Defines.Fonts.navigationBarLargeTitleViewTitle
+        label.text = Defines.Copies.saturdaysTitle
+        label.textColor = Defines.Colors.black
         return label
     }()
     
@@ -158,7 +158,7 @@ class IssueListView : UIViewController {
     
     //MARK: Private
     fileprivate func setupUI() {
-        self.title = UIDefines.Copies.saturdaysTitle
+        self.title = Defines.Copies.saturdaysTitle
     }
     
     fileprivate func setupTableView() {
@@ -199,7 +199,7 @@ class IssueListView : UIViewController {
             constraints.append(contentsOf: [
                 navigationBarView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
                 navigationBarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-                navigationBarView.heightAnchor.constraint(equalToConstant: UIDefines.Sizes.navigationBarViewHeight),
+                navigationBarView.heightAnchor.constraint(equalToConstant: Defines.Sizes.navigationBarViewHeight),
                 navigationBarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
             ])
         }

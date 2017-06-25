@@ -34,8 +34,8 @@ class NotificationService : NSObject {
         let notificationCenter = UNUserNotificationCenter.current()
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         
-        let openIssueAction = UNNotificationAction(identifier: NotificationAction.openIssue.rawValue, title: UIDefines.Copies.openIssue, options: [UNNotificationActionOptions.foreground])
-        let dismissAction   = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: UIDefines.Copies.dismiss, options: [])
+        let openIssueAction = UNNotificationAction(identifier: NotificationAction.openIssue.rawValue, title: Defines.Copies.openIssue, options: [UNNotificationActionOptions.foreground])
+        let dismissAction   = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: Defines.Copies.dismiss, options: [])
         let generalCategory = UNNotificationCategory(identifier: newIssueIdentifier,
                                                      actions: [openIssueAction, dismissAction],
                                                      intentIdentifiers: [],

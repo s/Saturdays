@@ -1,5 +1,5 @@
 //
-//  UIDefines.swift
+//  Defines.swift
 //  Saturdays
 //
 //  Created by Said Ozcan on 15/06/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct UIDefines {
+struct Defines {
     static let issueDetailsTransitionDuration : TimeInterval = 3
     
     fileprivate struct FontSizes {
@@ -28,14 +28,14 @@ struct UIDefines {
     }
     
     struct Fonts {
-        static let title  = UIFont.systemFont(ofSize: UIDefines.FontSizes.large, weight: UIFontWeightRegular)
-        static let body   = UIFont.systemFont(ofSize: UIDefines.FontSizes.xlarge, weight: UIFontWeightSemibold)
-        static let detail = UIFont.systemFont(ofSize: UIDefines.FontSizes.large, weight: UIFontWeightRegular)
-        static let subDetail = UIFont.systemFont(ofSize: UIDefines.FontSizes.large, weight: UIFontWeightLight)
-        static let subtitle = UIFont.systemFont(ofSize: UIDefines.FontSizes.xxxlarge, weight: UIFontWeightBold)
-        static let navigationBarLargeTitleViewTitle = UIFont.systemFont(ofSize: UIDefines.FontSizes.navigationBarLargeTitleViewTitle,
+        static let title  = UIFont.systemFont(ofSize: Defines.FontSizes.large, weight: UIFontWeightRegular)
+        static let body   = UIFont.systemFont(ofSize: Defines.FontSizes.xlarge, weight: UIFontWeightSemibold)
+        static let detail = UIFont.systemFont(ofSize: Defines.FontSizes.large, weight: UIFontWeightRegular)
+        static let subDetail = UIFont.systemFont(ofSize: Defines.FontSizes.large, weight: UIFontWeightLight)
+        static let subtitle = UIFont.systemFont(ofSize: Defines.FontSizes.xxxlarge, weight: UIFontWeightBold)
+        static let navigationBarLargeTitleViewTitle = UIFont.systemFont(ofSize: Defines.FontSizes.navigationBarLargeTitleViewTitle,
                                                                         weight:UIFontWeightBold)
-        static let navigationBarContentViewTitle = UIFont.systemFont(ofSize: UIDefines.FontSizes.navigationBarContentViewTitle,
+        static let navigationBarContentViewTitle = UIFont.systemFont(ofSize: Defines.FontSizes.navigationBarContentViewTitle,
                                                                      weight:UIFontWeightSemibold)
     }
     
@@ -43,7 +43,7 @@ struct UIDefines {
         static let lightGray              = UIColor(red: 230.0/255.0, green: 230.0/255.0, blue: 230.0/255.0, alpha: 1.0)
         static let white                  = UIColor.white
         static let black                  = UIColor.black
-        static let navigationBarTintColor = UIDefines.Colors.white
+        static let navigationBarTintColor = Defines.Colors.white
     }
     
     struct Copies {

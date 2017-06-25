@@ -14,7 +14,7 @@ class IssueDetailsTracksDataSource : NSObject {
     fileprivate let tracks : [TrackViewModel]
     fileprivate let imageDownloadingService : ImageDownloadingService
     fileprivate lazy var headerView : UIView = { [unowned self] in
-        return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.tracksTitle)
+        return UIHelper.getTableViewSectionHeader(with: Defines.Copies.tracksTitle)
     }()
     
     //MARK: Lifecycle

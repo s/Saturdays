@@ -61,7 +61,7 @@ class RoutingService {
     fileprivate func createNavigationController(with rootView:UIViewController) -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: rootView)
         navigationController.navigationBar.isTranslucent = false
-        navigationController.navigationBar.tintColor = UIDefines.Colors.navigationBarTintColor
+        navigationController.navigationBar.tintColor = Defines.Colors.navigationBarTintColor
         if #available(iOS 11.0, *) {
             navigationController.navigationBar.prefersLargeTitles = true
         }

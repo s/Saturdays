@@ -14,7 +14,7 @@ class IssueDetailsVenuesDataSource : NSObject {
     fileprivate let venues : [VenueViewModel]
     fileprivate let imageDownloadingService : ImageDownloadingService
     fileprivate lazy var headerView : UIView = { [unowned self] in
-        return UIHelper.getTableViewSectionHeader(with: UIDefines.Copies.venuesTitle)
+        return UIHelper.getTableViewSectionHeader(with: Defines.Copies.venuesTitle)
     }()
     
     //MARK: Lifecycle

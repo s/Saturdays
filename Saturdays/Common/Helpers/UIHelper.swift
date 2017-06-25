@@ -14,7 +14,7 @@ class UIHelper: NSObject {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = UIDefines.Spacings.singleUnit
+        stackView.spacing = Defines.Spacings.singleUnit
         
         for _ in 0..<count {
             let block = self.createAShimmerBlock()
@@ -31,7 +31,7 @@ class UIHelper: NSObject {
         shimmeringView.translatesAutoresizingMaskIntoConstraints = false
         
         let view = UIView(frame: CGRect.zero)
-        view.backgroundColor = UIDefines.Colors.lightGray
+        view.backgroundColor = Defines.Colors.lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         
         shimmeringView.contentView = view
@@ -52,8 +52,8 @@ class UIHelper: NSObject {
     
     static func getTrackCellLabelDescriptors(from track:TrackViewModel) -> [UILabelDescriptor] {
         return [
-            UILabelDescriptor(text: track.trackName, font: UIDefines.Fonts.body, textColor: UIDefines.Colors.black),
-            UILabelDescriptor(text: track.artistName, font: UIDefines.Fonts.detail, textColor: UIDefines.Colors.black)
+            UILabelDescriptor(text: track.trackName, font: Defines.Fonts.body, textColor: Defines.Colors.black),
+            UILabelDescriptor(text: track.artistName, font: Defines.Fonts.detail, textColor: Defines.Colors.black)
         ]
     }
     
@@ -63,9 +63,9 @@ class UIHelper: NSObject {
     
     static func getVenueCellLabelDescriptors(from venue:VenueViewModel) -> [UILabelDescriptor] {
         return [
-            UILabelDescriptor(text: venue.venueName, font: UIDefines.Fonts.body, textColor: UIDefines.Colors.black),
-            UILabelDescriptor(text: venue.locationInfo, font: UIDefines.Fonts.detail, textColor: UIDefines.Colors.black),
-            UILabelDescriptor(text: venue.type, font: UIDefines.Fonts.subDetail, textColor: UIDefines.Colors.black)
+            UILabelDescriptor(text: venue.venueName, font: Defines.Fonts.body, textColor: Defines.Colors.black),
+            UILabelDescriptor(text: venue.locationInfo, font: Defines.Fonts.detail, textColor: Defines.Colors.black),
+            UILabelDescriptor(text: venue.type, font: Defines.Fonts.subDetail, textColor: Defines.Colors.black)
         ]
     }
     
@@ -75,8 +75,8 @@ class UIHelper: NSObject {
     
     static func getTableViewSectionHeader(with text:String) -> UIView {
         let descriptor = UILabelDescriptor(text: text,
-                                           font: UIDefines.Fonts.subtitle,
-                                           textColor: UIDefines.Colors.black)
+                                           font: Defines.Fonts.subtitle,
+                                           textColor: Defines.Colors.black)
         guard let label = self.createLabels(from: [descriptor]).first else { return UIView() }
         
         let view = UIView(frame:CGRect.zero)
@@ -85,9 +85,9 @@ class UIHelper: NSObject {
         view.addSubview(label)
         view.addConstraints([
             label.topAnchor.constraint(equalTo: view.topAnchor),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.Spacings.doubleUnit),
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-Defines.Spacings.doubleUnit),
         ])
         return view
     }

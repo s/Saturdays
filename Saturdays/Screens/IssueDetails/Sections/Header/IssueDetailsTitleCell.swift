@@ -14,7 +14,7 @@ class IssueDetailsTitleCell: UITableViewCell {
     fileprivate lazy var issueTitleLabel : UILabel = { [unowned self] in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIDefines.Fonts.navigationBarLargeTitleViewTitle
+        label.font = Defines.Fonts.navigationBarLargeTitleViewTitle
         label.numberOfLines = 0
         label.setContentHuggingPriority(UILayoutPriorityRequired, for: UILayoutConstraintAxis.vertical)
         return label
@@ -23,7 +23,7 @@ class IssueDetailsTitleCell: UITableViewCell {
     fileprivate lazy var issueDescriptionLabel : UILabel = { [unowned self] in
         let label = UILabel(frame: CGRect.zero)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIDefines.Fonts.detail
+        label.font = Defines.Fonts.detail
         label.numberOfLines = 0
         return label
     }()
@@ -35,7 +35,7 @@ class IssueDetailsTitleCell: UITableViewCell {
         ])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = UILayoutConstraintAxis.vertical
-        stackView.spacing = UIDefines.Spacings.singleUnit
+        stackView.spacing = Defines.Spacings.singleUnit
         stackView.alignment = .fill
         
         return stackView
@@ -63,10 +63,10 @@ class IssueDetailsTitleCell: UITableViewCell {
         self.contentView.addSubview(self.headerStackView)
         NSLayoutConstraint.activate([
             self.headerStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:UIDefines.Spacings.doubleUnit),
+            self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.Spacings.doubleUnit),
             self.headerStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.headerStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
-                                                           constant:-(UIDefines.Spacings.doubleUnit+UIDefines.Sizes.issueDetailsDismissIconDimension))
+                                                           constant:-(Defines.Spacings.doubleUnit+Defines.Sizes.issueDetailsDismissIconDimension))
         ])
     }
 }

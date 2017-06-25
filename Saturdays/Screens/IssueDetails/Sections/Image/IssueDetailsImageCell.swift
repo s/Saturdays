@@ -16,7 +16,7 @@ class IssueDetailsImageCell: UITableViewCell {
         let imageView = UIImageView(frame: CGRect.zero)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = UIViewContentMode.scaleAspectFill
-        imageView.backgroundColor = UIDefines.Colors.lightGray
+        imageView.backgroundColor = Defines.Colors.lightGray
         return imageView
     }()
     

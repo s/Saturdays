@@ -45,13 +45,13 @@ class IssueDetailsView: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = self.issueImage
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = UIDefines.Sizes.issueListCellCornerRadius
+        imageView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()
     
     fileprivate lazy var dismissIcon : UIImageView = { [unowned self] in
-        let imageView = UIImageView(image: Images.dismissIcon)
+        let imageView = UIImageView(image: ImageDefines.dismissIcon)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
         return imageView
@@ -63,12 +63,12 @@ class IssueDetailsView: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = UIDefines.Sizes.defaultIssueCellHeight
+        tableView.estimatedRowHeight = Defines.Sizes.defaultIssueCellHeight
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = UIColor.clear
         tableView.backgroundView = nil
         tableView.tableHeaderView = UIView()
-        tableView.contentInset = UIEdgeInsets(top: UIDefines.Sizes.issueDetailsTableViewInset, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: Defines.Sizes.issueDetailsTableViewInset, left: 0, bottom: 0, right: 0)
         return tableView
     }()
     
@@ -112,7 +112,7 @@ class IssueDetailsView: UIViewController {
     //MARK: Private
     fileprivate func setupUI() {
         self.title = item.title
-        self.view.backgroundColor = UIDefines.Colors.white
+        self.view.backgroundColor = Defines.Colors.white
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.automaticallyAdjustsScrollViewInsets = false
     }
@@ -171,10 +171,10 @@ class IssueDetailsView: UIViewController {
     
     fileprivate func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
-            self.dismissIcon.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:UIDefines.Spacings.doubleUnit),
-            self.dismissIcon.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-UIDefines.Spacings.doubleUnit),
-            self.dismissIcon.widthAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsDismissIconDimension),
-            self.dismissIcon.heightAnchor.constraint(equalToConstant: UIDefines.Sizes.issueDetailsDismissIconDimension),
+            self.dismissIcon.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:Defines.Spacings.doubleUnit),
+            self.dismissIcon.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-Defines.Spacings.doubleUnit),
+            self.dismissIcon.widthAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsDismissIconDimension),
+            self.dismissIcon.heightAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsDismissIconDimension),
             
             self.tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
