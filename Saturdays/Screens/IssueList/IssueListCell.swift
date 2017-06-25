@@ -31,10 +31,10 @@ class IssueListCell: UITableViewCell {
         
         titleView.addSubview(self.issueTitleLabel)
         NSLayoutConstraint.activate([
-            self.issueTitleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant:Defines.Spacings.singleUnit),
-            self.issueTitleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: Defines.Spacings.singleUnit),
-            self.issueTitleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -Defines.Spacings.singleUnit),
-            self.issueTitleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -Defines.Spacings.singleUnit)
+            self.issueTitleLabel.topAnchor.constraint(equalTo: titleView.topAnchor, constant:Defines.spacings.singleUnit),
+            self.issueTitleLabel.leadingAnchor.constraint(equalTo: titleView.leadingAnchor, constant: Defines.spacings.singleUnit),
+            self.issueTitleLabel.bottomAnchor.constraint(equalTo: titleView.bottomAnchor, constant: -Defines.spacings.singleUnit),
+            self.issueTitleLabel.trailingAnchor.constraint(equalTo: titleView.trailingAnchor, constant: -Defines.spacings.singleUnit)
         ])
         
         titleView.setContentHuggingPriority(UILayoutPriorityRequired, for: .horizontal)
@@ -57,8 +57,8 @@ class IssueListCell: UITableViewCell {
         }
         set (newFrame) {
             var frame = newFrame
-            frame.size.width = frame.width - (2 * Defines.Spacings.doubleUnit)
-            frame.origin.x = Defines.Spacings.doubleUnit
+            frame.size.width = frame.width - (2 * Defines.spacings.doubleUnit)
+            frame.origin.x = Defines.spacings.doubleUnit
             super.frame = frame
         }
     }
@@ -96,7 +96,7 @@ class IssueListCell: UITableViewCell {
     }
     
     fileprivate func setupLayoutConstraints() {
-        let spacing = Defines.Spacings.doubleUnit
+        let spacing = Defines.spacings.doubleUnit
         
         let trailingConstraintOfTitleView = self.issueTitleView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
                                                                                           constant: -spacing)

@@ -101,9 +101,9 @@ class IssueListView : UIViewController {
         view.backgroundColor = Defines.Colors.navigationBarTintColor
         view.addSubview(self.navigationBarLargeTitleLabel)
         view.addConstraints([
-            self.navigationBarLargeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.Spacings.doubleUnit),
-            self.navigationBarLargeTitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-Defines.Spacings.singleUnit),
-            self.navigationBarLargeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-Defines.Spacings.doubleUnit)
+            self.navigationBarLargeTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.spacings.doubleUnit),
+            self.navigationBarLargeTitleLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant:-Defines.spacings.singleUnit),
+            self.navigationBarLargeTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-Defines.spacings.doubleUnit)
         ])
         return view
     }()

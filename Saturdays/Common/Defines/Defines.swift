@@ -11,6 +11,8 @@ import UIKit
 struct Defines {
     static let issueDetailsTransitionDuration : TimeInterval = 3
     
+    static let spacings = SpacingDefines()
+    
     fileprivate struct FontSizes {
         static let small                            : CGFloat = 12.0
         static let medium                           : CGFloat = 14.0
@@ -19,12 +21,6 @@ struct Defines {
         static let xxxlarge                         : CGFloat = 22.0
         static let navigationBarLargeTitleViewTitle : CGFloat = 34.0
         static let navigationBarContentViewTitle    : CGFloat = 17.0
-    }
-    
-    struct Spacings {
-        static let singleUnit : CGFloat = 8.0
-        static let doubleUnit : CGFloat = 16.0
-        static let cellSpacing: CGFloat = 24.0
     }
     
     struct Fonts {

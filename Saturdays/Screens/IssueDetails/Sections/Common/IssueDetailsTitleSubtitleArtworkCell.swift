@@ -24,7 +24,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
     fileprivate lazy var stackView : UIStackView = { [unowned self] in
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = Defines.Spacings.singleUnit / 2
+        stackView.spacing = Defines.spacings.singleUnit / 2
         stackView.axis = UILayoutConstraintAxis.vertical
         stackView.distribution = .fill
         stackView.alignment = UIStackViewAlignment.top
@@ -68,22 +68,22 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
     }
     
     fileprivate func setupLayoutConstraints() {
-        let imageViewBottomConstraint = self.mediaImageView.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant:-Defines.Spacings.singleUnit)
+        let imageViewBottomConstraint = self.mediaImageView.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant:-Defines.spacings.singleUnit)
         imageViewBottomConstraint.priority = UILayoutPriorityDefaultHigh - 1
         
-        let stackViewBottomConstraint = self.stackView.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant:-Defines.Spacings.singleUnit)
+        let stackViewBottomConstraint = self.stackView.bottomAnchor.constraint(lessThanOrEqualTo: self.contentView.bottomAnchor, constant:-Defines.spacings.singleUnit)
         stackViewBottomConstraint.priority = UILayoutPriorityDefaultHigh - 1
         
         NSLayoutConstraint.activate([
-            self.mediaImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:Defines.Spacings.singleUnit),
-            self.mediaImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.Spacings.doubleUnit),
+            self.mediaImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:Defines.spacings.singleUnit),
+            self.mediaImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.spacings.doubleUnit),
             self.mediaImageView.widthAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsTrackAlbumArtDimension),
             self.mediaImageView.heightAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsTrackAlbumArtDimension),
             imageViewBottomConstraint,
             
-            self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:Defines.Spacings.singleUnit),
-            self.stackView.leadingAnchor.constraint(equalTo: self.mediaImageView.trailingAnchor, constant:Defines.Spacings.singleUnit),
-            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant:-Defines.Spacings.doubleUnit),
+            self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:Defines.spacings.singleUnit),
+            self.stackView.leadingAnchor.constraint(equalTo: self.mediaImageView.trailingAnchor, constant:Defines.spacings.singleUnit),
+            self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant:-Defines.spacings.doubleUnit),
             stackViewBottomConstraint
         ])
     }

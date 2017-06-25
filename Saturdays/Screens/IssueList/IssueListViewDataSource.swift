@@ -89,7 +89,7 @@ extension IssueListViewDataSource : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return Defines.Spacings.cellSpacing
+        return Defines.spacings.cellSpacing
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -98,7 +98,7 @@ extension IssueListViewDataSource : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section == self.items.count - 1 {
-            return Defines.Spacings.cellSpacing
+            return Defines.spacings.cellSpacing
         }
         return 0.0
     }

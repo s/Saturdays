@@ -14,7 +14,7 @@ class UIHelper: NSObject {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = Defines.Spacings.singleUnit
+        stackView.spacing = Defines.spacings.singleUnit
         
         for _ in 0..<count {
             let block = self.createAShimmerBlock()
@@ -85,9 +85,9 @@ class UIHelper: NSObject {
         view.addSubview(label)
         view.addConstraints([
             label.topAnchor.constraint(equalTo: view.topAnchor),
-            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.Spacings.doubleUnit),
+            label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant:Defines.spacings.doubleUnit),
             label.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-Defines.Spacings.doubleUnit),
+            label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:-Defines.spacings.doubleUnit),
         ])
         return view
     }

@@ -171,8 +171,8 @@ class IssueDetailsView: UIViewController {
     
     fileprivate func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
-            self.dismissIcon.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:Defines.Spacings.doubleUnit),
-            self.dismissIcon.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-Defines.Spacings.doubleUnit),
+            self.dismissIcon.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:Defines.spacings.doubleUnit),
+            self.dismissIcon.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-Defines.spacings.doubleUnit),
             self.dismissIcon.widthAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsDismissIconDimension),
             self.dismissIcon.heightAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsDismissIconDimension),
             

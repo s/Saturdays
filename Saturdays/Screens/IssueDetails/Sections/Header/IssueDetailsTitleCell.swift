@@ -35,7 +35,7 @@ class IssueDetailsTitleCell: UITableViewCell {
         ])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = UILayoutConstraintAxis.vertical
-        stackView.spacing = Defines.Spacings.singleUnit
+        stackView.spacing = Defines.spacings.singleUnit
         stackView.alignment = .fill
         
         return stackView
@@ -63,10 +63,10 @@ class IssueDetailsTitleCell: UITableViewCell {
         self.contentView.addSubview(self.headerStackView)
         NSLayoutConstraint.activate([
             self.headerStackView.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.Spacings.doubleUnit),
+            self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.spacings.doubleUnit),
             self.headerStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.headerStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
-                                                           constant:-(Defines.Spacings.doubleUnit+Defines.Sizes.issueDetailsDismissIconDimension))
+                                                           constant:-(Defines.spacings.doubleUnit+Defines.Sizes.issueDetailsDismissIconDimension))
         ])
     }
 }

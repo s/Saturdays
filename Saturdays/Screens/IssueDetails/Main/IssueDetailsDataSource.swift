@@ -80,7 +80,7 @@ extension IssueDetailsDataSource : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if !self.isLast(section: section) {
-            return Defines.Spacings.cellSpacing
+            return Defines.spacings.cellSpacing
         }
         return CGFloat.leastNormalMagnitude
     }
