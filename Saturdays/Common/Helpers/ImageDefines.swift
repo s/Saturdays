@@ -1,5 +1,5 @@
 //
-//  Images.swift
+//  ImageDefines.swift
 //  Saturdays
 //
 //  Created by Said Ozcan on 12/06/2017.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-struct Images {
+struct ImageDefines {
     static let dismissIcon = UIImage(named: "Dismiss")
 }
