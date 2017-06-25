@@ -45,7 +45,7 @@ class IssueDetailsView: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.image = self.issueImage
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
+        imageView.layer.cornerRadius = Defines.sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()
@@ -63,12 +63,12 @@ class IssueDetailsView: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = Defines.Sizes.defaultIssueCellHeight
+        tableView.estimatedRowHeight = Defines.sizes.defaultIssueCellHeight
         tableView.showsVerticalScrollIndicator = false
         tableView.backgroundColor = UIColor.clear
         tableView.backgroundView = nil
         tableView.tableHeaderView = UIView()
-        tableView.contentInset = UIEdgeInsets(top: Defines.Sizes.issueDetailsTableViewInset, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = UIEdgeInsets(top: Defines.sizes.issueDetailsTableViewInset, left: 0, bottom: 0, right: 0)
         return tableView
     }()
     
@@ -173,8 +173,8 @@ class IssueDetailsView: UIViewController {
         NSLayoutConstraint.activate([
             self.dismissIcon.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor, constant:Defines.spacings.doubleUnit),
             self.dismissIcon.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant:-Defines.spacings.doubleUnit),
-            self.dismissIcon.widthAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsDismissIconDimension),
-            self.dismissIcon.heightAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsDismissIconDimension),
+            self.dismissIcon.widthAnchor.constraint(equalToConstant: Defines.sizes.issueDetailsDismissIconDimension),
+            self.dismissIcon.heightAnchor.constraint(equalToConstant: Defines.sizes.issueDetailsDismissIconDimension),
             
             self.tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
             self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),

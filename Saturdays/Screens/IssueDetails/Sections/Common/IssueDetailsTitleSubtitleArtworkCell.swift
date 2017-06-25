@@ -16,7 +16,7 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = Defines.colors.lightGray
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
+        imageView.layer.cornerRadius = Defines.sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()
@@ -77,8 +77,8 @@ class IssueDetailsTitleSubtitleArtworkCell : UITableViewCell {
         NSLayoutConstraint.activate([
             self.mediaImageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:Defines.spacings.singleUnit),
             self.mediaImageView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.spacings.doubleUnit),
-            self.mediaImageView.widthAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsTrackAlbumArtDimension),
-            self.mediaImageView.heightAnchor.constraint(equalToConstant: Defines.Sizes.issueDetailsTrackAlbumArtDimension),
+            self.mediaImageView.widthAnchor.constraint(equalToConstant: Defines.sizes.issueDetailsTrackAlbumArtDimension),
+            self.mediaImageView.heightAnchor.constraint(equalToConstant: Defines.sizes.issueDetailsTrackAlbumArtDimension),
             imageViewBottomConstraint,
             
             self.stackView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant:Defines.spacings.singleUnit),

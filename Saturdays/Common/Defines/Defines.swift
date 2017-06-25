@@ -13,6 +13,7 @@ struct Defines {
     
     static let colors   = ColorDefines()
     static let copies   = CopyDefines()
+    static let sizes    = SizeDefines()
     static let spacings = SpacingDefines()
     
     fileprivate struct FontSizes {
@@ -35,17 +36,5 @@ struct Defines {
                                                                         weight:UIFontWeightBold)
         static let navigationBarContentViewTitle = UIFont.systemFont(ofSize: Defines.FontSizes.navigationBarContentViewTitle,
                                                                      weight:UIFontWeightSemibold)
-    }
-    
-    struct Sizes {
-        static let defaultIssueCellHeight            : CGFloat = 250.0
-        static let navigationBarViewHeight           : CGFloat = 96.0
-        static let navigationBarLargeTitleViewHeight : CGFloat = 52.0
-        static let navigationBarContentViewHeight    : CGFloat = 44.0
-        static let issueListCellCornerRadius         : CGFloat = 8.0
-        static let issueDetailsDismissIconDimension  : CGFloat = 40.0
-        static let issueDetailsTrackAlbumArtDimension: CGFloat = 80
-        static let issueDetailsTracksHeight          : CGFloat = 200.0
-        static let issueDetailsTableViewInset        : CGFloat = -20.0
     }
 }

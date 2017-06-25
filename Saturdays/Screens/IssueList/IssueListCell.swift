@@ -17,7 +17,7 @@ class IssueListCell: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = Defines.colors.lightGray
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
+        imageView.layer.cornerRadius = Defines.sizes.issueListCellCornerRadius
         imageView.contentMode = UIViewContentMode.scaleAspectFill
         return imageView
     }()
@@ -26,7 +26,7 @@ class IssueListCell: UITableViewCell {
         let titleView = UIView(frame: CGRect.zero)
         titleView.translatesAutoresizingMaskIntoConstraints = false
         titleView.backgroundColor = UIColor.black
-        titleView.layer.cornerRadius = Defines.Sizes.issueListCellCornerRadius
+        titleView.layer.cornerRadius = Defines.sizes.issueListCellCornerRadius
         titleView.layer.masksToBounds = true
         
         titleView.addSubview(self.issueTitleLabel)

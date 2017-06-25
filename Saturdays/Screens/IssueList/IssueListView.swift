@@ -58,7 +58,7 @@ class IssueListView : UIViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = Defines.Sizes.defaultIssueCellHeight
+        tableView.estimatedRowHeight = Defines.sizes.defaultIssueCellHeight
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
@@ -78,18 +78,18 @@ class IssueListView : UIViewController {
             self.navigationBarContentView.topAnchor.constraint(equalTo:view.topAnchor),
             self.navigationBarContentView.leadingAnchor.constraint(equalTo:view.leadingAnchor),
             self.navigationBarContentView.trailingAnchor.constraint(equalTo:view.trailingAnchor),
-            self.navigationBarContentView.heightAnchor.constraint(equalToConstant:Defines.Sizes.navigationBarContentViewHeight),
+            self.navigationBarContentView.heightAnchor.constraint(equalToConstant:Defines.sizes.navigationBarContentViewHeight),
             
             self.navigationBarLargeTitleView.topAnchor.constraint(equalTo:self.navigationBarContentView.bottomAnchor),
             self.navigationBarLargeTitleView.leadingAnchor.constraint(equalTo:view.leadingAnchor),
             self.navigationBarLargeTitleView.trailingAnchor.constraint(equalTo:view.trailingAnchor),
-            self.navigationBarLargeTitleView.heightAnchor.constraint(equalToConstant:Defines.Sizes.navigationBarLargeTitleViewHeight),
+            self.navigationBarLargeTitleView.heightAnchor.constraint(equalToConstant:Defines.sizes.navigationBarLargeTitleViewHeight),
             
         ])
         
         let bottomBorderLayer = CALayer()
         bottomBorderLayer.backgroundColor = Defines.colors.lightGray.cgColor
-        bottomBorderLayer.frame = CGRect(x: 0, y: Defines.Sizes.navigationBarViewHeight, width: self.view.frame.width, height: 0.5)
+        bottomBorderLayer.frame = CGRect(x: 0, y: Defines.sizes.navigationBarViewHeight, width: self.view.frame.width, height: 0.5)
         view.layer.addSublayer(bottomBorderLayer)
         
         return view
@@ -199,7 +199,7 @@ class IssueListView : UIViewController {
             constraints.append(contentsOf: [
                 navigationBarView.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor),
                 navigationBarView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-                navigationBarView.heightAnchor.constraint(equalToConstant: Defines.Sizes.navigationBarViewHeight),
+                navigationBarView.heightAnchor.constraint(equalToConstant: Defines.sizes.navigationBarViewHeight),
                 navigationBarView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
             ])
         }

@@ -66,7 +66,7 @@ class IssueDetailsTitleCell: UITableViewCell {
             self.headerStackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant:Defines.spacings.doubleUnit),
             self.headerStackView.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
             self.headerStackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,
-                                                           constant:-(Defines.spacings.doubleUnit+Defines.Sizes.issueDetailsDismissIconDimension))
+                                                           constant:-(Defines.spacings.doubleUnit+Defines.sizes.issueDetailsDismissIconDimension))
         ])
     }
 }
